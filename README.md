@@ -8,10 +8,10 @@ The site owner's goal is to build an active community around the product based o
 
 Must haves for this project:
 <!-- TODO: Must  haves -->
-- Functionality that allows subscribers to update fellow members on their successes
+- Functionality that allows subscribers to update fellow members on their successes --> a forum?
 - User proﬁles containing information that map to nutrition and/or exercise plans
 - Product reviews
-- A subscription-based payment model: 3 subs: lose weight, build muscle, get healthy.
+- A subscription-based payment model: on offer are 3 subscriptions, based on duration of subscription. Subscriptions get you access to workouts, nutrition plans, the community and a discount on the shop
 - Individual item purchase capability
 - Authentication and authorisation mechanism for subscribers and administrators
 
@@ -23,46 +23,10 @@ To see the site in action, visit []()
 
 ---
 
-## Table of Contents
-<!-- TODO: Find out if ToC can be automatically updated -->
-- [Simply Fit](#simply-fit)
-  - [Table of Contents](#table-of-contents)
-  - [UI and UX](#ui-and-ux)
-    - [User stories](#user-stories)
-    - [The 5 Planes of Design](#the-5-planes-of-design)
-      - [Strategy Plane](#strategy-plane)
-      - [Scope Plane](#scope-plane)
-      - [Structure Plane](#structure-plane)
-      - [Skeleton Plane](#skeleton-plane)
-      - [Surface Plane](#surface-plane)
-  - [Database Design](#database-design)
-  - [Features](#features)
-    - [Existing Features](#existing-features)
-    - [Features Left to Implement](#features-left-to-implement)
-  - [Technologies Used](#technologies-used)
-  - [Responsiveness of Pages](#responsiveness-of-pages)
-  - [Testing](#testing)
-    - [Notable Bugs](#notable-bugs)
-    - [Problems](#problems)
-  - [Deployment](#deployment)
-    - [Run locally](#run-locally)
-  - [Credits](#credits)
-    - [Inspiration](#inspiration)
-    - [Content](#content)
-    - [Media](#media)
-    - [Code](#code)
-    - [Acknowledgements](#acknowledgements)
-
----
-
 ## UI and UX
  
 ### User stories
 <!-- TODO: Create table of user stories: -->
-
-- Product reviews
-- A subscription-based payment model: 3 subs: lose weight, build muscle, get healthy.
-
   
 **Viewing and Navigation**
 | User Story ID | As A/An | I Want To Be Able To... | So That I Can... |
@@ -71,52 +35,65 @@ To see the site in action, visit []()
 |             2 | Shopper | View individual product details | Identify the price, description, product rating, product image and available sizes |
 |             3 | Shopper | Quickly identify deals, clearance items and special offers | Take advantage of special savings on products I'd like to purchase |
 |             4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much |
+|             5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like |
 
 **Registration and User Accounts**
 | User Story ID | As A/An   | I Want To Be Able To... | So That I Can... |
 | :-------------|:--------  | :----------------------:| :---------------:|
-|             5 | Site User | Easily register for an account | Have a personal account and be able to view my profile |
-|             6 | Site User | Easily login or logout | Access my personal account information |
-|             7 | Site User | Easily recover my password in case I forget it | Recover access to my account |
-|             8 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful |
-|             9 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information |
+|             6 | Site User | Easily register for an account | Have a personal account and be able to view my profile |
+|             7 | Site User | Easily login or logout | Access my personal account information |
+|             8 | Site User | Easily recover my password in case I forget it | Recover access to my account |
+|             9 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful |
+|            10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information |
+|            11 | Site User | Easily review products | Help my fellow fitness community members to find the right product |
 
 **Sorting and Searching**
 | User Story ID | As A/An | I Want To Be Able To... | So That I Can... |
 | :-------------|:--------| :----------------------:| :---------------:|
-|            10 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products |
-|            11 | Shopper | Sort a specific category of product | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name |
-|            12 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "homeware" |
-|            13 | Shopper | Search for a product by name or description | Find a specific product I'd like to purchase |
-|            14 | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available |
+|            12 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products |
+|            13 | Shopper | Sort a specific category of product | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name |
+|            14 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "homeware" |
+|            15 | Shopper | Search for a product by name or description | Find a specific product I'd like to purchase |
+|            16 | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available |
 
 **Purchasing and Checkout**
 | User Story ID | As A/An | I Want To Be Able To... | So That I Can... |
 | :-------------|:--------| :----------------------:| :---------------:|
-|            15 | Shopper | Easily select the size and quantity of a product when purchasing it | Ensure I don't accidentally select the wrong product, quantity or size |
-|            16 | Shopper | View items in my bag to be purchased | Identify the total cost of my purchase and all items I will receive |
-|            18 | Shopper | Adjust the quantity of individual items in my bag | Easily make changes to my purchase before checkout |
-|            19 | Shopper | Easily enter my payment information  | Check out quickly and with no hassle |
-|            20 | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase |
-|            21 | Shopper | View an order confirmation after checkout | Verify that I haven't made any mistakes |
-|            22 | Shopper | Receiv an email confirmation after checkout | Keep the confirmation of what I've purchased for my records |
+|            17 | Shopper | Easily select the size and quantity of a product when purchasing it | Ensure I don't accidentally select the wrong product, quantity or size |
+|            18 | Shopper | View items in my bag to be purchased | Identify the total cost of my purchase and all items I will receive |
+|            19 | Shopper | Adjust the quantity of individual items in my bag | Easily make changes to my purchase before checkout |
+|            20 | Shopper | Easily enter my payment information  | Check out quickly and with no hassle |
+|            21 | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase |
+|            22 | Shopper | View an order confirmation after checkout | Verify that I haven't made any mistakes |
+|            23 | Shopper | Receiv an email confirmation after checkout | Keep the confirmation of what I've purchased for my records |
 
 **Community**
 | User Story ID | As A/An   | I Want To Be Able To... | So That I Can... |
-|  | Subscriber   | Post updates about my progress | Update my fellow members on my successes |
-|  | Subscriber   | Add and edit information on my profile pertaining to my fitness goals | Receive nutrition and exercise plans tailored to my fitness goals |
+|            24 | Subscriber   | Post updates about my progress | Update my fellow members on my successes |
+|            25 | Subscriber   | Add and edit information on my profile pertaining to my fitness goals | Receive nutrition and exercise plans tailored to my fitness goals |
+|            26 | Subscriber   | Easily find other subscribers | Feel part of a community and get motivated |
+|            27 | Subscriber   | Easily see updates from other subscribers | Feel part of a community and get motivated |
+|            28 | Subscriber   | Easily find information about the subscriptions available | Make an informed choice about my subscription |
+|            29 | Subscriber   | Easily find workouts | Work on my fitness goal |
+|            30 | Subscriber   | Easily find nutrition plans | Work on my fitness goal |
+
 
 **Admin and Store Management**
 | User Story ID | As A/An | I Want To Be Able To... | So That I Can... |
 | :-------------|:--------| :----------------------:| :---------------:|
-|            23 | Store Owner/Admin | Easily login or logout | Access the admin interface of the webapp |
-|            23 | Store Owner/Admin | Add a product | Add new items to my store |
-|            24 | Store Owner/Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria |
-|            25 | Store Owner/Admin | Delete a product | Remove items that are no longer for sale |
-
-
-
-
+|            31 | Store Owner/Admin | Easily login or logout | Access the admin interface of the webapp |
+|            32 | Store Owner/Admin | Add a product | Add new items to my store |
+|            33 | Store Owner/Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria |
+|            34 | Store Owner/Admin | Delete a product | Remove items that are no longer for sale |
+|            35 | Store Owner/Admin | Add a subscription | Add new subscription options |
+|            36 | Store Owner/Admin | Edit/update a subscription | Change subscription prices, descriptions, linked workouts and nutrition |
+|            37 | Store Owner/Admin | Delete a subscription | Remove subscriptions that are no longer available |
+|            38 | Store Owner/Admin | Add a workout | Add new workouts |
+|            39 | Store Owner/Admin | Edit/update a workout | Change workouts |
+|            40 | Store Owner/Admin | Delete a workout | Remove workouts that are no longer promoted |
+|            41 | Store Owner/Admin | Add a nutrition plan | Add new nutrition plans |
+|            42 | Store Owner/Admin | Edit/update a nutrition plan | Change nutrition plan |
+|            43 | Store Owner/Admin | Delete a nutrition plan | Remove nutrition plans that are no longer promoted |
 
 
 Screenshots that fulfill these user stories:
@@ -289,15 +266,15 @@ https://www.precor.com/en-us/resources/5-online-fitness-communities-to-keep-you-
 
 
 ### Content
-<!-- TODO: Content -->
+<!-- TODO: Add where I got the Content -->
 
 
 ### Media
-<!-- TODO: Media -->
+<!-- TODO: Add where I got the Media -->
 
 
 ### Code
-<!-- TODO: Code -->
+<!-- TODO: Add where I got the Code, if using other people's code -->
 
 
 ### Acknowledgements
