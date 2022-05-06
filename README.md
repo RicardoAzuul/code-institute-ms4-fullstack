@@ -1,6 +1,6 @@
 # Simply Fit
 <!-- TODO: Add description of project: A book review and recommendation site, using MongoDB, Python, Flask, HTML, CSS and JavaScript. -->
-Simply Fit is a fitness subscription application.
+Fit Family is a fitness subscription application.
 
 The user's goal is to join a fitness community and purchase exercise plans and merchandise.
 
@@ -18,15 +18,13 @@ Must haves for this project:
 Nice to have: 
 <!-- TODO: nice to haves -->
 
-<!-- TODO: Add url for Heroku app -->
-To see the site in action, visit []()
+To see the site in action, visit [Fit Family](https://code-institute-ms4.herokuapp.com/)
 
 ---
 
 ## UI and UX
  
 ### User stories
-<!-- TODO: Create table of user stories: -->
   
 **Viewing and Navigation**
 | User Story ID | As A/An | I Want To Be Able To... | So That I Can... |
@@ -248,10 +246,62 @@ These screenshots indicate the responsiveness of the pages on various screens. P
 
 ## Deployment
 <!-- TODO: Deployment -->
+The project has been deployed to Heroku, with static files hosted on AWS S3. If  you want to do the same:
+1. Fork the repository to your own GitHub: https://github.com/RicardoAzuul/code-institute-ms4-fullstack.
+1. Log in to Heroku (www.heroku.com) - or register if you don't have an account yet.
+1. In the Heroku dashboard, click the New button in the top right corner and create a new app.
+1. Give your new app a name and choose a region. The name has to be unique within Heroku.
+1. On the page for your new Heroku app, go to Deployment method and choose "Connect to GitHub". If you haven't connected your GitHub account to Heroku yet, you will be able to do so now.
+1. Choose the forked repository of this project from your own GitHub account.
+1. If you want, you can enable Automatic Deploys here: whenever you perform a push to your GitHub repository, the Heroku app can redeploy. Otherwise you can deploy manually. Heroku will use the PROCFILE and requirements.txt to install dependencies and build the app.
+1. You will also have to set some Config Vars in the Settings section of your Heroku app. These are the Config Vars:
+   1. AWS_ACCESS_KEY_ID: the id for your AWS S3 container
+   1. AWS_SECRET_ACCESS_KEY: the secret key for your AWS S3 container
+   1. DATABASE_URL: the url to the postgress database on Heroku
+   1. EMAIL_HOST_PASS: the password or application key for the email account you use for emailing. This project uses Gmail
+   1. EMAIL_HOST_USER: the emailadress
+   1. SECRET_KEY: the Django secret key
+   1. STRIPE_PUBLIC_KEY: Your Stripe public key
+   1. STRIPE_SECRET_KEY: Your stripe secret key
+   1. STRIPE_WH_SECRET: Your Stripe webhook secret
+   1. USE_AWS
 
 
 ### Run locally
 <!-- TODO: Run locally -->
+If you want to run the project locally:
+1. First, fork the repository to your own GitHub: https://github.com/RicardoAzuul/code-institute-ms4-fullstack.
+1. Clone the forked repository to your own machine.
+1. Install Python 3.8.12, as this is what the project was built with: https://www.python.org/downloads/release/python-3812/ (though if you're running Windows, install 3.8.10)
+1. From the terminal, run the below to install required modules:
+  ``` pip3 install -r requirements.txt ```
+1. You will need to create an env.py file (or another form of environment file) for running the app locally. The content of this file:
+```
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "[secret key for use with flash package]")
+os.environ.setdefault("MONGO_URI", "[uri to your MongoDB]")
+os.environ.setdefault("MONGO_DBNAME", "[name of your MongoDB database")
+os.environ.setdefault("DEBUG", "True")
+
+   1. AWS_ACCESS_KEY_ID: the id for your AWS S3 container
+   1. AWS_SECRET_ACCESS_KEY: the secret key for your AWS S3 container
+   1. DATABASE_URL: the url to the postgress database on Heroku
+   1. EMAIL_HOST_PASS: the password or application key for the email account you use for emailing. This project uses Gmail
+   1. EMAIL_HOST_USER: the emailadress
+   1. SECRET_KEY: the Django secret key
+   1. STRIPE_PUBLIC_KEY: Your Stripe public key
+   1. STRIPE_SECRET_KEY: Your stripe secret key
+   1. STRIPE_WH_SECRET: Your Stripe webhook secret
+   1. USE_AWS
+```
+1. To run the app:
+   
+   ``` python manage.py startserver ```
+
+1. This will run the app locally, you can then browse to http://192.168.1.68:5000/ to interact with the app.
 
 
 
