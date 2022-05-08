@@ -280,11 +280,6 @@ If you want to run the project locally:
 import os
 
 os.environ.setdefault("IP", "0.0.0.0")
-os.environ.setdefault("PORT", "5000")
-os.environ.setdefault("SECRET_KEY", "[secret key for use with flash package]")
-os.environ.setdefault("MONGO_URI", "[uri to your MongoDB]")
-os.environ.setdefault("MONGO_DBNAME", "[name of your MongoDB database")
-os.environ.setdefault("DEBUG", "True")
 
    1. AWS_ACCESS_KEY_ID: the id for your AWS S3 container
    1. AWS_SECRET_ACCESS_KEY: the secret key for your AWS S3 container
