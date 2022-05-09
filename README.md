@@ -246,7 +246,7 @@ These screenshots indicate the responsiveness of the pages on various screens. P
 
 ## Deployment
 <!-- TODO: Deployment -->
-The project has been deployed to Heroku, with static files hosted on AWS S3. If  you want to do the same:
+The project has been deployed to Heroku, with a Postgress database and static files hosted on AWS S3. If  you want to do the same:
 1. Fork the repository to your own GitHub: https://github.com/RicardoAzuul/code-institute-ms4-fullstack.
 1. Log in to Heroku (www.heroku.com) - or register if you don't have an account yet.
 1. In the Heroku dashboard, click the New button in the top right corner and create a new app.
@@ -260,7 +260,7 @@ The project has been deployed to Heroku, with static files hosted on AWS S3. If 
    1. DATABASE_URL: the url to the postgress database on Heroku
    1. EMAIL_HOST_PASS: the password or application key for the email account you use for emailing. This project uses Gmail
    1. EMAIL_HOST_USER: the emailadress
-   1. SECRET_KEY: the Django secret key
+   1. SECRET_KEY: the Django secret key. You can use https://djecrety.ir/ to generate a key
    1. STRIPE_PUBLIC_KEY: Your Stripe public key
    1. STRIPE_SECRET_KEY: Your stripe secret key
    1. STRIPE_WH_SECRET: Your Stripe webhook secret
@@ -286,7 +286,7 @@ os.environ.setdefault("IP", "0.0.0.0")
    1. DATABASE_URL: the url to the postgress database on Heroku
    1. EMAIL_HOST_PASS: the password or application key for the email account you use for emailing. This project uses Gmail
    1. EMAIL_HOST_USER: the emailadress
-   1. SECRET_KEY: the Django secret key
+   1. SECRET_KEY: the Django secret key. YOu can use https://djecrety.ir/ to generate a key
    1. STRIPE_PUBLIC_KEY: Your Stripe public key
    1. STRIPE_SECRET_KEY: Your stripe secret key
    1. STRIPE_WH_SECRET: Your Stripe webhook secret

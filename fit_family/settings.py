@@ -174,10 +174,10 @@ if 'USE_AWS' in os.environ:
         'CacheControl': 'max-age=94608000',
     }
     # Bucket config
-    AWS_STORAGE_BUCKET_NAME = 'ricardoazuul-boutique-ado'
+    AWS_STORAGE_BUCKET_NAME = 'ricardoazuul-boutique-ado' # TODO: Replace with other Storage Bucket
     AWS_S3_REGION_NAME = 'eu-west-3'
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') # TODO: config in Heroku once set up
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') # TODO: Config in Heroku once set up
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
    
     # Static and media files
