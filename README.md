@@ -275,22 +275,11 @@ If you want to run the project locally:
 1. Install Python 3.8.12, as this is what the project was built with: https://www.python.org/downloads/release/python-3812/ (though if you're running Windows, install 3.8.10)
 1. From the terminal, run the below to install required modules:
   ``` pip3 install -r requirements.txt ```
-1. You will need to create an env.py file (or another form of environment file) for running the app locally. The content of this file:
+1. This also installs django-environ, which can be used to save environment variables.
+1. https://alicecampkin.medium.com/how-to-set-up-environment-variables-in-django-f3c4db78c55f
+3. You will need to create an .env file for running the app locally. Save it in the same directory as Django's settings.py. The content of this file:
 ```
-import os
 
-os.environ.setdefault("IP", "0.0.0.0")
-
-   1. AWS_ACCESS_KEY_ID: the id for your AWS S3 container
-   1. AWS_SECRET_ACCESS_KEY: the secret key for your AWS S3 container
-   1. DATABASE_URL: the url to the postgress database on Heroku
-   1. EMAIL_HOST_PASS: the password or application key for the email account you use for emailing. This project uses Gmail
-   1. EMAIL_HOST_USER: the emailadress
-   1. SECRET_KEY: the Django secret key
-   1. STRIPE_PUBLIC_KEY: Your Stripe public key
-   1. STRIPE_SECRET_KEY: Your stripe secret key
-   1. STRIPE_WH_SECRET: Your Stripe webhook secret
-   1. USE_AWS
 ```
 1. To run the app:
    
