@@ -174,7 +174,7 @@ if 'USE_AWS' in os.environ:
         'CacheControl': 'max-age=94608000',
     }
     # Bucket config
-    AWS_STORAGE_BUCKET_NAME = 'ricardoazuul-boutique-ado'
+    AWS_STORAGE_BUCKET_NAME = 'code-institute-ms4'
     AWS_S3_REGION_NAME = 'eu-west-3'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
