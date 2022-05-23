@@ -66,7 +66,8 @@ To see the site in action, visit [Fit Family](https://code-institute-ms4.herokua
 |            23 | Shopper | Receiv an email confirmation after checkout | Keep the confirmation of what I've purchased for my records |
 
 **Community**
-| User Story ID | As A/An   | I Want To Be Able To... | So That I Can... |
+| User Story ID | As A/An      | I Want To Be Able To... | So That I Can... |
+| :-------------|:-------------|:-----------------------:| :---------------:|
 |            24 | Subscriber   | Post updates about my progress | Update my fellow members on my successes |
 |            25 | Subscriber   | Add and edit information on my profile pertaining to my fitness goals | Receive nutrition and exercise plans tailored to my fitness goals |
 |            26 | Subscriber   | Easily find other subscribers | Feel part of a community and get motivated |
@@ -190,10 +191,48 @@ We use icons from Font Awesome to add some visual interest but also visual cues 
 
 
 <ins>Wireframes</ins>
-<!-- TODO: Add wireframes -->
-
-
-
+- [Home](readme-assets\media\home.png)
+- [Home - tablet](readme-assets/media/home_tablet_view.png)
+- [Home - mobile](readme-assets/media/home_mobile_view.png)
+- [Shop](readme-assets/media/shop.png)
+- [Shop - tablet](readme-assets/media/shop_tablet_view.png)
+- [Shop - mobile](readme-assets/media/shop_mobile_view.png)
+- [Product](readme-assets/media/product.png)
+- [Product - tablet](readme-assets/media/product_tablet_view.png)
+- [Product - mobile](readme-assets/media/product_mobile_view.png)
+- [Product: add to cart](readme-assets/media/product_add-to-cart.png)
+- [Cart](readme-assets/media/cart.png)
+- [Cart - tablet](readme-assets/media/cart_tablet_view.png)
+- [Cart - mobile](readme-assets/media/cart_mobile_view.png)
+- [Checkout](readme-assets/media/checkout.png)
+- [Checkout - tablet](readme-assets/media/checkout_tablet_view.png)
+- [Checkout - mobile](readme-assets/media/checkout_mobile_view.png)
+- [Checkout success](readme-assets/media/checkout_success.png)
+- [Checkout success - tablet](readme-assets/media/checkout_success_tablet_view.png)
+- [Checkout success - mobile](readme-assets/media/checkout_success_mobile_view.png)
+- [Email confirmation](readme-assets/media/email_confirmation.png)
+- [Profile](readme-assets/media/profile.png)
+- [Profile - tablet](readme-assets/media/profile_tablet_view.png)
+- [Profile - mobile](readme-assets/media/profile_mobile_view.png)
+- [Community](readme-assets/media/community.png)
+- [Community - tablet](readme-assets/media/community_tablet_view.png)
+- [Community - mobile](readme-assets/media/community_mobile_view.png)
+- [Exercises](readme-assets/media/exercises.png)
+- [Exercises - tablet](readme-assets/media/exercises_tablet_view.png)
+- [Exercises - mobile](readme-assets/media/exercises_mobile_view.png)
+- [Nutrition](readme-assets/media/nutrition.png)
+- [Nutrition - tablet](readme-assets/media/nutrition_tablet_view.png)
+- [Nutrition - mobile](readme-assets/media/nutrition_mobile_view.png)
+- [Login](readme-assets/media/login.png)
+- [Login - tablet](readme-assets/media/login_tablet_view.png)
+- [Login - mobile](readme-assets/media/login_mobile_view.png)
+- [Forgot password](readme-assets/media/forgot_password.png)
+- [Forgot password - tablet](readme-assets/media/forgot_password_tablet_view.png)
+- [Forgot password - mobile](readme-assets/media/forgot_password_mobile_view.png)
+- [Register](readme-assets/media/register.png)
+- [Register - tablet](readme-assets/media/register_tablet_view.png)
+- [Register - mobile](readme-assets/media/register_mobile_view.png)
+- [Admin portal](readme-assets/media/admin_portal.png)
 
 ---
 
