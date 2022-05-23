@@ -108,8 +108,10 @@ Jesse James Garret's 5 planes of UX design were used to design the site. I start
 
 #### Strategy Plane
 <!-- TODO: Write about Strategy Plane -->
-
-
+The main goal for visitors is to find and join a fitness community they might like. This means giving visitors a feeling about the kind of community they are joining. Fit Family sets out to be a friendly, warm community. Not necessarily for people interested in maximizing their fitness or muscle gain or weight loss, but for people who want to join a family of people who are all trying to work on their fitness without impossible goals.
+So the main page has to have a call to action in the form of a button to take you to subscriptions. We also need a hero image that exemplifies the image of Fit Family.
+Some brief text to indicate what subscribers gain access to would also be good.
+We also indicate that there is a shop and account option by having options for these in the navbar.
 
 ---
 
@@ -117,35 +119,80 @@ Jesse James Garret's 5 planes of UX design were used to design the site. I start
 
 The functional specifications of the site:
 <!-- TODO: Write about Scope Plane -->
+- a responsive website with mobile first design.
+- a main page with a hero image, call to action (join our community) and navbar options indicating the shop and user account functionalities.
+- a navbar which changes if a user is logged in or not.
+- a footer.
+- a profile page, only visible when logged in. Here members can set up their shopping details, but also personal details which map to exercise and nutrition plans.
+- a page where subscribers can share their progress with other subscribers.
+- a shop page, containing items for sale. Signed in users have the option to review items.
+- a page containing exercises, only available for subscribers.
+- a page containing nutrition plans, only available for subscribers.
 
 
 Content requirements:
 <!-- TODO: Write about content requirements -->
+- a hero image evoking the idea of family, warmth and fitness.
+- some exercise and nutrition plans.
+- some items for sale, with example reviews.
+- some example subscribers.
 
 
 ---
 
 #### Structure Plane
 <!-- TODO: Structure Plane -->
+All pages should have the same navigation bar and footer:
 
+- the navigation bar contains links to all the pages, as well as the home page. The content does change depending on login status.
+- the footer contains copyright info.
+
+<ins>The Home Page</ins>
+- a hero image evoking the idea of family, warmth and fitness.
+- a call to action to subscribe.
+
+<ins>The Profile Page</ins>
+- inspiring imagery.
+- a form where subscribers can fill in their shopping details, but also personal details which map to exercise or nutrition.
+
+<ins>The Community Page</ins>
+- inspiring imagery.
+- a form where subscribers can share their progress with fellow subscribers.
+
+<ins>The Shop Page</ins>
+- items for sale.
+- the option to review items for signed in users.
+- search functionality to search for items
+
+<ins>The Exercise Page</ins>
+- exercises for the subscriber to choose from.
+- search functionality to search for exercises.
+
+<ins>The Nutrition Page</ins>
+- several nutrition plans to choose from.
 
 
 ---
 
 #### Skeleton Plane
 <!-- TODO: Skeleton Plane -->
+The navigation bar will be added to the top of every page and will always remain visible. There are links to all pages on this navbar, though some links are only visible if the user has logged in. On the left will be the logo, which when clicked upon will take the visitor back to the home page.
 
+The active page is indicated with a different font color for the navigation item. When hovering over navigation items, the navigation item will be highlighted.
 
+At the bottom of every page will be the same footer.
 
 ---
 
 #### Surface Plane
 <!-- TODO: Surface Plane -->
-
+We use icons from Font Awesome to add some visual interest but also visual cues to indicate functionality. We use Bootstrap as a basis, but add our own style. Fit Family needs to be warm and familiar.
 
 
 <ins>Wireframes</ins>
 <!-- TODO: Add wireframes -->
+
+
 
 
 ---
@@ -264,7 +311,7 @@ The project has been deployed to Heroku, with static files hosted on AWS S3. If 
    1. STRIPE_PUBLIC_KEY: Your Stripe public key
    1. STRIPE_SECRET_KEY: Your stripe secret key
    1. STRIPE_WH_SECRET: Your Stripe webhook secret
-   1. USE_AWS
+   1. USE_AWS: Set to true to tell Django to use the other AWS settings
 
 
 ### Run locally
@@ -275,10 +322,15 @@ If you want to run the project locally:
 1. Install Python 3.8.12, as this is what the project was built with: https://www.python.org/downloads/release/python-3812/ (though if you're running Windows, install 3.8.10)
 1. From the terminal, run the below to install required modules:
   ``` pip3 install -r requirements.txt ```
-1. This also installs django-environ, which can be used to save environment variables.
-1. https://alicecampkin.medium.com/how-to-set-up-environment-variables-in-django-f3c4db78c55f
-3. You will need to create an .env file for running the app locally. Save it in the same directory as Django's settings.py. The content of this file:
+1. You will need to create an env.py file for running the app locally. The content of this file:
 ```
+import os
+
+os.environ.setdefault("SECRET_KEY", [django secret key])
+os.environ.setdefault("DEVELOPMENT", "True")
+os.environ.setdefault("STRIPE_PUBLIC_KEY", "[stripe public key]") 
+os.environ.setdefault("STRIPE_SECRET_KEY", "[stripe secret key]") 
+os.environ.setdefault("STRIPE_WH_SECRET ", "[stripe webhook key]") 
 
 ```
 1. To run the app:
