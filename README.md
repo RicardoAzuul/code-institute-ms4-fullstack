@@ -1,5 +1,5 @@
 # Simply Fit
-<!-- TODO: Add description of project: A book review and recommendation site, using MongoDB, Python, Flask, HTML, CSS and JavaScript. -->
+<!-- TODO: Add description of project: -->
 Fit Family is a fitness subscription application.
 
 The user's goal is to join a fitness community and purchase exercise plans and merchandise.
@@ -50,7 +50,7 @@ To see the site in action, visit [Fit Family](https://code-institute-ms4.herokua
 | :-------------|:--------| :----------------------:| :---------------:|
 |            12 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products |
 |            13 | Shopper | Sort a specific category of product | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name |
-|            14 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "homeware" |
+|            14 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "exercise equipment" |
 |            15 | Shopper | Search for a product by name or description | Find a specific product I'd like to purchase |
 |            16 | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available |
 
@@ -191,7 +191,7 @@ We use icons from Font Awesome to add some visual interest but also visual cues 
 
 
 <ins>Wireframes</ins>
-- [Home](readme-assets\media\home.png)
+- [Home](readme-assets/media/home.png)
 - [Home - tablet](readme-assets/media/home_tablet_view.png)
 - [Home - mobile](readme-assets/media/home_mobile_view.png)
 - [Shop](readme-assets/media/shop.png)
@@ -238,6 +238,7 @@ We use icons from Font Awesome to add some visual interest but also visual cues 
 
 ## Database Design
 <!-- TODO: Database design -->
+The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c17efc98)
 
 
 ---
@@ -280,6 +281,7 @@ We use icons from Font Awesome to add some visual interest but also visual cues 
 - [Markdown link check](https://github.com/marketplace/actions/markdown-link-check): an automated tool to check for dead links in Markdown files.
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree): to keep track of todos, bugs, things that need to be fixed and such in my project.
 - [autopep8](https://pypi.org/project/autopep8/): a Python package that helps with formatting Python code according to PEP8.
+- [dbdiagram.io](https://dbdiagram.io): an online tool to create a relational database schema.
 
 
 ---
@@ -386,8 +388,7 @@ os.environ.setdefault("STRIPE_WH_SECRET ", "[stripe webhook key]")
 
 ### Inspiration
 <!-- TODO: Inspiration -->
-<!-- TODO: Look at these websites for inspiration -->
-https://www.precor.com/en-us/resources/5-online-fitness-communities-to-keep-you-motivated
+
 
 
 ### Content
