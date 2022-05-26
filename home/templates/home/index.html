@@ -1,6 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock page_header %}
+
 {% block content %}
-    <h1 class="display-4 text-success">It works!</h1>
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-8 offset-2">
+                {% comment %} logo-font and text-black are probably custom CSS classes, not Bootstrap {% endcomment %}
+                <h1 class="display-4 logo-font text-black text-center mb-3">  
+                    Join The Family!
+                </h1>
+                <p class="text-center">
+                    Getting fit can be challenging, and sometimes you need some support. Join Fit Family and we'll provide you with support, community and help you with your challenges.
+                </p>
+                <div>
+                    <h4 class="text-center">
+                        <a href="" class="btn btn-lg btn-outline-primary rounded-0 text-uppercase"><i class="fas fa-user-plus"></i> Register</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
