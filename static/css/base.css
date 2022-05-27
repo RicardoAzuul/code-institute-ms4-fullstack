@@ -1,0 +1,93 @@
+/* Palette */
+#FFAB03 /* Yellow */
+#FC7F03 /* Orange */
+#FC3903 /* Red */
+#D1024E /* Deep red */
+#A6026C /* Purple */
+
+html {
+    height: 100%
+}
+
+/* TODO: Add image */
+body {
+    background: url('/media/*.jp') no-repeat center center fixed;
+    background-size: cover;
+    /* The header is 164px high */
+    height: calc(100vh - 164px);
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Indie Flower', cursive;
+}
+
+.bg-purple {
+    background-color: #A6026C !important;
+}
+
+.border-purple {
+    border: 1px solid #A6026C;
+}
+
+/* Text */
+.text-yellow {
+    color: #FFAB03 !important;
+}
+
+.text-purple {
+    color: #A6026C !important;
+}
+/* End of text */
+
+/* Buttons */
+.btn-outline-purple {
+    background: white;
+    color: #A6026C !important;
+    border: 1px solid #A6026C;
+}
+
+.btn-outline-purple:hover,
+.btn-outline-purple:active,
+.btn-outline-purple:focus {
+    background: #A6026C;
+    color: white !important;
+}
+
+.btn-purple {
+    background: #A6026C;
+    color: white;
+}
+
+.btn-purple:hover,
+.btn-purple:active,
+.btn-purple:focus {
+    background: white;
+    color: #A6026C;
+    border: 1px solid #A6026C;
+}
+/* End of Buttons */
+
+
+
+
+/* Media queries */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
