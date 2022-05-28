@@ -30,6 +30,13 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #A6026C;
 }
 
+.social-link:hover,
+.social-link:active,
+.social-link:focus {
+    color: #FC7F03 !important;
+}
+
+
 /* Text */
 .text-yellow {
     color: #FFAB03 !important;
@@ -66,16 +73,19 @@ h1, h2, h3, h4, h5, h6 {
     color: #A6026C;
     border: 1px solid #A6026C;
 }
-/* End of Buttons */
 
-/* Testimonials */
-.testimonial {
-    
+.btn-bg-white-text-purple {
+    background: white;
+    color: #A6026C !important;  
 }
-/* End of Testimonials */
 
-
-
+.btn-bg-white-text-purple:hover,
+.btn-bg-white-text-purple:active,
+.btn-bg-white-text-purple:focus {
+    background: #FC7F03;
+    color: white !important;
+}
+/* End of Buttons */
 
 /* Media queries */
 @media (min-width: 1200px) {
