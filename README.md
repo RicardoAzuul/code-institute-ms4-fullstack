@@ -282,6 +282,7 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree): to keep track of todos, bugs, things that need to be fixed and such in my project.
 - [autopep8](https://pypi.org/project/autopep8/): a Python package that helps with formatting Python code according to PEP8.
 - [dbdiagram.io](https://dbdiagram.io): an online tool to create a relational database schema.
+- [UI Avatars](https://ui-avatars.com/): an API for creating avatars based on the initials of a username.
 
 
 ---
