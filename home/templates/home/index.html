@@ -13,44 +13,69 @@
 
 {% block content %}
     <div class="container">
-        <div class="row h-100">
-            <div class="jumbotron">
-                <div class="col-8 offset-2">
-                    <h1 class="display-4 text-center">Join The Family!</h1>
-                    <p class="lead text-center">Getting fit can be challenging, and sometimes you need some support. Join Fit Family and we'll provide you with support, community and help you with your challenges.</p>
-                    <h4 class="text-center">
-                        <a href="{% url 'account_signup' %}" class="btn btn-lg btn-outline-purple rounded text-uppercase"><i class="fas fa-user-plus"></i> Register</a>
-                    </h4>
-                </div>
-            </div>
-            <section id="testimonials-section">
-                <div class="row mb-5">
-                    <div class="col-5 border-purple testimonial rounded mx-auto">
-                        <img src="https://ui-avatars.com/api/?name=Brad+Harris" class="rounded float-left my-3 mr-3" alt="Avatar">                        
-                        <p class="my-3"><i>Getting fit alone is boring. Join Fit Family if you want to have fun!</i><span><br>- Brad Harris</span></p>
+        <div class="row">            
+            {% if request.user.is_authenticated %}
+                <section id="call-to-action-section_auth">
+                    <div class="col-7 col-md-6 my-auto bg-white">
+                        <h1>Get fit</h1>
+                        <div class="my-5">
+                            <h4>
+                                <a href="#" class="btn btn-lg rounded text-uppercase py-3">Shop Now</a>
+                            </h4>
+                        </div>
                     </div>
-                    <div class="col-5 border-purple testimonial rounded mx-auto">
-                        <img src="https://ui-avatars.com/api/?name=John+Smith" class="rounded float-left my-3 mr-3" alt="Avatar">
-                        <p class="my-3"><i>I was trying to get fit by myself, but joining Fit Family made everything easier!</i><span><br>- John Smith</span></p>
+                </section>              
+            {% else %}
+                <section id="call-to-action-section_unauth">
+                    <div class="col-7 col-md-6 my-auto bg-white">
+                        <h1>Get fit</h1>
+                        <div class="my-5">
+                            <h4>
+                                <a href="#" class="btn btn-lg rounded text-uppercase py-3">Shop Now</a>
+                            </h4>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section id="features-section">
-                <div class="row mb-3">
-                    <div class="col-4">
-                        <h2><u>Shop with discount</u></h2>
-                        <p>Join the family and receive a 5% discount on items in our shop, ranging from exercise equipment and nutrition to merchandise.</p>
+                </section> 
+                <section id="jumbotron-section">
+                    <div class="jumbotron">
+                        <div class="col-8 offset-2">
+                            <h1 class="text-center">Join The Family!</h1>
+                            <p class="lead text-center">Getting fit can be challenging, and sometimes you need some support. Join Fit Family and we'll provide you with support, community and help you with your challenges.</p>
+                            <h4 class="text-center">
+                                <a href="{% url 'account_signup' %}" class="btn btn-lg btn-outline-purple rounded text-uppercase"><i class="fas fa-user-plus"></i> Register</a>
+                            </h4>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <h2><u>Join the community</u></h2>
-                        <p>Fit Family members get access to the Fit Family Community, a place where you can keep your fellow Fit Family members up to date on your progress, support each other and celebrate success together.</p>
+                </section>
+                <section id="testimonials-section">
+                    <div class="row mb-5">
+                        <div class="col-5 border-purple testimonial rounded mx-auto bg-white">
+                            <img src="https://ui-avatars.com/api/?name=Brad+Harris" class="rounded float-left my-3 mr-3" alt="Avatar">                        
+                            <p class="my-3"><i>Getting fit alone is boring. Join Fit Family if you want to have fun!</i><span><br>- Brad Harris</span></p>
+                        </div>
+                        <div class="col-5 border-purple testimonial rounded mx-auto bg-white">
+                            <img src="https://ui-avatars.com/api/?name=John+Smith" class="rounded float-left my-3 mr-3" alt="Avatar">
+                            <p class="my-3"><i>I was trying to get fit by myself, but joining Fit Family made everything easier!</i><span><br>- John Smith</span></p>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <h2><u>Access fitness plans</u></h2>
-                        <p>Fit Family members are also able to purchase exercise and nutrition plans, based on your fitness goals. These exercise and nutrition plans are created and updated by our staff.</p>
+                </section>
+                <section id="features-section">
+                    <div class="row mb-3">
+                        <div class="col-4 bg-white">
+                            <h2><u>Shop with discount</u></h2>
+                            <p>Join the family and receive a 5% discount on items in our shop, ranging from exercise equipment and nutrition to merchandise.</p>
+                        </div>
+                        <div class="col-4 bg-white">
+                            <h2><u>Join the community</u></h2>
+                            <p>Fit Family members get access to the Fit Family Community, a place where you can keep your fellow Fit Family members up to date on your progress, support each other and celebrate success together.</p>
+                        </div>
+                        <div class="col-4 bg-white">
+                            <h2><u>Access fitness plans</u></h2>
+                            <p>Fit Family members are also able to purchase exercise and nutrition plans, based on your fitness goals. These exercise and nutrition plans are created and updated by our staff.</p>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            {% endif %}
         </div>
     </div>
 {% endblock content %}

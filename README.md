@@ -398,6 +398,7 @@ os.environ.setdefault("STRIPE_WH_SECRET ", "[stripe webhook key]")
 
 ### Media
 <!-- TODO: Add where I got the Media -->
+Main page: https://www.pexels.com/photo/woman-doing-exercise-414029/
 
 
 ### Code

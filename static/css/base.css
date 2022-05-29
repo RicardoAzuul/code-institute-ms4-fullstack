@@ -5,16 +5,22 @@
 #D1024E /* Deep red */
 #A6026C /* Purple */
 
-html {
-    height: 100%
+/* Clear any browser-specific formatting */
+* {
+	margin: 0;
+	border: none;
+	padding: 0;
 }
 
-/* TODO: Add image */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
-    background: url('/media/*.jp') no-repeat center center fixed;
+    background: url('/media/woman_doing_exercise.jpg') no-repeat center center fixed;
+    background-position: 0px 164px;
     background-size: cover;
-    /* The header is 164px high */
-    height: calc(100vh - 164px);
     font-family: 'Open Sans', sans-serif;
 }
 
