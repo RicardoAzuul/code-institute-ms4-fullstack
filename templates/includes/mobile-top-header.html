@@ -1,11 +1,12 @@
 <ul>
     <li class="list-inline-item">
-      <a class="d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="d-block d-lg-none text-white" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="text-center">
               <div><i class="fas fa-search fa-lg"></i></div>
               <p class="my-0">Search</p>
           </div>
       </a>
+      {% comment %} TODO: Add stylings, once I've decided on a style {% endcomment %}
       <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
           <form class="form" method="GET" action="">
               <div class="input-group w-100">
@@ -22,7 +23,7 @@
       </div>
   </li>
   <li class="list-inline-item dropdown">
-      <a class="d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="d-block d-lg-none text-white" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="text-center">
               <div><i class="fas fa-user fa-lg"></i></div>
               <p class="my-0">My Account</p>
@@ -42,7 +43,7 @@
       </div>
   </li>
   <li class="list-inline-item">
-      <a class="{% if grand_total %}text-primary font-weight-bold{% else %}{% endif %} d-block d-lg-none" href="">
+      <a class="{% if grand_total %}text-primary font-weight-bold{% else %}{% endif %} d-block d-lg-none text-white" href="">
           <div class="text-center">
               <div><i class="fas fa-shopping-bag fa-lg"></i></div>
               <p class="my-0">

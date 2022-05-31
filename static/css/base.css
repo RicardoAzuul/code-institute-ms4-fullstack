@@ -5,23 +5,21 @@
 #D1024E /* Deep red */
 #A6026C /* Purple */
 
-/* Clear any browser-specific formatting */
-* {
-	margin: 0;
-	border: none;
-	padding: 0;
-}
-
-html, body {
+html {
     height: 100%;
-    margin: 0;
 }
 
 body {
-    background: url('/media/woman_doing_exercise.jpg') no-repeat center center fixed;
-    background-position: 0px 164px;
+    background-image: url('/media/woman_doing_exercise.jpg');
+    background-position: 63% 5%;
+    background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Open Sans', sans-serif;
+    background-color: white;
+}
+
+.header-container {
+    padding-top: 164px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,13 +33,6 @@ h1, h2, h3, h4, h5, h6 {
 .border-purple {
     border: 1px solid #A6026C;
 }
-
-.social-link:hover,
-.social-link:active,
-.social-link:focus {
-    color: #FC7F03 !important;
-}
-
 
 /* Text */
 .text-yellow {
@@ -93,6 +84,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* End of Buttons */
 
+/* Footer */
+.social-link i {
+    width: 40px;
+    height: 40px;
+    /* background-color: #6B382D ; */
+    text-align: center;
+    /* padding: 12px 0; */
+    font-size: large;
+    /* border-style: solid; */
+    /* border-width: 1px; */
+    /* border-color: #fefefe; */
+    /* color: #fefefe;  */
+}
+
+.social-link:hover,
+.social-link:active,
+.social-link:focus {
+    color: #FC7F03 !important;
+}
+
+#xs-submit-btn {
+    margin-left: 5rem;
+}
+/* End of Footer */
+
 /* Media queries */
 @media (min-width: 1200px) {
     .container {
@@ -111,5 +127,24 @@ h1, h2, h3, h4, h5, h6 {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-container {
+        padding-top: 120px;
+    }
+
+    .call-to-action-header {
+        font-size: 1.8rem;
+    }
+
+    .feature-header {
+        font-size: 1.5rem;
+    }
+
+    body {
+        background-image: url('/media/woman_doing_exercise.jpg');
+        background-position: 57%;
     }
 }
