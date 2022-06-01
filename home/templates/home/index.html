@@ -15,7 +15,7 @@
             <div class="row">
                 {% if request.user.is_authenticated %}
                     <section id="call-to-action-section_auth">
-                        <div class="col-8 offset-2 mb-5">
+                        <div class="col-8 offset-2 offset-sm-4 mb-5">
                             <h1 class="bg-white call-to-action-header text-center px-4 my-5">We make it simple. Get fit</h1>
                             <div class="text-center">
                                 <h4>
@@ -26,7 +26,7 @@
                     </section>
                 {% else %}
                     <section id="call-to-action-section_unauth">
-                        <div class="col-8 offset-2 mb-5">
+                        <div class="col-8 offset-2 offset-sm-4 mb-5">
                             <h1 class="bg-white call-to-action-header text-center px-4 my-5">We make it simple. Get fit</h1>
                             <div class="text-center">
                                 <h4 class="px-4">
@@ -37,10 +37,9 @@
             </div>
                     </section>
                     <section id="jumbotron-section">
-                        {% comment %} TODO: do something with Jumbotron for smartphone screens {% endcomment %}
                         <div class="row mt-5">
-                            <div class="col-8 offset-2 jumbotron-btn-xs d-block d-sm-none my-5">
-                                <button class="btn bg-white px-4 mt-5" type="button" data-toggle="collapse" data-target="#collapseJumbotron" aria-expanded="false" aria-controls="collapseJumbotron">
+                            <div class="col-8 offset-2 offset-sm-3 jumbotron-btn-xs d-block d-md-none my-5">
+                                <button id="jumbotron-collapse-button" class="btn bg-white px-4 mt-5" type="button" data-toggle="collapse" data-target="#collapseJumbotron" aria-expanded="false" aria-controls="collapseJumbotron">
                                     {% comment %} TODO: Add JavaScript/JQuery code that changes the icon on click {% endcomment %}
                                     <h2 class="feature-header"><i class="fas fa-angle-right"></i> Join The Family!</h2>
                                   </button>
@@ -54,7 +53,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="jumbotron d-none d-sm-block">
+                                <div class="jumbotron d-none d-md-block">
                                     <div class="col-8 offset-2">
                                         <h1 class="text-center">Join The Family!</h1>
                                         <p class="lead text-center">Getting fit can be challenging, and sometimes you need some support. Join Fit Family and we'll provide you with support, community and help you with your challenges.</p>
@@ -92,7 +91,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-8 border-purple rounded mx-auto bg-white d-none d-sm-block">
+                            <div class="col-8 border-purple rounded mx-auto bg-white d-none d-sm-block mb-5">
                                 <img src="https://ui-avatars.com/api/?name=Brad+Harris" class="rounded float-left my-3 mr-3" alt="Avatar">
                                 <p class="my-3"><i>Getting fit alone is boring. Join Fit Family if you want to have fun!</i><span><br>- Brad Harris</span></p>
                             </div>

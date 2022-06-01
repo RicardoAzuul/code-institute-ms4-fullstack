@@ -130,6 +130,18 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+@media (min-width: 576px) {
+    #jumbotron-collapse-button {
+        margin-top: 12rem !important;
+    }
+    #xs-submit-btn {
+        margin-left: 8rem;
+    }
+    .social-link i {
+        margin-right: 1.5rem;
+    }
+}
+
 @media (max-width: 576px) {
     .header-container {
         padding-top: 120px;
