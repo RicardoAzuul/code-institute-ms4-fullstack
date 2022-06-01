@@ -124,27 +124,28 @@ h1, h2, h3, h4, h5, h6 {
         left: 0;
         z-index: 1030;
     }
-
     .header-container {
         padding-top: 164px;
     }
 }
 
 @media (min-width: 576px) {
+    body {
+        background-position: 57%;
+    }
+    
     #jumbotron-collapse-button {
         margin-top: 12rem !important;
-    }
-    #xs-submit-btn {
-        margin-left: 8rem;
-    }
-    .social-link i {
-        margin-right: 1.5rem;
     }
 }
 
 @media (max-width: 576px) {
     .header-container {
         padding-top: 120px;
+    }
+
+    body {
+        background-position: 57%;
     }
 
     .call-to-action-header {
@@ -155,8 +156,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.5rem;
     }
 
-    body {
-        background-image: url('/media/woman_doing_exercise.jpg');
-        background-position: 57%;
+    .social-link i {
+        margin-right: 1.5rem;
     }
 }
