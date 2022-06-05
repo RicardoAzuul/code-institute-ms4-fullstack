@@ -389,6 +389,7 @@ os.environ.setdefault("STRIPE_WH_SECRET ", "[stripe webhook key]")
 
 ### Inspiration
 <!-- TODO: Inspiration -->
+The color scheme, black with accents of white and red, was inspired by Netflix: it looks bold. For the font I did some research into bold aggressive font types and came upon slab serif fonts. I picked Kelly Slab, as it was available via Google Fonts.
 
 
 

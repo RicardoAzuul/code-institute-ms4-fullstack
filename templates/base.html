@@ -19,7 +19,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock corecss %}
 
@@ -38,20 +38,20 @@
     <title>Fit Family {% block extra_title %}{% endblock extra_title %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top bg-purple">
+    <header class="container-fluid fixed-top bg-black">
       <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="text-white">
-            <h1 class="my-0"><i class="fas fa-users fa-lg"></i> Fit Family</h1>
+            <h1 class="my-0"><i class="fas fa-bolt fa-lg"></i> Git Fit</h1>
           </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <form method="GET" action="#">
             <div class="input-group w-100">
-              <input class="form-control border rounded-pill" type="text" name="q"
+              <input class="form-control border rounded-0" type="text" name="q"
                 placeholder="Search our site">
               <div class="input-group-append">
-                <button class="form-control btn btn-bg-white-text-purple rounded-pill" type="submit">Search
+                <button class="form-control btn btn-red rounded-0" type="submit">Search
                   <span class="icon">
                     <i class="fas fa-search"></i>
                   </span>
@@ -103,10 +103,10 @@
       </div>
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light w-100">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+          <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#main-nav"
             aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
             {% comment %} TODO: change color of hamburger menu {% endcomment %}
-            <span class="navbar-toggler-icon"></span>
+            <i class="fas fa-bars fa-lg"></i>
           </button>
           {% include 'includes/mobile-top-header.html' %}
           {% include 'includes/main-nav.html' %} 
@@ -130,10 +130,10 @@
     {% block content %}
     {% endblock content %}
 
-    <footer class="container-fluid bg-purple text-white">
+    <footer class="container-fluid bg-black text-white">
       <div class="row pt-3">
         <div class="col-6">
-          <h4>Fit Family</h4>
+          <h4><i class="fas fa-bolt"></i> Git Fit</h4>
           <i class="fab fa-cc-visa fa-lg"></i>
           <i class="fab fa-cc-mastercard fa-lg"></i>
           <i class="fab fa-cc-amex fa-lg"></i>
@@ -153,7 +153,7 @@
           </ul>
         </div>
         <div class="col-6">
-          <p class="d-none d-sm-block">Join the family on social media!</p>
+          <p class="d-none d-sm-block">Git fit on social media</p>
           <p class="d-block d-sm-none">Social media</p>
             <a href="https://www.facebook.com" class="text-white text-decoration-none social-link" aria-label="Open Facebook in new tab" target="_blank"
                 rel="external noopener noreferrer">
@@ -183,18 +183,16 @@
         <div class="col-6">
           <form>
               <div class="form-group">
-                  <label for="email" class="d-none d-sm-block">Stay in touch! Join our newsletter</label>
+                  <label for="email" class="d-none d-sm-block">Join the newsletter</label>
                   <label for="email" class="d-block d-sm-none">Newsletter</label>
                   <div class="input-group">
-                    <input class="form-control rounded-pill text-center" type="email" name="email" id="email"
+                    <input class="form-control rounded-0 text-center" type="email" name="email" id="email"
                     placeholder="Email Address" required>
                     <div class="input-group-append">
-                      <button class="form-control btn btn-bg-white-text-purple text-purple rounded-pill d-none d-sm-flex" type="submit">Submit
+                      <button class="form-control btn btn-red rounded-0" type="submit">Subscribe
                       </button>
                     </div>
                   </div>
-                  <button id="xs-submit-btn" class="form-control btn btn-bg-white-text-purple text-purple rounded-pill w-50 d-block d-sm-none" type="submit">Submit
-                  </button>
               </div>
           </form>
         </div>
