@@ -1,0 +1,299 @@
+:root {
+    --netflix-red: #e50914;
+    --netflix-white: #f5f5f1;
+    --netflix-black: #221f1f;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--netflix-black);
+    background-image: url('/media/woman_doing_exercise.jpg');
+    background-position: 500%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--netflix-white);
+}
+
+/* To replace the background image */
+.overlay { 
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: var(--netflix-black);
+    z-index: -1;
+}
+
+.header-container {
+    padding-top: 164px;
+}
+
+.minheight {
+    min-height: 60vh;
+}
+
+.jumbotron {
+    background-color: var(--netflix-white) !important;
+    color: var(--netflix-black) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Kelly Slab', cursive;
+}
+
+/* Background */
+.bg-red {
+    background-color: var(--netflix-red) !important;
+}
+
+.bg-white {
+    background-color: var(--netflix-white) !important;
+    color: var(--netflix-black) !important;
+}
+
+.bg-black {
+    background-color: var(--netflix-black) !important;
+}
+/* End of Background */
+
+/* Border */
+.border-red {
+    border: 1px solid var(--netflix-red);
+}
+
+.border-white {
+    border: 1px solid var(--netflix-white);
+}
+
+.border-black {
+    border: 1px solid var(--netflix-black);
+}
+/* End of Border */
+
+/* Text */
+.text-red {
+    color: var(--netflix-red) !important;
+}
+
+.text-white {
+    color: var(--netflix-white) !important;
+}
+
+.text-black {
+    color: var(--netflix-black) !important;
+}
+/* End of Text */
+
+/* Buttons */
+.btn-outline-red {
+    background: var(--netflix-white);
+    color: var(--netflix-red) !important;
+    border: 1px solid var(--netflix-red);
+}
+
+.btn-outline-red:hover,
+.btn-outline-red:active,
+.btn-outline-red:focus {
+    background: var(--netflix-red);
+    color: var(--netflix-white) !important;
+}
+
+.btn-outline-white {
+    background: var(--netflix-black);
+    color: var(--netflix-white) !important;
+    border: 1px solid var(--netflix-white);
+}
+
+.btn-outline-white:hover,
+.btn-outline-white:active,
+.btn-outline-white:focus {
+    background: var(--netflix-white);
+    color: var(--netflix-black) !important;
+}
+
+.btn-outline-black {
+    background: var(--netflix-white);
+    color: var(--netflix-black) !important;
+    border: 1px solid var(--netflix-black);
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: var(--netflix-black);
+    color: var(--netflix-white) !important;
+}
+
+.btn-red {
+    background: var(--netflix-red);
+    color: var(--netflix-white);
+}
+
+.btn-red:hover,
+.btn-red:active,
+.btn-red:focus {
+    background: var(--netflix-white);
+    color: var(--netflix-red);
+    border: 1px solid var(--netflix-red);
+}
+
+.btn-white {
+    background: var(--netflix-white);
+    color: var(--netflix-black);
+}
+
+.btn-white:hover,
+.btn-white:active,
+.btn-white:focus {
+    background: var(--netflix-black);
+    color: var(--netflix-white);
+    border: 1px solid var(--netflix-white);
+}
+
+.btn-black {
+    background: var(--netflix-black);
+    color: var(--netflix-white);
+}
+
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: var(--netflix-white);
+    color: var(--netflix-black);
+    border: 1px solid var(--netflix-black);
+}
+
+.btn-bg-white-text-black {
+    background: var(--netflix-white);
+    color: var(--netflix-black) !important;  
+}
+
+.btn-bg-white-text-black:hover,
+.btn-bg-white-text-black:active,
+.btn-bg-white-text-black:focus {
+    background: var(--netflix-white);
+    color: var(--netflix-black) !important;
+    text-decoration: underline;
+}
+/* End of Buttons */
+
+/* Links */
+.link-white {
+    color: var(--netflix-white);
+}
+
+.link-white:hover,
+.link-white:active,
+.link-white:focus {
+    color: var(--netflix-red) !important;
+}
+
+.link-red {
+    color: var(--netflix-red);
+}
+
+.link-red:hover,
+.link-red:active,
+.link-red:focus {
+    color: var(--netflix-red) !important;
+}
+
+/* End of Links */
+
+/* Footer */
+.social-link i {
+    width: 40px;
+    height: 40px;
+    /* background-color: #6B382D ; */
+    text-align: center;
+    /* padding: 12px 0; */
+    font-size: large;
+    /* border-style: solid; */
+    /* border-width: 1px; */
+    /* border-color: #fefefe; */
+    /* color: #fefefe;  */
+}
+
+.social-link:hover,
+.social-link:active,
+.social-link:focus {
+    color: var(--netflix-red) !important;
+}
+
+#xs-submit-btn {
+    margin-left: 5rem;
+}
+/* End of Footer */
+
+/* Media queries */
+@media (max-width: 1200px) {
+    body {
+        background-position: 500%;
+    }
+
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 1080px) {
+    body {
+        background-position: 100%;
+    }
+
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        background-position: 60%;
+    }
+
+    .fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    } 
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        background-position: 58%;
+    }
+
+    .header-container {
+        padding-top: 120px;
+    }
+
+
+    .call-to-action-header {
+        font-size: 1.8rem;
+    }
+
+    .feature-header {
+        font-size: 1.5rem;
+    }
+
+    .social-link i {
+        margin-right: 1.5rem;
+    }
+}
+
+@media (max-width: 575px) {
+    body {
+        background-position: 58%;
+    }
+}

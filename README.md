@@ -282,6 +282,7 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree): to keep track of todos, bugs, things that need to be fixed and such in my project.
 - [autopep8](https://pypi.org/project/autopep8/): a Python package that helps with formatting Python code according to PEP8.
 - [dbdiagram.io](https://dbdiagram.io): an online tool to create a relational database schema.
+- [UI Avatars](https://ui-avatars.com/): an API for creating avatars based on the initials of a username.
 
 
 ---
@@ -388,6 +389,7 @@ os.environ.setdefault("STRIPE_WH_SECRET ", "[stripe webhook key]")
 
 ### Inspiration
 <!-- TODO: Inspiration -->
+The color scheme, black with accents of white and red, was inspired by Netflix: it looks bold. For the font I did some research into bold aggressive font types and came upon slab serif fonts. I picked Kelly Slab, as it was available via Google Fonts.
 
 
 
@@ -397,6 +399,7 @@ os.environ.setdefault("STRIPE_WH_SECRET ", "[stripe webhook key]")
 
 ### Media
 <!-- TODO: Add where I got the Media -->
+Main page: https://www.pexels.com/photo/woman-doing-exercise-414029/
 
 
 ### Code
