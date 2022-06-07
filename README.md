@@ -283,6 +283,7 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 - [autopep8](https://pypi.org/project/autopep8/): a Python package that helps with formatting Python code according to PEP8.
 - [dbdiagram.io](https://dbdiagram.io): an online tool to create a relational database schema.
 - [UI Avatars](https://ui-avatars.com/): an API for creating avatars based on the initials of a username.
+- [Chromedriver](https://sites.google.com/chromium.org/driver/): for doing Chrome browser based automated tests
 
 
 ---
@@ -298,6 +299,15 @@ These screenshots indicate the responsiveness of the pages on various screens. P
 ## Testing
 <!-- TODO: Testing, either manual or automated -->
 <!-- TODO: Look through Hello Django Github for tests -->
+There are some unit tests using Django's own testing capabilities.
+For the home app, tests can be found in home\tests.py:
+`python manage.py test --verbosity=2
+test_get_home (home.tests.TestViews) ... ok
+test_get_login (home.tests.TestViews) ... ok
+test_get_password_reset (home.tests.TestViews) ... ok
+test_get_signup (home.tests.TestViews) ... ok`
+
+Selenium tests for the home app:
 
 
 
