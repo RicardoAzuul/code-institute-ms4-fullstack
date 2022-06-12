@@ -275,7 +275,7 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 - [Heroku](https://heroku.com/): a Platform as a Service, for hosting the webapp.
 - [Balsamiq](https://balsamiq.com): for creating wireframes of all the pages.
 - [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/): for quick debugging and testing of HTML and CSS. 
-- [Am I Responsive?](http://ami.responsivedesign.is/): to generate screenshots of the site at various viewpoints, indicating responsiveness.
+- [Am I Responsive?](https://ui.dev/amiresponsive): to generate screenshots of the site at various viewpoints, indicating responsiveness.
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse): an automated tool in Chrome DevTools that audits for performance, accessibility, progressive web apps, SEO and more.
 - [Prettier VS Code plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): a code formatter that helps with code formatting, which is good for creating a consistent style.
 - [Markdown link check](https://github.com/marketplace/actions/markdown-link-check): an automated tool to check for dead links in Markdown files.
