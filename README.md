@@ -405,11 +405,13 @@ The color scheme, black with accents of white and red, was inspired by Netflix: 
 
 ### Content
 <!-- TODO: Add where I got the Content -->
+Product images, prices, descriptions and ratings: www.decathon.nl
 
 
 ### Media
 <!-- TODO: Add where I got the Media -->
 Main page: https://www.pexels.com/photo/woman-doing-exercise-414029/
+No image available file: https://commons.wikimedia.org/wiki/File:No_Image_Available.jpg
 
 
 ### Code

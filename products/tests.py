@@ -101,6 +101,15 @@ class TestModels(TestCase):
         self.assertFalse(product.category)
 
 
+class TestViews(TestCase):
+
+    def test_get_products(self):
+        """ Test that when browsing to /products/ we get a 200 code and products/products.html template"""
+        response = self.client.get('/products/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+
+
 
 
 

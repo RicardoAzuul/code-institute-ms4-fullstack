@@ -70,6 +70,10 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--netflix-white);
 }
 
+.border-top-white {
+    border-top: 1px solid var(--netflix-white);
+}
+
 .border-black {
     border: 1px solid var(--netflix-black);
 }
@@ -201,6 +205,12 @@ h1, h2, h3, h4, h5, h6 {
 .link-red:active,
 .link-red:focus {
     color: var(--netflix-red) !important;
+}
+
+.link-card:hover,
+.link-card:active,
+.link-card:focus {
+    border: 2px solid var(--netflix-red) !important;
 }
 
 /* End of Links */
