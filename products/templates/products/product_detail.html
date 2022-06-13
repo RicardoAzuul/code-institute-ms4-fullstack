@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <!-- Breadcrumb taken from Bootstrap: https://getbootstrap.com/docs/4.6/components/breadcrumb/ -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-black">
+                  <li class="breadcrumb-item"><a href="{% url 'products' %}" class="text-white">Home</a></li>
+                  <li class="breadcrumb-item"><a href="#" class="text-white">{{ product.category }}</a></li>
+                  <li class="breadcrumb-item text-white active" aria-current="page">{{ product.name}} </li>
+                </ol>
+              </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            {% if product.image %}
+                <a href="{{ product.image.url }}" target="_blank">
+                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid mb-3">
+                </a>
+            {% else %}
+                <a href="{{ product.image.url }}" target="_blank">
+                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                    <img src="/media/No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid mb-3">
+                </a>
+            {% endif %}
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="row">
+                <div class="col-8">
+                    <h3 class="float-left">{{ product.name }}</h3>
+                </div>
+                <div class="col-4">
+                    <h3 class="float-right">${{ product.price }}</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <hr class="bg-white">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 ">
+                    <!-- Dropdown taken from Bootstrap: https://getbootstrap.com/docs/4.6/components/dropdowns/ -->
+                    <form action="">
+                        <div class="form-group">
+                            <label for="chooseSize">Choose Size</label>
+                            <select class="form-control bg-white" id="chooseSize">
+                              <option>Small</option>
+                              <option>Medium</option>
+                              <option>Large</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <hr class="bg-white">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 ">
+                    <p>Quantity</p>
+                    <input type="number" class="form-control bg-white" name="quantity" value="1"
+                    min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col text-center">
+                    <hr class="bg-white">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 ">
+                    <button class="btn btn-red w-100">Add To Cart</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <hr class="bg-white">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {% if product.rating %}
+                        <p><i class="fas fa-star"></i> {{ product.rating }}/5</p>
+                    {% else %}
+                        <p>No Rating</p>
+                    {% endif %}
+                    <p>{{ product.description }}</p>  
+                </div>
+            </div>
+            <div class="row d-flex d-lg-none">
+                <div class="col text-center">
+                    <hr class="bg-white">
+                </div>
+            </div>
+            <div class="row d-flex d-lg-none">
+                <div class="col-12">
+                    <p>Related Products</p>
+                </div>
+                <div class="col">
+                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+                </div>
+                <div class="col">
+                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-none d-lg-flex">
+        <div class="col text-center">
+            <hr class="bg-white">
+        </div>
+    </div>
+    <div class="row d-none d-lg-flex">
+        <div class="col-12">
+            <p>Related Products</p>
+        </div>
+        <div class="col-lg-3">
+            {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+        </div>
+        <div class="col-lg-3">
+            {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+        </div>
+        <div class="col-lg-3">
+            {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+        </div>
+        <div class="col-lg-3">
+            {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+            <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+        </div>
+    </div>
+</div>
+{% endblock content %}

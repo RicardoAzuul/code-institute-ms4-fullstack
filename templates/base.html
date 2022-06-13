@@ -114,7 +114,8 @@
       </div>
       <div id="delivery-banner" class="row text-center bg-white">
         <div class="col">
-          <h4 class="my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
+          {% comment %} TODO: Hide on most pages {% endcomment %}
+          <h4 class="my-1">Order over ${{ free_delivery_threshold }} for free delivery!</h4>
         </div>
       </div>
     </header>
@@ -188,6 +189,7 @@
                   <div class="input-group">
                     <input class="form-control rounded-0 text-center" type="email" name="email" id="email"
                     placeholder="Email Address" required>
+                    {% comment %} TODO: Hide button on small screens (below 576 px) and display Subscribe button underneath {% endcomment %}
                     <div class="input-group-append">
                       <button class="form-control btn btn-red rounded-0" type="submit">Subscribe
                       </button>

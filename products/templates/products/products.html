@@ -27,12 +27,13 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-5">
                         <div class="card h-100 text-black rounded-0">                            
                             {% if product.image %}
-                                <a href="" class="link-card">
+                                <a href="{% url 'product_detail' product.id %}" class="link-card">
                                     <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
                                 </a>
                             {% else %}
-                                <a href="" class="link-card">
-                                    <img src="{{ MEDIA_URL }}.No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid">
+                                <a href="{% url 'product_detail' product.id %}" class="link-card">
+                                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                                    <img src="/media/No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid">
                                 </a>
                             {% endif %}
                             <div class="card-body p-2">

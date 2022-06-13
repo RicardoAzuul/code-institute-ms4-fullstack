@@ -104,10 +104,12 @@ class TestModels(TestCase):
 class TestViews(TestCase):
 
     def test_get_products(self):
-        """ Test that when browsing to /products/ we get a 200 code and products/products.html template"""
+        """ Test that when browsing to /products/ we get a 200 code, products/products.html template and context """
         response = self.client.get('/products/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertIn(b'Products', response.content)
 
 
 

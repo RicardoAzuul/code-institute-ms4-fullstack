@@ -422,5 +422,5 @@ No image available file: https://commons.wikimedia.org/wiki/File:No_Image_Availa
 
 - I received help and support from my mentor at Code Institute, [Jack Wachira](https://github.com/iamjackwachira). 
 - I would also like to thank to all the people at [Code Institute](https://codeinstitute.net/) for providing the Diploma in Software Development course and giving me the tools and guidance to create this app.
-- And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, and [Stackoverflow](https://stackoverflow.com/) for helping with finding solutions to coding problems.
+- And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, [Django](https://www.djangoproject.com/) for their documentation and [Stackoverflow](https://stackoverflow.com/) for helping with finding solutions to coding problems.
 - My wife, Elizabeth Lane, for supporting me during this coding course.
