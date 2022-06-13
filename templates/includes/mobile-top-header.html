@@ -8,9 +8,9 @@
       </a>
       {% comment %} TODO: Add stylings, once I've decided on a style {% endcomment %}
       <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-          <form class="form" method="GET" action="">
+          <form class="form" method="GET" action="{% url 'products' %}">
               <div class="input-group w-100">
-                  <input class="form-control border rounded-0" type="text" name="q" placeholder="Search our site">
+                  <input class="form-control border rounded-0" type="text" name="q" placeholder="Search Git Fit">
                   <div class="input-group-append">
                       <button class="form-control form-control btn border rounded-0" type="submit">
                           <span class="icon">

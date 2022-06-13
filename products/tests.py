@@ -92,13 +92,6 @@ class TestModels(TestCase):
     def test_delete_category_of_product(self):
         """Test that when a category is deleted for a product, the category field on the product is emptied"""
         # TODO: Write test
-        category_name = 'test_category'
-        product_category = Product_Category.objects.create(name=category_name)
-        product_category.full_clean()
-        product = Product.objects.create(name='test_product', description='test description', price=1.99, category=category_name)
-        self.assertTrue(product.category)
-        Product_Category.objects.delete(name=category_name)
-        self.assertFalse(product.category)
 
 
 class TestViews(TestCase):
@@ -110,6 +103,18 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'products/products.html')
         self.assertTrue(response.context)
         self.assertIn(b'Products', response.content)
+
+    
+    def test_get_product_details(self):
+        """ Test that when browsing to /products/1 we get a 200 code, products/product_detail.html template and context """
+        # TODO: Write test
+        # product_id = 1
+        # response = self.client.get('/products/' + str(product_id))
+        # self.assertEqual(response.status_code, 200)
+        # self.assertTemplateUsed(response, 'products/product_detail.html')
+        # self.assertTrue(response.context)
+        # print("response.content", response.content)
+        # print("response.context", response.context)
 
 
 

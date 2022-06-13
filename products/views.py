@@ -1,5 +1,7 @@
 from multiprocessing import context
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render, reverse
+from django.contrib import messages
+from django.db.models import Q
 from .models import Product 
 from django.conf import settings
 
@@ -10,10 +12,24 @@ def all_products(request):
 
     # Get all products and store in products
     products = Product.objects.all()
+    # set query to None in case of no search term
+    query = None
+
+    # Logic to handle search = GET requests
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "No search terms entered.")
+                return redirect(reverse('products'))
+            
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     # Pass products to the context. This becomes available as a template variable.
     context = {
         'products': products,
+        'search_term': query,
     }
 
     return render(request, 'products/products.html', context)
