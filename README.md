@@ -1,6 +1,6 @@
 # Simply Fit
 <!-- TODO: Add description of project: -->
-Fit Family is a fitness subscription application.
+Git Fit is a fitness subscription application.
 
 The user's goal is to join a fitness community and purchase exercise plans and merchandise.
 
@@ -8,98 +8,92 @@ The site owner's goal is to build an active community around the product based o
 
 Must haves for this project:
 <!-- TODO: Must  haves -->
+- Authentication and authorisation mechanism for subscribers and administrators
+- Individual item purchase capability
+
+Nice to have: 
+<!-- TODO: nice to haves -->
 - Functionality that allows subscribers to update fellow members on their successes --> a forum?
 - User proﬁles containing information that map to nutrition and/or exercise plans
 - Product reviews
 - A subscription-based payment model: on offer are 3 subscriptions, based on duration of subscription. Subscriptions get you access to workouts, nutrition plans, the community and a discount on the shop
-- Individual item purchase capability
-- Authentication and authorisation mechanism for subscribers and administrators
 
-Nice to have: 
-<!-- TODO: nice to haves -->
-
-To see the site in action, visit [Fit Family](https://code-institute-ms4.herokuapp.com/)
+To see the site in action, visit [Git Fit](https://code-institute-ms4.herokuapp.com/)
 
 ---
 
 ## UI and UX
  
 ### User stories
+<!-- TODO: add screenshots -->
   
 **Viewing and Navigation**
-| User Story ID | As A/An | I Want To Be Able To... | So That I Can... |
-| :-------------|:--------| :----------------------:| :---------------:|
-|             1 | Shopper | View a list of products | Select some to purchase |
-|             2 | Shopper | View individual product details | Identify the price, description, product rating, product image and available sizes |
-|             3 | Shopper | Quickly identify deals, clearance items and special offers | Take advantage of special savings on products I'd like to purchase |
-|             4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much |
-|             5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like |
+| Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
+| :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
+| :heavy_check_mark: | 1 | Shopper | View a list of products | Select some to purchase | |
+| :heavy_check_mark: | 2 | Shopper | View individual product details | Identify the price, description, product rating, product image and available sizes | |
+| :heavy_check_mark: | 3 | Shopper | Quickly identify deals, clearance items and special offers | Take advantage of special savings on products I'd like to purchase | |
+|            | 4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much | |
+| :heavy_check_mark: | 5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like | |
 
 **Registration and User Accounts**
-| User Story ID | As A/An   | I Want To Be Able To... | So That I Can... |
-| :-------------|:--------  | :----------------------:| :---------------:|
-|             6 | Site User | Easily register for an account | Have a personal account and be able to view my profile |
-|             7 | Site User | Easily login or logout | Access my personal account information |
-|             8 | Site User | Easily recover my password in case I forget it | Recover access to my account |
-|             9 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful |
-|            10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information |
-|            11 | Site User | Easily review products | Help my fellow fitness community members to find the right product |
+| Done | User Story ID | As A/An   | I Want To Be Able To... | So That I Can... | Screenshot |
+| :---:| :-------------|:--------  | :----------------------:| :---------------:| :---------:|
+| :heavy_check_mark: | 6 | Site User | Easily register for an account | Have a personal account and be able to view my profile | |
+| :heavy_check_mark: | 7 | Site User | Easily login or logout | Access my personal account information | |
+| :heavy_check_mark: | 8 | Site User | Easily recover my password in case I forget it | Recover access to my account | |
+| :heavy_check_mark: | 9 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful | |
+|           | 10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information | |
+|           | 11 | Site User | Easily review products | Help my fellow fitness community members to find the right product | |
 
 **Sorting and Searching**
-| User Story ID | As A/An | I Want To Be Able To... | So That I Can... |
-| :-------------|:--------| :----------------------:| :---------------:|
-|            12 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products |
-|            13 | Shopper | Sort a specific category of product | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name |
-|            14 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "exercise equipment" |
-|            15 | Shopper | Search for a product by name or description | Find a specific product I'd like to purchase |
-|            16 | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available |
+| Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
+| :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
+| :heavy_check_mark: | 12 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products | |
+| :heavy_check_mark: | 13 | Shopper | Sort a specific category of product | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name | |
+| :heavy_check_mark: | 14 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "exercise equipment" | |
+| :heavy_check_mark: | 15 | Shopper | Search for a product by name or description | Find a specific product I'd like to purchase | |
+| :heavy_check_mark: | 16 | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available | |
 
 **Purchasing and Checkout**
-| User Story ID | As A/An | I Want To Be Able To... | So That I Can... |
-| :-------------|:--------| :----------------------:| :---------------:|
-|            17 | Shopper | Easily select the size and quantity of a product when purchasing it | Ensure I don't accidentally select the wrong product, quantity or size |
-|            18 | Shopper | View items in my bag to be purchased | Identify the total cost of my purchase and all items I will receive |
-|            19 | Shopper | Adjust the quantity of individual items in my bag | Easily make changes to my purchase before checkout |
-|            20 | Shopper | Easily enter my payment information  | Check out quickly and with no hassle |
-|            21 | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase |
-|            22 | Shopper | View an order confirmation after checkout | Verify that I haven't made any mistakes |
-|            23 | Shopper | Receiv an email confirmation after checkout | Keep the confirmation of what I've purchased for my records |
+| Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
+| :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
+|           | 17 | Shopper | Easily select the size and quantity of a product when purchasing it | Ensure I don't accidentally select the wrong product, quantity or size | |
+|           | 18 | Shopper | View items in my bag to be purchased | Identify the total cost of my purchase and all items I will receive | |
+|           | 19 | Shopper | Adjust the quantity of individual items in my bag | Easily make changes to my purchase before checkout | |
+|           | 20 | Shopper | Easily enter my payment information  | Check out quickly and with no hassle | |
+|           | 21 | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase | |
+|           | 22 | Shopper | View an order confirmation after checkout | Verify that I haven't made any mistakes | |
+|           | 23 | Shopper | Receiv an email confirmation after checkout | Keep the confirmation of what I've purchased for my records | |
 
 **Community**
-| User Story ID | As A/An      | I Want To Be Able To... | So That I Can... |
-| :-------------|:-------------|:-----------------------:| :---------------:|
-|            24 | Subscriber   | Post updates about my progress | Update my fellow members on my successes |
-|            25 | Subscriber   | Add and edit information on my profile pertaining to my fitness goals | Receive nutrition and exercise plans tailored to my fitness goals |
-|            26 | Subscriber   | Easily find other subscribers | Feel part of a community and get motivated |
-|            27 | Subscriber   | Easily see updates from other subscribers | Feel part of a community and get motivated |
-|            28 | Subscriber   | Easily find information about the subscriptions available | Make an informed choice about my subscription |
-|            29 | Subscriber   | Easily find workouts | Work on my fitness goal |
-|            30 | Subscriber   | Easily find nutrition plans | Work on my fitness goal |
+| Done | User Story ID | As A/An      | I Want To Be Able To... | So That I Can... | Screenshot |
+| :---:| :-------------|:-------------|:-----------------------:| :---------------:| :---------:|
+|           | 24 | Subscriber   | Post updates about my progress | Update my fellow members on my successes | |
+|           | 25 | Subscriber   | Add and edit information on my profile pertaining to my fitness goals | Receive nutrition and exercise plans tailored to my fitness goals | |
+|           | 26 | Subscriber   | Easily find other subscribers | Feel part of a community and get motivated | |
+|           | 27 | Subscriber   | Easily see updates from other subscribers | Feel part of a community and get motivated | |
+|           | 28 | Subscriber   | Easily find information about the subscriptions available | Make an informed choice about my subscription | |
+|           | 29 | Subscriber   | Easily find workouts | Work on my fitness goal | |
+|           | 30 | Subscriber   | Easily find nutrition plans | Work on my fitness goal | |
 
 
 **Admin and Store Management**
-| User Story ID | As A/An | I Want To Be Able To... | So That I Can... |
-| :-------------|:--------| :----------------------:| :---------------:|
-|            31 | Store Owner/Admin | Easily login or logout | Access the admin interface of the webapp |
-|            32 | Store Owner/Admin | Add a product | Add new items to my store |
-|            33 | Store Owner/Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria |
-|            34 | Store Owner/Admin | Delete a product | Remove items that are no longer for sale |
-|            35 | Store Owner/Admin | Add a subscription | Add new subscription options |
-|            36 | Store Owner/Admin | Edit/update a subscription | Change subscription prices, descriptions, linked workouts and nutrition |
-|            37 | Store Owner/Admin | Delete a subscription | Remove subscriptions that are no longer available |
-|            38 | Store Owner/Admin | Add a workout | Add new workouts |
-|            39 | Store Owner/Admin | Edit/update a workout | Change workouts |
-|            40 | Store Owner/Admin | Delete a workout | Remove workouts that are no longer promoted |
-|            41 | Store Owner/Admin | Add a nutrition plan | Add new nutrition plans |
-|            42 | Store Owner/Admin | Edit/update a nutrition plan | Change nutrition plan |
-|            43 | Store Owner/Admin | Delete a nutrition plan | Remove nutrition plans that are no longer promoted |
-
-
-Screenshots that fulfill these user stories:
-<!-- TODO: add screenshots -->
-
-
-
+| Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
+| :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
+|           | 31 | Store Owner/Admin | Easily login or logout | Access the admin interface of the webapp | |
+|           | 32 | Store Owner/Admin | Add a product | Add new items to my store | |
+|           | 33 | Store Owner/Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria | |
+|           | 34 | Store Owner/Admin | Delete a product | Remove items that are no longer for sale | |
+|           | 35 | Store Owner/Admin | Add a subscription | Add new subscription options | |
+|           | 36 | Store Owner/Admin | Edit/update a subscription | Change subscription prices, descriptions, linked workouts and nutrition | |
+|           | 37 | Store Owner/Admin | Delete a subscription | Remove subscriptions that are no longer available | |
+|           | 38 | Store Owner/Admin | Add a workout | Add new workouts | |
+|           | 39 | Store Owner/Admin | Edit/update a workout | Change workouts | |
+|           | 40 | Store Owner/Admin | Delete a workout | Remove workouts that are no longer promoted | |
+|           | 41 | Store Owner/Admin | Add a nutrition plan | Add new nutrition plans | |
+|           | 42 | Store Owner/Admin | Edit/update a nutrition plan | Change nutrition plan | |
+|           | 43 | Store Owner/Admin | Delete a nutrition plan | Remove nutrition plans that are no longer promoted | |
 
 ---
 
@@ -109,8 +103,8 @@ Jesse James Garret's 5 planes of UX design were used to design the site. I start
 
 #### Strategy Plane
 <!-- TODO: Write about Strategy Plane -->
-The main goal for visitors is to find and join a fitness community they might like. This means giving visitors a feeling about the kind of community they are joining. Fit Family sets out to be a friendly, warm community. Not necessarily for people interested in maximizing their fitness or muscle gain or weight loss, but for people who want to join a family of people who are all trying to work on their fitness without impossible goals.
-So the main page has to have a call to action in the form of a button to take you to subscriptions. We also need a hero image that exemplifies the image of Fit Family.
+The main goal for visitors is to find and join a fitness community they might like. This means giving visitors a feeling about the kind of community they are joining. Git Fit sets out to be no nonsense and active, aggressive almost. Git Fit is for goal-oriented people.
+So the main page has to have a call to action in the form of a button to take you to subscriptions. We also need a hero image that exemplifies the image of Git Fit.
 Some brief text to indicate what subscribers gain access to would also be good.
 We also indicate that there is a shop and account option by having options for these in the navbar.
 
@@ -133,7 +127,7 @@ The functional specifications of the site:
 
 Content requirements:
 <!-- TODO: Write about content requirements -->
-- a hero image evoking the idea of family, warmth and fitness.
+- a hero image evoking the idea of "active, aggressive, simplicity".
 - some exercise and nutrition plans.
 - some items for sale, with example reviews.
 - some example subscribers.
@@ -149,7 +143,7 @@ All pages should have the same navigation bar and footer:
 - the footer contains copyright info.
 
 <ins>The Home Page</ins>
-- a hero image evoking the idea of family, warmth and fitness.
+- a hero image evoking the idea of "active, aggressive, simplicity".
 - a call to action to subscribe.
 
 <ins>The Profile Page</ins>
@@ -247,6 +241,8 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 
 ### Existing Features
 <!-- TODO: Existing features -->
+- the home page, with hero image, call to action, testimonials and features
+- the navbar, with links to login and register, a search bar, and various shopping links
 
 
 
@@ -275,7 +271,7 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 - [Heroku](https://heroku.com/): a Platform as a Service, for hosting the webapp.
 - [Balsamiq](https://balsamiq.com): for creating wireframes of all the pages.
 - [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/): for quick debugging and testing of HTML and CSS. 
-- [Am I Responsive?](http://ami.responsivedesign.is/): to generate screenshots of the site at various viewpoints, indicating responsiveness.
+- [Am I Responsive?](https://ui.dev/amiresponsive): to generate screenshots of the site at various viewpoints, indicating responsiveness.
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse): an automated tool in Chrome DevTools that audits for performance, accessibility, progressive web apps, SEO and more.
 - [Prettier VS Code plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): a code formatter that helps with code formatting, which is good for creating a consistent style.
 - [Markdown link check](https://github.com/marketplace/actions/markdown-link-check): an automated tool to check for dead links in Markdown files.
@@ -300,14 +296,46 @@ These screenshots indicate the responsiveness of the pages on various screens. P
 <!-- TODO: Testing, either manual or automated -->
 <!-- TODO: Look through Hello Django Github for tests -->
 There are some unit tests using Django's own testing capabilities.
+
 For the home app, tests can be found in home\tests.py:
-`python manage.py test --verbosity=2
+`python manage.py test home.tests --verbosity=2
 test_get_home (home.tests.TestViews) ... ok
 test_get_login (home.tests.TestViews) ... ok
 test_get_password_reset (home.tests.TestViews) ... ok
 test_get_signup (home.tests.TestViews) ... ok`
 
 Selenium tests for the home app:
+
+The products app: products\test.py
+`python manage.py test products.tests --verbosity=2
+test_all_blank_product (products.tests.TestModels)
+Test that when a product is created with no info, we get a ValidationError ... ok
+test_all_blank_product_category (products.tests.TestModels)
+Test that when a category is created with no info, we get a ValidationError ... ok
+test_blank_description_product (products.tests.TestModels)
+Test that when a product is created with no description, we get a ValidationError ... ok
+test_blank_fields_product (products.tests.TestModels)
+Test that when a product is created, category, sku, rating, image_url and image are blank ... ok
+test_blank_name_product (products.tests.TestModels)
+Test that when a product is created with no name, we get a ValidationError ... ok
+test_blank_price_product (products.tests.TestModels)
+Test that when a product is created with no price, we get a ValidationError ... ok
+test_delete_category_of_product (products.tests.TestModels)
+Test that when a category is deleted for a product, the category field on the product is emptied ... ok
+test_friendly_name_blank_product_category (products.tests.TestModels)
+Test that when a category is created, friendly name is blank ... ok
+test_max_length_image_url_product (products.tests.TestModels)
+Test that when a product is created with an image_url longer than 1024 characters, we get a ValidationError ... ok
+test_max_length_name_product (products.tests.TestModels)
+Test that when a product is created with a name longer than 254 characters, we get a ValidationError ... ok
+test_max_length_name_product_category (products.tests.TestModels)
+Test that when a category is created with a name longer than 254 characters, we get a ValidationError ... ok
+test_max_length_price_product (products.tests.TestModels)
+Test that when a product is created with a price longer than 6 characters, we get a ValidationError ... ok
+test_max_length_rating_product (products.tests.TestModels)
+Test that when a product is created with a rating longer than 6 characters, we get a ValidationError ... ok
+test_max_length_sku_product (products.tests.TestModels)
+Test that when a product is created with a sku longer than 254 characters, we get a ValidationError ... ok`
 
 
 
@@ -400,16 +428,19 @@ os.environ.setdefault("STRIPE_WH_SECRET ", "[stripe webhook key]")
 ### Inspiration
 <!-- TODO: Inspiration -->
 The color scheme, black with accents of white and red, was inspired by Netflix: it looks bold. For the font I did some research into bold aggressive font types and came upon slab serif fonts. I picked Kelly Slab, as it was available via Google Fonts.
+Initially I wanted to do something different and go for warm and friendly, but I did not like the color scheme and couldn't find suitable images.
 
 
 
 ### Content
 <!-- TODO: Add where I got the Content -->
+Product images, prices, descriptions and ratings: www.decathon.nl
 
 
 ### Media
 <!-- TODO: Add where I got the Media -->
 Main page: https://www.pexels.com/photo/woman-doing-exercise-414029/
+No image available file: https://commons.wikimedia.org/wiki/File:No_Image_Available.jpg
 
 
 ### Code
@@ -420,5 +451,5 @@ Main page: https://www.pexels.com/photo/woman-doing-exercise-414029/
 
 - I received help and support from my mentor at Code Institute, [Jack Wachira](https://github.com/iamjackwachira). 
 - I would also like to thank to all the people at [Code Institute](https://codeinstitute.net/) for providing the Diploma in Software Development course and giving me the tools and guidance to create this app.
-- And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, and [Stackoverflow](https://stackoverflow.com/) for helping with finding solutions to coding problems.
+- And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, [Django](https://www.djangoproject.com/) for their documentation and [Stackoverflow](https://stackoverflow.com/) for helping with finding solutions to coding problems.
 - My wife, Elizabeth Lane, for supporting me during this coding course.

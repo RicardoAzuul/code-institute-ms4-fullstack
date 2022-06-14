@@ -46,7 +46,17 @@ class SeleniumTests(LiveServerTestCase):
 
         assert url == selenium.current_url        
     
+    def test_registration(self):
+        """Test that we can register for an account """  
 
+    def test_login(self):
+        """Test that we can login to our account """ 
+
+    def test_reset_password(self):
+        """Test that we can reset our password """
+
+    def test_delete_account(self):
+        """Test that we can delete our account """  
     
     
 

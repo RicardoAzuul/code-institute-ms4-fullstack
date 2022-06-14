@@ -1,5 +1,4 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,10 +45,10 @@
           </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-          <form method="GET" action="#">
+          <form method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
               <input class="form-control border rounded-0" type="text" name="q"
-                placeholder="Search our site">
+                placeholder="Search Git Fit">
               <div class="input-group-append">
                 <button class="form-control btn btn-red rounded-0" type="submit">Search
                   <span class="icon">
@@ -105,7 +104,7 @@
         <nav class="navbar navbar-expand-lg navbar-light w-100">
           <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#main-nav"
             aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-            {% comment %} TODO: change color of hamburger menu {% endcomment %}
+            <!-- TODO: change position of hamburger menu -->
             <i class="fas fa-bars fa-lg"></i>
           </button>
           {% include 'includes/mobile-top-header.html' %}
@@ -114,7 +113,8 @@
       </div>
       <div id="delivery-banner" class="row text-center bg-white">
         <div class="col">
-          <h4 class="my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
+            <!-- TODO: Hide on most pages -->
+          <h4 class="my-1">Order over ${{ free_delivery_threshold }} for free delivery!</h4>
         </div>
       </div>
     </header>
@@ -130,7 +130,7 @@
     {% block content %}
     {% endblock content %}
 
-    <footer class="container-fluid bg-black text-white">
+    <footer class="container-fluid bg-black text-white border-top-white">
       <div class="row pt-3">
         <div class="col-6">
           <h4><i class="fas fa-bolt"></i> Git Fit</h4>
@@ -153,7 +153,7 @@
           </ul>
         </div>
         <div class="col-6">
-          <p class="d-none d-sm-block">Git fit on social media</p>
+          <p class="d-none d-sm-block">Git Fit on social media</p>
           <p class="d-block d-sm-none">Social media</p>
             <a href="https://www.facebook.com" class="text-white text-decoration-none social-link" aria-label="Open Facebook in new tab" target="_blank"
                 rel="external noopener noreferrer">
@@ -188,6 +188,7 @@
                   <div class="input-group">
                     <input class="form-control rounded-0 text-center" type="email" name="email" id="email"
                     placeholder="Email Address" required>
+                    <!-- TODO: Hide button on small screens (below 576 px) and display Subscribe button underneath -->
                     <div class="input-group-append">
                       <button class="form-control btn btn-red rounded-0" type="submit">Subscribe
                       </button>

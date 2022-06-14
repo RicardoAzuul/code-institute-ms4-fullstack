@@ -10,10 +10,10 @@
                 All Products
             </a>
             <div class="dropdown-menu border-purple" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
-                <a href="" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
 
@@ -22,11 +22,11 @@
                 Exercise Equipment
             </a>
             <div class="dropdown-menu border-purple" aria-labelledby="exercise-equipment-link">
-                <a href="" class="dropdown-item">Weights</a>
-                <a href="" class="dropdown-item">Clothes</a>
-                <a href="" class="dropdown-item">Shoes</a>
-                <a href="" class="dropdown-item">Accessories</a>
-                <a href="" class="dropdown-item">All Exercise Equipment</a>
+                <a href="{% url 'products' %}?category=weights" class="dropdown-item">Weights</a>
+                <a href="{% url 'products' %}?category=clothes" class="dropdown-item">Clothes</a>
+                <a href="{% url 'products' %}?category=shoes" class="dropdown-item">Shoes</a>
+                <a href="{% url 'products' %}?category=accessories" class="dropdown-item">Accessories</a>
+                <a href="{% url 'products' %}?category=weights,clothes,shoes,accessories" class="dropdown-item">All Exercise Equipment</a>
             </div>
         </li>
 
@@ -35,11 +35,11 @@
                 Nutrition
             </a>
             <div class="dropdown-menu border-purple" aria-labelledby="nutrition-link">
-                <a href="" class="dropdown-item">Protein Powders</a>
-                <a href="" class="dropdown-item">Protein Bars</a>
-                <a href="" class="dropdown-item">Sports Drinks</a>
-                <a href="" class="dropdown-item">Vitamins</a>
-                <a href="" class="dropdown-item">All Nutrition</a>
+                <a href="{% url 'products' %}?category=protein_powders" class="dropdown-item">Protein Powders</a>
+                <a href="{% url 'products' %}?category=protein_bars" class="dropdown-item">Protein Bars</a>
+                <a href="{% url 'products' %}?category=sports_drinks" class="dropdown-item">Sports Drinks</a>
+                <a href="{% url 'products' %}?category=vitamins" class="dropdown-item">Vitamins</a>
+                <a href="{% url 'products' %}?category=protein_powders,protein_bars,sports_drinks,vitamins" class="dropdown-item">All Nutrition</a>
             </div>
         </li>
 
@@ -48,10 +48,10 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-purple" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
