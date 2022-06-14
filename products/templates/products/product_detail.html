@@ -19,7 +19,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-black">
                   <li class="breadcrumb-item"><a href="{% url 'products' %}" class="text-white">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#" class="text-white">{{ product.category }}</a></li>
+                  <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ product.category.name }}" class="text-white">{{ product.category.friendly_name }}</a></li>
                   <li class="breadcrumb-item text-white active" aria-current="page">{{ product.name}} </li>
                 </ol>
               </nav>
@@ -96,11 +96,20 @@
             </div>
             <div class="row">
                 <div class="col">
-                    {% if product.rating %}
-                        <p><i class="fas fa-star"></i> {{ product.rating }}/5</p>
-                    {% else %}
-                        <p>No Rating</p>
+                    {% if product.category %}
+                        <p class="float-left">
+                            <a href="{% url 'products' %}?category={{ product.category.name }}" class="link-white-hover-white"><i class="fas fa-tag"></i> {{ product.category.friendly_name }}</a>
+                        </p>
                     {% endif %}
+                    {% if product.rating %}
+                        <p class="float-right"><i class="fas fa-star"></i> {{ product.rating }}/5</p>
+                    {% else %}
+                        <p class="float-right">No Rating</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
                     <p>{{ product.description }}</p>  
                 </div>
             </div>

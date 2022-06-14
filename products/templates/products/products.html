@@ -16,12 +16,46 @@
     <div class="row">
         <div class="col text-center">
             <h2>Products</h2>
+            {% for category in selected_categories  %}
+                <a href="{% url 'products' %}?category={{ category.name }}" class="btn btn-red rounded-0 mb-1">{{ category.friendly_name }}</a>
+            {% endfor %}                
             <hr class="bg-white w-75">
         </div>
     </div>
     <div class="row">
         <div class="container">
-            <div class="row"></div>
+            <div class="row">
+                <div class="col-6 text-left">
+                    <p>                        
+                        {% if search_term or selected_categories or selected_sorting != 'None_None' %}
+                            <a href="{% url 'products' %}" class="link-white-hover-white">Products Home</a> |
+                        {% endif %}
+                        {{ products|length }} Products{% if search_term %} found for search term "{{ search_term }}"{% endif %}
+                    </p>
+                </div>
+                <div class="col-6 text-right">
+                    <select id="sort-selector" class="border-white rounded-0 mb-3 w-75">
+                        <option value="reset" {% if selected_sorting == 'None_None' %}selected{% endif %}>Sort by...
+                        </option>
+                        <option value="price_asc" {% if selected_sorting == 'price_asc' %}selected{% endif %}>Price
+                            (low to high)</option>
+                        <option value="price_desc" {% if selected_sorting == 'price_desc' %}selected{% endif %}>Price
+                            (high to low)</option>
+                        <option value="rating_asc" {% if selected_sorting == 'rating_asc' %}selected{% endif %}>
+                            Rating (low to high)</option>
+                        <option value="rating_desc" {% if selected_sorting == 'rating_desc' %}selected{% endif %}>
+                            Rating (high to low)</option>
+                        <option value="name_asc" {% if selected_sorting == 'name_asc' %}selected{% endif %}>Name
+                            (A-Z)</option>
+                        <option value="name_desc" {% if selected_sorting == 'name_desc' %}selected{% endif %}>Name
+                            (Z-A)</option>
+                        <option value="category_asc" {% if selected_sorting == 'category_asc' %}selected{% endif %}>
+                            Category (A-Z)</option>
+                        <option value="category_desc"
+                            {% if selected_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                    </select>
+                </div>
+            </div>
             <div class="row">
                 {% for product in products %}
                     <div class="col-12 col-md-6 col-lg-3 mb-5">
@@ -43,12 +77,21 @@
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="float-right font-weight-bold m-0">${{ product.price }}</p>
+                                        <p class="float-right font-weight-bold m-0">${{ product.price }}</p>                                   
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        {% if product.category %}
+                                            <p class="float-left small m-0">
+                                                <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted"><i class="fas fa-tag"></i> {{ product.category.friendly_name }}</a>
+                                            </p>
+                                        {% endif %}
                                         {% if product.rating %}
-                                            <p class="float-left text-muted m-0"><i class="fas fa-star"></i> {{ product.rating }}/5</p>
+                                            <p class="small float-right text-muted m-0"><i class="fas fa-star"></i> {{ product.rating }}/5</p>
                                         {% else %}
-                                            <p class="float-left text-muted m-0">No Rating</p>
-                                        {% endif %}                                           
+                                            <p class="float-right text-muted m-0">No Rating</p>
+                                        {% endif %} 
                                     </div>
                                 </div>
                             </div>

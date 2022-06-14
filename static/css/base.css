@@ -197,6 +197,16 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--netflix-red) !important;
 }
 
+.link-white-hover-white {
+    color: var(--netflix-white);
+}
+
+.link-white-hover-white:hover,
+.link-white-hover-white:active,
+.link-white-hover-white:focus {
+    color: var(--netflix-white) !important;
+}
+
 .link-red {
     color: var(--netflix-red);
 }
