@@ -33,7 +33,7 @@
                 </a>
             {% else %}
                 <a href="{{ product.image.url }}" target="_blank">
-                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
                     <img src="/media/No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid mb-3">
                 </a>
             {% endif %}
@@ -114,15 +114,15 @@
                     <p>Related Products</p>
                 </div>
                 <div class="col">
-                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
                     <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
-                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
                     <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
                 </div>
                 <div class="col">
-                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
                     <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
-                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
                     <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid mb-3">
                 </div>
             </div>
@@ -138,19 +138,19 @@
             <p>Related Products</p>
         </div>
         <div class="col-lg-3">
-            {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+            <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
             <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
         </div>
         <div class="col-lg-3">
-            {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+            <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
             <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
         </div>
         <div class="col-lg-3">
-            {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+            <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
             <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
         </div>
         <div class="col-lg-3">
-            {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+            <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
             <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid mb-3">
         </div>
     </div>

@@ -32,7 +32,7 @@
                                 </a>
                             {% else %}
                                 <a href="{% url 'product_detail' product.id %}" class="link-card">
-                                    {% comment %} !BUG: this should be {{ MEDIA_URL }} but this doesn't work  {% endcomment %}
+                                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
                                     <img src="/media/No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid">
                                 </a>
                             {% endif %}

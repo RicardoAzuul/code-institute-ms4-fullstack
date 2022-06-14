@@ -1,8 +1,9 @@
 from multiprocessing import context
+from unicodedata import category
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product 
+from .models import Product, Product_Category 
 from django.conf import settings
 
 # Create your views here.
@@ -12,11 +13,17 @@ def all_products(request):
 
     # Get all products and store in products
     products = Product.objects.all()
-    # set query to None in case of no search term
+    # set to None in case of no search term or category
     query = None
+    categories = None
 
     # Logic to handle search = GET requests
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Product_Category.objects.filter(name__in=categories)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -30,6 +37,7 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
+        'selected_categories': categories,
     }
 
     return render(request, 'products/products.html', context)

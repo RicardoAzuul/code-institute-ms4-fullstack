@@ -1,4 +1,5 @@
 from decimal import InvalidOperation
+from this import d
 from unicodedata import category
 from django.forms import ValidationError
 from django.test import TestCase
@@ -95,26 +96,223 @@ class TestModels(TestCase):
 
 
 class TestViews(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        # TODO: Figure out how to create categories for use with test data
+        cls.category = Product_Category.objects.create(name="weights")
+        cls.category = Product_Category.objects.create(name="clothes")
+        cls.category = Product_Category.objects.create(name="shoes")
+        cls.category = Product_Category.objects.create(name="accessories")
+        cls.category = Product_Category.objects.create(name="protein_powders")
+        cls.category = Product_Category.objects.create(name="protein_bars")
+        cls.category = Product_Category.objects.create(name="sports_drinks")
+        cls.category = Product_Category.objects.create(name="vitamins")
+        cls.category = Product_Category.objects.create(name="new_arrivals")
+        cls.category = Product_Category.objects.create(name="deals")
+        cls.category = Product_Category.objects.create(name="clearance")
+
+        cls.product = Product.objects.create(
+            name="Test Product",
+            description="Ideal",
+            price=1.99,
+            image="No_Image_Available.jpg")
+
+        cls.product = Product.objects.create(
+            name="Test Weight",
+            description="Weight",
+            price=1.99,
+            category="weights")
+
+        cls.product = Product.objects.create(
+            name="Test Clothes",
+            description="Clothes",
+            price=1.99,
+            category="clothes")
+
+        cls.product = Product.objects.create(
+            name="Test Shoes",
+            description="Shoes",
+            price=1.99,
+            category="shoes")
+
+        cls.product = Product.objects.create(
+            name="Test Accessories",
+            description="Accessories",
+            price=1.99,
+            category="accessories")
+
+        cls.product = Product.objects.create(
+            name="Test Protein Powders",
+            description="Protein Powders",
+            price=1.99,
+            category="protein_powders")
+            
+        cls.product = Product.objects.create(
+            name="Test Protein Bars",
+            description="Protein Bars",
+            price=1.99,
+            category="protein_bars")
+                        
+        cls.product = Product.objects.create(
+            name="Test Sports Drinks",
+            description="Sports Drinks",
+            price=1.99,
+            category="sports_drinks")
+                                    
+        cls.product = Product.objects.create(
+            name="Test Vitamins",
+            description="Vitamins",
+            price=1.99,
+            category="vitamins")
+                                                
+        cls.product = Product.objects.create(
+            name="Test New Arrivals",
+            description="New Arrivals",
+            price=1.99,
+            category="new_arrivals")
+                                                            
+        cls.product = Product.objects.create(
+            name="Test Deals",
+            description="Deals",
+            price=1.99,
+            category="deals")
+                                                                        
+        cls.product = Product.objects.create(
+            name="Test Clearance",
+            description="Clearance",
+            price=1.99,
+            category="clearance")
 
     def test_get_products(self):
-        """ Test that when browsing to /products/ we get a 200 code, products/products.html template and context """
+        """ Test that when browsing to /products/ we get a 200 code, products/products.html template, context and that we have 1 product """
         response = self.client.get('/products/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/products.html')
         self.assertTrue(response.context)
         self.assertIn(b'Products', response.content)
+        self.assertEqual(1, response.context['products'].count())
+
+
+    def test_select_categories(self):
+        """ Test that when selecting categories we get a 200 code, products/products.html template and context """
+        response = self.client.get('/products/?category=weights')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("weights", response.context['selected_categories'])
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=clothes')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("clothes", response.context['selected_categories'])
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=shoes')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("shoes", response.context['selected_categories']) 
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=accessories')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("accessories", response.context['selected_categories']) 
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=weights,clothes,shoes,accessories')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("weights,clothes,shoes,accessories", response.context['selected_categories'])
+        self.assertEqual(4, response.context['products'].count())
+
+        response = self.client.get('/products/?category=protein_powders')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("protein_powders", response.context['selected_categories'])        
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=protein_bars')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("protein_bars", response.context['selected_categories'])        
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=sports_drinks')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("sports_drinks", response.context['selected_categories'])        
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=vitamins')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)    
+        self.assertTrue("vitamins", response.context['selected_categories'])
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=protein_powders,protein_bars,sports_drinks,vitamins')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("protein_powders,protein_bars,sports_drinks,vitamins", response.context['selected_categories'])
+        self.assertEqual(4, response.context['products'].count())
+
+        response = self.client.get('/products/?category=new_arrivals')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("new_arrivals", response.context['selected_categories'])
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=deals')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("deals", response.context['selected_categories'])
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=clearance')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("clearance", response.context['selected_categories'])
+        self.assertEqual(1, response.context['products'].count())
+
+        response = self.client.get('/products/?category=new_arrivals,deals,clearance')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("new_arrivals,deals,clearance", response.context['selected_categories']) 
+        self.assertEqual(3, response.context['products'].count())
+        
+
+    def test_search_products(self):
+        """ Test that when searching for 'ideal' we get a 200 code, products/products.html template, context and that we find 1 product """    
+        response = self.client.get('/products/?q=ideal')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+        self.assertTrue(response.context)
+        self.assertTrue("ideal", response.context['search_term'])
+        self.assertEqual(1, response.context['products'].count())
 
     
     def test_get_product_details(self):
-        """ Test that when browsing to /products/1 we get a 200 code, products/product_detail.html template and context """
-        # TODO: Write test
-        # product_id = 1
-        # response = self.client.get('/products/' + str(product_id))
-        # self.assertEqual(response.status_code, 200)
-        # self.assertTemplateUsed(response, 'products/product_detail.html')
-        # self.assertTrue(response.context)
-        # print("response.content", response.content)
-        # print("response.context", response.context)
+        """ Test that when browsing to /products/1 we get a 200 code, products/product_detail.html template, context and that name and description are true """
+        product_id = 1
+        response = self.client.get('/products/' + str(product_id))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/product_detail.html')
+        self.assertTrue(response.context)
+        self.assertEqual('Test Product', response.context['product'].name)
+        self.assertEqual('Ideal', response.context['product'].description)
 
 
 
