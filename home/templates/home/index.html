@@ -11,6 +11,7 @@
 {% endblock page_header %}
 
 {% block content %}
+        <!-- TODO: Add mb-5 to container  -->
         <div class="container minheight">
             <div class="row">
                 {% if request.user.is_authenticated %}
@@ -30,7 +31,7 @@
                             <h1 class="text-white call-to-action-header text-center px-4 my-5">Make it simple.<br> Get fit.</h1>
                             <div class="text-center">
                                 <h4 class="px-4">
-                                    <a href="{% url 'products' %}" class="btn btn-lg btn-red rounded-0 text-uppercase mb-5">Shop Now</a>
+                                    <a href="{% url 'products' %}" class="btn btn-lg btn-red rounded-0 text-uppercase mb-5">Buy</a>
                                 </h4>
                             </div>
                         </div>
@@ -135,6 +136,7 @@
                                 </div>
                             </div>
                             <div class="feature-btn-xs col-8 offset-2 d-block d-sm-none text-center">
+                                <!-- TODO: Remove mb-5, add to container instead -->
                                 <div class="feature-collapse mb-5">
                                     <button class="btn bg-white rounded-0 w-100" type="button" data-toggle="collapse" data-target="#collapseFeature3" aria-expanded="false" aria-controls="collapseFeature3">
                                         <!-- TODO: Add JavaScript/JQuery code that changes the icon on click -->
@@ -158,6 +160,7 @@
                                 </div>
                              </div>
                             <div class="col-8 offset-2 d-none d-sm-block">
+                                <!-- TODO: Remove mb-5, add to container instead -->
                                 <div class="feature-div mb-5 bg-white">
                                     <h2 class="mt-3 feature-header"><u>Access fitness plans</u></h2>
                                     <p>Git Fit members are also able to purchase exercise and nutrition plans, based on your fitness goals. These exercise and nutrition plans are created and updated by our staff.</p>
