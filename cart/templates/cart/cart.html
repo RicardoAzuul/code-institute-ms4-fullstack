@@ -16,18 +16,55 @@
         <div class="row">
             <div class="col">
                 <h2>Your Cart</h2>
-                <hr class=bg-white>
+                <hr class="bg-white">
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                {% if cart_items %}
-                    <div class="table-responsive rounded-0"></div>
-                {% else %}
-                    <p>Your cart is empty.</p>
-                    <a href="{% url 'products' %}" class="btn btn-red rounded-0"><i class="fas fa-caret-left"></i> Back to Products</a>
-                {% endif %}
-            </div>
+            {% if cart_items %}
+                {% for item in cart_items  %}
+                    <div class="col-12 col-md-8 mb-3">
+                        <p class="font-weight-bold">Item</p>
+                        <hr class="bg-white">
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded-0">
+                            </div>
+                            <div class="col-6">
+                                <h5>{{ item.product.name }}</h5>
+                            </div>                        
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p class="font-weight-bold">Price</p>
+                        <hr class="bg-white d-none d-md-block">
+                        <h4>${{ item.product.price }}</h4>
+                    </div>
+                    <div class="col">
+                        <p class="font-weight-bold text-right">Quantity</p>
+                        <hr class="bg-white d-none d-md-block">
+                        <p class="text-right">{{ item.quantity }}</p>
+                    </div>
+                    <div class="col-12">
+                        <hr class="bg-white">
+                        <p class="text-right">Subtotal: ${{ item.product.price }}</p>
+                        <hr class="bg-white">
+                    </div>
+                {% endfor %}
+                <div class="col-12 col-md-8 offset-md-2 border-white py-3">
+                    <h3>Summary ([] items)</h3>
+                    <p class="font-weight-light">Subtotal <span class="float-right">${{ total|floatformat:2 }}</span></p>
+                    <p class="font-weight-light">Shipping <span class="float-right">${{ delivery|floatformat:2 }}</span></p>
+                    {% if free_delivery_difference > 0 %}
+                        <p>
+                            Spend ${{ free_delivery_difference }} more for free delivery.
+                        </p>
+                    {% endif %}
+                    <br>  
+                    <p>Total <span class="float-right">${{ grand_total|floatformat:2 }}</span></p>
+                    <a href="{% url 'products' %}" class="btn btn-white rounded-0"><i class="fas fa-caret-left"></i> Back to Shop</a>
+                    <a href="" class="btn btn-red rounded-0 float-right"><i class="fas fa-wallet"></i> Secure Checkout</a>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock content %}

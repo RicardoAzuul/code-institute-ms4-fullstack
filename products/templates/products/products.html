@@ -64,12 +64,12 @@
                         <div class="card h-100 text-black rounded-0">                            
                             {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}" class="link-card">
-                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0">
                                 </a>
                             {% else %}
                                 <a href="{% url 'product_detail' product.id %}" class="link-card">
                                     <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-                                    <img src="/media/No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid">
+                                    <img src="/media/No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0">
                                 </a>
                             {% endif %}
                             <div class="card-body p-2">

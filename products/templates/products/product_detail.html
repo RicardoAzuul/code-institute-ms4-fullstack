@@ -30,12 +30,12 @@
         <div class="col-12 col-lg-8">
             {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
-                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid mb-3">
+                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0 mb-3">
                 </a>
             {% else %}
-                <a href="{{ product.image.url }}" target="_blank">
+                <a href="">
                     <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-                    <img src="/media/No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid mb-3">
+                    <img src="/media/No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0 mb-3">
                 </a>
             {% endif %}
         </div>
@@ -133,15 +133,15 @@
                 </div>
                 <div class="col">
                     <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
                     <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
                 </div>
                 <div class="col">
                     <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
                     <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
                 </div>
             </div>
         </div>
@@ -158,22 +158,22 @@
         <div class="col-lg-3">
             <!-- TODO: Remove mb-3, add to container instead -->
             <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
         </div>
         <div class="col-lg-3">
             <!-- TODO: Remove mb-3, add to container instead -->
             <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
         </div>
         <div class="col-lg-3">
             <!-- TODO: Remove mb-3, add to container instead -->
             <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
         </div>
         <div class="col-lg-3">
             <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
             <!-- TODO: Remove mb-3, add to container instead -->
-            <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid mb-3">
+            <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
         </div>
     </div>
 </div>
