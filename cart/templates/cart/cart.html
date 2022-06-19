@@ -21,12 +21,13 @@
         </div>
         <div class="row">
             {% if cart_items %}
-                {% for item in cart_items  %}
-                    <div class="col-12 col-md-8 mb-3">
+                {% for item in cart_items  %}           
+                    <div class="col-12 col-md-6 mb-3">
                         <p class="font-weight-bold">Item</p>
                         <hr class="bg-white">
                         <div class="row">
                             <div class="col-6">
+                                <!-- TODO: Add a link to the product via the image -->  
                                 <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded-0">
                             </div>
                             <div class="col-6">
@@ -35,14 +36,30 @@
                         </div>
                     </div>
                     <div class="col">
-                        <p class="font-weight-bold">Price</p>
+                        <p class="font-weight-bold text-md-right">Price</p>
                         <hr class="bg-white d-none d-md-block">
-                        <h4>${{ item.product.price }}</h4>
+                        <h4 class="text-md-right">${{ item.product.price }}</h4>
                     </div>
                     <div class="col">
                         <p class="font-weight-bold text-right">Quantity</p>
                         <hr class="bg-white d-none d-md-block">
-                        <p class="text-right">{{ item.quantity }}</p>
+                        <form action="{% url 'update_cart' item.item_id %}" class="form update-form" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prefix">
+                                        <button class="decrease-qty btn btn-sm btn-white rounded-0" data-item_id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}"><i class="fas fa-minus fa-sm"></i></button>
+                                    </div>
+                                    <input type="number" class="form-control form-control-sm qty_input bg-white rounded-0" name="quantity" value="{{ item.quantity }}"
+                                        min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                    <div class="input-group-suffix">
+                                        <button class="increase-qty btn btn-sm btn-white rounded-0" data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}"><i class="fas fa-plus fa-sm"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <a href="" class="update-link btn btn-sm btn-white rounded-0 float-left">Update Cart</a>
+                        <a href="" id="remove_{{ item.item_id }}" class="remove-item btn btn-sm btn-red rounded-0 float-right"><i class="fas fa-trash fa-sm"></i></a>
                     </div>
                     <div class="col-12">
                         <hr class="bg-white">
@@ -56,7 +73,7 @@
                     <p class="font-weight-light">Shipping <span class="float-right">${{ delivery|floatformat:2 }}</span></p>
                     {% if free_delivery_difference > 0 %}
                         <p>
-                            Spend ${{ free_delivery_difference }} more for free delivery.
+                            Spend ${{ free_delivery_difference }} more for free delivery
                         </p>
                     {% endif %}
                     <br>  
@@ -64,7 +81,36 @@
                     <a href="{% url 'products' %}" class="btn btn-white rounded-0"><i class="fas fa-caret-left"></i> Back to Shop</a>
                     <a href="" class="btn btn-red rounded-0 float-right"><i class="fas fa-wallet"></i> Secure Checkout</a>
                 </div>
+            {% else %}
+                <div class="col-12 col-md-6 mb-3">
+                    <p class="lead mb-5">Your cart is empty.</p>
+                    <a href="{% url 'products' %}" class="btn btn-lg btn-white rounded-0"><i class="fas fa-caret-left"></i> Back to Shop</a>
+                </div>
             {% endif %}
         </div>
     </div>
 {% endblock content %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    $('.remove-item').click(function(e) {        
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/cart/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+                location.reload();
+         });
+    })
+</script>
+{% endblock postloadjs %}

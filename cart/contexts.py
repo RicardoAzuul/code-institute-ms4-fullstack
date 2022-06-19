@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 
 def cart_contents(request):
-
+    
     cart_items = []
     total = 0
     product_count = 0
@@ -30,7 +30,7 @@ def cart_contents(request):
         free_delivery_difference = 0
 
     if total > 0:
-        grand_total = delivery + total
+        grand_total = Decimal(delivery) + total 
 
     context = {
         'cart_items': cart_items,

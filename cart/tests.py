@@ -8,3 +8,7 @@ class TestViews(TestCase):
         response = self.client.get('/cart/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'cart/cart.html')
+
+# TODO: Test updating cart
+
+# TODO: Test removing from cart
