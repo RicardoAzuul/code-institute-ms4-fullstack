@@ -362,6 +362,9 @@ Test that when a product is created with a sku longer than 254 characters, we ge
 
 ### Notable Bugs
 <!-- TODO: Notable Bugs -->
+There is a bug when going to product details. It doesn't seem to break anything, but the console shows:
+ValueError: Field 'id' expected a number but got 'No_Image_Available.jpg'.
+[15/Jun/2022 16:52:59] "GET /products/No_Image_Available.jpg HTTP/1.1" 500 132675
 
 
 
