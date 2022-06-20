@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Border */
 .border-red {
-    border: 1px solid var(--netflix-red);
+    border: 2px solid var(--netflix-red);
 }
 
 .border-white {
@@ -224,6 +224,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* End of Links */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 999999999;
+}
+
+.cart-toast-div {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
 /* Footer */
 .social-link i {
