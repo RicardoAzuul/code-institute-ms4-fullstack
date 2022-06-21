@@ -9,7 +9,7 @@
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-  box-shadow: 3px 3px 3px 3px var(--netflix-red);
+  border: thick double var(--netflix-red);
 }
 
 .StripeElement--webkit-autofill {
