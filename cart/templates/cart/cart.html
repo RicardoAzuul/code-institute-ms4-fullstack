@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cart_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -63,7 +64,7 @@
                     </div>
                     <div class="col-12">
                         <hr class="bg-white">
-                        <p class="text-right">Subtotal: ${{ item.product.price }}</p>
+                        <p class="text-right">Subtotal: ${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         <hr class="bg-white">
                     </div>
                 {% endfor %}
@@ -79,7 +80,7 @@
                     <br>  
                     <p>Total <span class="float-right">${{ grand_total|floatformat:2 }}</span></p>
                     <a href="{% url 'products' %}" class="btn btn-white rounded-0"><i class="fas fa-caret-left"></i> Back to Shop</a>
-                    <a href="" class="btn btn-red rounded-0 float-right"><i class="fas fa-wallet"></i> Secure Checkout</a>
+                    <a href="{% url 'checkout' %}" class="btn btn-red rounded-0 float-right"><i class="fas fa-wallet"></i> Secure Checkout</a>
                 </div>
             {% else %}
                 <div class="col-12 col-md-6 mb-3">
