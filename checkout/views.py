@@ -16,6 +16,7 @@ import stripe
 import json
 
 # Create your views here.
+# !BUG app doesn't get past cache_checkout_data.
 @require_POST
 def cache_checkout_data(request):
     try:
