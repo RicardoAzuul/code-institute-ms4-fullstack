@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 from products.models import Product
-from profiles.models import UserProfile
+#from profiles.models import UserProfile
 from .models import Order, OrderLineItem
 
 
@@ -19,6 +19,22 @@ class stripeWebHookHandler:
     def handle_event(self, event):
         """
         Handle a generic/unknown/unexpected webhook event
+        """
+        return HttpResponse(
+            content=f'Unhandled webhook received: {event["type"]}',
+            status=200)
+    
+    def handle_payment_intent_succeeded(self, event):
+        """
+        Handle the payment_intent.succeeded webhook from Stripe
+        """
+        return HttpResponse(
+            content=f'Webhook received: {event["type"]}',
+            status=200)
+
+    def handle_payment_intent_payment_failed(self, event):
+        """
+        Handle the payment_intent.payment_failed webhook from Stripe
         """
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
