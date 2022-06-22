@@ -37,7 +37,7 @@ select option {
 
 select:invalid,
 select option[value=""] {
-  color: var(--netflix-white) !important;
+  color: #aab7c4 !important;
 }
 
 #loading-overlay {
