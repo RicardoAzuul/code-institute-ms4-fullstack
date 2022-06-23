@@ -28,12 +28,16 @@
                         <hr class="bg-white">
                         <div class="row">
                             <div class="col-6">
-                                <!-- IMPROVE: Add a link to the product via the image -->
+                                <!-- IMPROVE: Pass data to the a href to indicate where we came from, so we can go back to the cart via a button -->
                                 {% if item.product.image %}
-                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded-0">
+                                    <a href="{% url 'product_detail' item.product.id %}" target="_blank">
+                                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded-0">
+                                    </a>
                                 {% else %}
-                                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="{{ item.product.name }}" class="img-fluid rounded-0">
-                                {% endif %}                                      
+                                    <a href="{% url 'product_detail' item.product.id %}" target="_blank">
+                                        <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="{{ item.product.name }}" class="img-fluid rounded-0">
+                                    </a>
+                                {% endif %}
                             </div>
                             <div class="col-6">
                                 <h5>{{ item.product.name }}</h5>
