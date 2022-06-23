@@ -73,7 +73,7 @@
                     </div>
                 {% endfor %}
                 <div class="col-12 col-md-8 offset-md-2 border-white py-3">
-                    <h3>Summary ([] items)</h3>
+                    <h3>Summary ({{ product_count }} {% if product_count > 1 %}items{% else %}item{% endif %})</h3>
                     <p class="font-weight-light">Subtotal <span class="float-right">${{ total|floatformat:2 }}</span></p>
                     <p class="font-weight-light">Shipping <span class="float-right">${{ delivery|floatformat:2 }}</span></p>
                     {% if free_delivery_difference > 0 %}

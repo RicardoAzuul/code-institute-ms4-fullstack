@@ -26,14 +26,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-lg-8">
+        <div class="col-12 col-lg-4 offset-lg-2">
             {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
-                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0 mb-3">
+                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0 mb-3 ">
                 </a>
             {% else %}
                 <a href="">
-                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
                     <img src="/media/No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0 mb-3">
                 </a>
             {% endif %}
@@ -63,6 +62,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 ">
                     <!-- Dropdown taken from Bootstrap: https://getbootstrap.com/docs/4.6/components/dropdowns/ -->
+                    <!-- IMPROVE -->
                     <form action="">
                         <div class="form-group">
                             <label for="chooseSize">Choose Size</label>
@@ -146,16 +146,12 @@
                     <p>Related Products</p>
                 </div>
                 <div class="col">
-                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0">
-                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0">
+                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0">
+                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0">
                 </div>
                 <div class="col">
-                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-                    <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0">
-                    <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-                    <!-- <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0"> -->
+                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0">
+                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0">
                 </div>
             </div>
         </div>
@@ -171,23 +167,19 @@
         </div>
         <div class="col-lg-3">
             <!-- IMPROVE: Remove mb-3, add to container instead -->
-            <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
+            <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
         </div>
         <div class="col-lg-3">
             <!-- IMPROVE: Remove mb-3, add to container instead -->
-            <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
+            <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0 mb-3">
         </div>
         <div class="col-lg-3">
             <!-- IMPROVE: Remove mb-3, add to container instead -->
-            <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
-            <img src="/media/No_Image_Available.jpg" alt="" class="img-fluid rounded-0">
+            <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0">
         </div>
         <div class="col-lg-3">
-            <!-- !BUG: this should be {{ MEDIA_URL }} but this doesn't work -->
             <!-- IMPROVE: Remove mb-3, add to container instead -->
-            <!-- <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0"> -->
+            <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="" class="img-fluid rounded-0">
         </div>
     </div>
 </div>
