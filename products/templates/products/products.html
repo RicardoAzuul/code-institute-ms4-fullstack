@@ -93,7 +93,12 @@
                                             <p class="small float-right text-muted m-0"><i class="fas fa-star"></i> {{ product.rating }}/5</p>
                                         {% else %}
                                             <p class="float-right text-muted m-0">No Rating</p>
-                                        {% endif %} 
+                                        {% endif %}
+                                        {% if request.user.is_superuser %}
+                                            <br>
+                                            <a href="{% url 'edit_product' product.id %}" class="small link-black">Edit</a>
+                                            <a href="{% url 'delete_product' product.id %}" class="small link-black float-right">Delete</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>

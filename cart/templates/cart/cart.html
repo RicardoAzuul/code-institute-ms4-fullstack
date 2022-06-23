@@ -28,8 +28,12 @@
                         <hr class="bg-white">
                         <div class="row">
                             <div class="col-6">
-                                <!-- TODO: Add a link to the product via the image -->  
-                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded-0">
+                                <!-- TODO: Add a link to the product via the image -->
+                                {% if item.product.image %}
+                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded-0">
+                                {% else %}
+                                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="{{ item.product.name }}" class="img-fluid rounded-0">
+                                {% endif %}                                      
                             </div>
                             <div class="col-6">
                                 <h5>{{ item.product.name }}</h5>

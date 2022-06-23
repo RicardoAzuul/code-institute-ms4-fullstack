@@ -47,6 +47,14 @@
                 <div class="col-4">
                     <h3 class="float-right">${{ product.price }}</h3>
                 </div>
+                {% if request.user.is_superuser %}
+                    <div class="col-8">
+                        <a href="{% url 'edit_product' product.id %}" class="link-white">Edit</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="{% url 'delete_product' product.id %}" class="link-white float-right">Delete</a>
+                    </div>                
+                {% endif %} 
             </div>
             <div class="row">
                 <div class="col text-center">
@@ -121,12 +129,12 @@
                         <p class="float-right"><i class="fas fa-star"></i> {{ product.rating }}/5</p>
                     {% else %}
                         <p class="float-right">No Rating</p>
-                    {% endif %}
+                    {% endif %} 
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <p>{{ product.description }}</p>  
+                    <p>{{ product.description }}</p>
                 </div>
             </div>
             <div class="row d-flex d-lg-none">
