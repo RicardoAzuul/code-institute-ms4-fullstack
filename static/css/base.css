@@ -188,6 +188,16 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--netflix-black) !important;
     text-decoration: underline;
 }
+
+#button-to-top {
+    padding: 5px 3px;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    display: none;
+    z-index: 9999999999999;
+}
+
 /* End of Buttons */
 
 /* Links */
@@ -234,6 +244,11 @@ h1, h2, h3, h4, h5, h6 {
 .link-black:hover,
 .link-black:active,
 .link-black:focus {
+    color: var(--netflix-black) !important;
+}
+
+.alert-primary {
+    background-color: var(--netflix-white) !important;
     color: var(--netflix-black) !important;
 }
 
