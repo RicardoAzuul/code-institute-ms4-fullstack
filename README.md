@@ -356,6 +356,7 @@ Test that when a product is created with a sku longer than 254 characters, we ge
 
 3. [Python Validation](http://pep8online.com/)
 <!-- TODO: Python Validation:  -->
+python3 -m flake8 # outputs linting problems to the console
 
 
 
@@ -453,3 +454,32 @@ No image available file: https://commons.wikimedia.org/wiki/File:No_Image_Availa
 - I would also like to thank to all the people at [Code Institute](https://codeinstitute.net/) for providing the Diploma in Software Development course and giving me the tools and guidance to create this app.
 - And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, [Django](https://www.djangoproject.com/) for their documentation and [Stackoverflow](https://stackoverflow.com/) for helping with finding solutions to coding problems.
 - My wife, Elizabeth Lane, for supporting me during this coding course.
+
+# TODOS
+<!-- TODO: database migrations -->
+Set the database url hardcoded in the project so you can do migrations.
+
+
+<!-- TODO: media migrations -->
+Upload by hand using Upload functionality of AWS
+
+<!-- TODO: Fix bug with product details -->
+
+<!-- TODO:Rename project: https://stackoverflow.com/questions/18293875/easy-way-to-rename-a-django-project -->
+
+<!-- TODO:Add to Heroku: see https://dashboard.heroku.com/apps/ricardoazuul-boutique-ado/settings --> 
+STRIPE_PUBLIC_KEY
+STRIPE_SECRET_KEY
+STRIPE_WH_SECRET
+
+<!-- TODO:Go through Stripe and copy settings --> 
+
+
+
+<!-- TODO: Datasets: --> 
+https://www.kaggle.com/datasets/edoardoba/fitness-exercises-with-animations
+https://www.kaggle.com/datasets/afsaja/workout-supplements-and-nutrition-products
+
+<!-- TODO: Django newsletter: --> 
+
+<!-- TODO: Add margin-bottom to containers?: --> 

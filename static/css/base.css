@@ -74,6 +74,10 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid var(--netflix-white);
 }
 
+.border-bottom-white {
+    border-bottom: 1px solid var(--netflix-white);
+}
+
 .border-black {
     border: 1px solid var(--netflix-black);
 }
@@ -274,7 +278,6 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #dc3545;
     border-radius: 0;
 }
-
 /* Footer */
 .social-link i {
     width: 40px;
