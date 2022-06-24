@@ -13,7 +13,8 @@ class Product_Category(models.Model):
     def __str__(self):
         return self.name
 
-    def get_friendly_name(self):
+    @property
+    def friendly_name2(self):
         return self.friendly_name
 
 

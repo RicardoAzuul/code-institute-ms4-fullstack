@@ -10,7 +10,7 @@ from profiles.models import UserProfile
 from .models import Order, OrderLineItem
 
 
-class stripeWebHookHandler:
+class StripeWebHook_Handler:
     """Handle Stripe webhooks"""
 
     def __init__(self, request):
@@ -46,7 +46,7 @@ class stripeWebHookHandler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
-        payment_intent_id = intent.id
+        pid = intent.id
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
 
@@ -89,7 +89,7 @@ class stripeWebHookHandler:
                     county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
                     original_cart=cart,
-                    stripe_pid=payment_intent_id,
+                    stripe_pid=pid,
                 )
                 order_exists = True
                 break
@@ -117,7 +117,7 @@ class stripeWebHookHandler:
                     street_address2=shipping_details.address.line2,
                     county=shipping_details.address.state,
                     original_cart=cart,
-                    stripe_pid=payment_intent_id,
+                    stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(cart).items():
                     product = Product.objects.get(id=item_id)

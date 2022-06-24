@@ -363,7 +363,16 @@ python3 -m flake8 # outputs linting problems to the console
 
 ### Notable Bugs
 <!-- TODO: Notable Bugs -->
-
+One big bug was with the checkout process not working: after clicking on the checkout button, the loading spinner would appear, but would never progress to the checkout success page.
+To try and fix this bug I took the following steps:
+1. Check if all the Stripe keys and secrets were correct
+1. Check if the environment vars were using the correct Stripe information.
+1. Go through the code for the checkout app: changed some variable names and fixed a typo where a dash was used instead of an underscore.
+1. urls.py was missing the / after checkout_success/<order_number>, fixed that.
+1. After changing variable names, I had to do another database migration.
+2. After this, when trying to checkout, I could an error about adding a float and decimal together: fixed this as well.
+3. It still wasn't working, and I found out the problem was within stripe_elements.js: when I changed code in there, checkout would work.
+4. I was about to start working through the code using console.log when I noticed an error in the log: it couldn't parse $post. This piece of code should have been $.post, missing a period. After adding that, the code worked.
 
 
 ### Problems

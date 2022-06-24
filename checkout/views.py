@@ -1,10 +1,7 @@
-from importlib.metadata import metadata
-from locale import currency
 from django.shortcuts import redirect, render, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.conf import settings
 
-from checkout.forms import OrderForm
 from django.contrib import messages
 
 from .forms import OrderForm
@@ -22,12 +19,12 @@ import json
 @require_POST
 def cache_checkout_data(request):
     try:
-        payment_intent_id =  request.POST.get('client_secret').split('_secret')[0]
+        pid =  request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        stripe.PaymentIntent.modify(payment_intent_id, metadata={
+        stripe.PaymentIntent.modify(pid, metadata={
             'cart': json.dumps(request.session.get('cart', {})),
             'save_info': request.POST.get('save_info'),
-            'username': request.user
+            'username': request.user,
         })
         return HttpResponse(status=200)
     except Exception as e:
@@ -35,7 +32,6 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 def checkout(request):
-    # Test
     stripe_public_key = settings.STRIPE_PUBLIC_KEY 
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -56,9 +52,9 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
-            payment_intent_id = request.POST.get('client_secret').split('_secret')[0]
-            order.stripe_pid = payment_intent_id
-            order.original_bag = json.dumps(cart)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_cart = json.dumps(cart)
             order.save()
             for item_id, item_data in cart.items():
                 try:
@@ -125,7 +121,7 @@ def checkout(request):
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
-        'client-secret': intent.client_secret,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
