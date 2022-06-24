@@ -12,7 +12,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--netflix-black);
     background-image: url('/media/woman_doing_exercise.jpg');
-    background-position: 500%;
+    background-position: 80%;
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--netflix-white);
@@ -34,7 +34,7 @@ body {
 }
 
 .minheight {
-    min-height: 60vh;
+    min-height: 70vh;
 }
 
 .jumbotron {

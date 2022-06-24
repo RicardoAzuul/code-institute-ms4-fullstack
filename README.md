@@ -1,4 +1,4 @@
-# Simply Fit
+# Git Fit
 <!-- TODO: Add description of project: -->
 Git Fit is a fitness subscription application.
 
@@ -13,7 +13,7 @@ Must haves for this project:
 
 Nice to have: 
 <!-- TODO: nice to haves -->
-- Functionality that allows subscribers to update fellow members on their successes --> a forum?
+- Functionality that allows subscribers to update fellow members on their successes, perhaps a forum?
 - User proﬁles containing information that map to nutrition and/or exercise plans
 - Product reviews
 - A subscription-based payment model: on offer are 3 subscriptions, based on duration of subscription. Subscriptions get you access to workouts, nutrition plans, the community and a discount on the shop
@@ -250,7 +250,9 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 
 ### Features Left to Implement
 <!-- TODO: Features left to implement -->
-
+- newsletter functionality, where visitors can sign up for the newsletter.
+- giving customers the ability to choose the size of an item, where applicable
+- related products functionality, showing related products when looking at product details
 
 
 ---
