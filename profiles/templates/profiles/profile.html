@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 mb-5">
                 <h3>Default Delivery Information</h3>
                 <form id="update-profile-form" action="{% url 'profile' %}" method="POST">
                     {% csrf_token %}
@@ -33,10 +33,10 @@
                     <button class="btn btn-red rounded-0">Update Information</button>
                 </form>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 mb-5">
                 <h3>Order History</h3>
                 <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless">
+                    <table class="table table-sm table-borderless text-white">
                         <thead>
                             <tr>
                                 <th>Order Number</th>
@@ -49,10 +49,10 @@
                             {% for order in orders %}
                             <tr>
                                 <td>
-                                    <a href="{% url 'order_history' order.order_number %}"
+                                    <a href="{% url 'order_history' order.order_number %}" class="link-red"
                                         title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}</a>
                                 </td>
-                                <td>{{ order.date }}</td>
+                                <td class="small">{{ order.date }}</td>
                                 <td>
                                     <ul class="list-unstyled">
                                         {% for item in order.lineitems.all %}
@@ -71,6 +71,7 @@
                 </div>
             </div>
         </div>
+    </div>
 {% endblock content %}
 
 {% block postloadjs %}
