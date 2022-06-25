@@ -7,12 +7,10 @@ The user's goal is to join a fitness community and purchase exercise plans and m
 The site owner's goal is to build an active community around the product based on subscription and individual payments models, and to sell: exercise plans, nutrition plans, nutrition products and exercise products
 
 Must haves for this project:
-<!-- TODO: Must  haves -->
-- Authentication and authorisation mechanism for subscribers and administrators
+- Authentication and authorisation mechanism for users and administrators
 - Individual item purchase capability
 
 Nice to have: 
-<!-- TODO: nice to haves -->
 - Functionality that allows subscribers to update fellow members on their successes, perhaps a forum?
 - User proﬁles containing information that map to nutrition and/or exercise plans
 - Product reviews
@@ -104,7 +102,7 @@ Jesse James Garret's 5 planes of UX design were used to design the site. I start
 
 #### Strategy Plane
 <!-- TODO: Write about Strategy Plane -->
-The main goal for visitors is to find and join a fitness community they might like. This means giving visitors a feeling about the kind of community they are joining. Git Fit sets out to be no nonsense and active, aggressive almost. Git Fit is for goal-oriented people.
+The main goal for visitors is to find and join a fitness community they might like. This means giving visitors a feeling about the kind of community they are joining. Git Fit sets out to be no nonsense and active, aggressive almost. Git Fit is for goal-oriented people. For now it is just a shop, but by adding subscriptions, we can create a community, with exercise and nutrition plans and a way for subscribers to connect.
 So the main page has to have a call to action in the form of a button to take you to subscriptions. We also need a hero image that exemplifies the image of Git Fit.
 Some brief text to indicate what subscribers gain access to would also be good.
 We also indicate that there is a shop and account option by having options for these in the navbar.
@@ -114,30 +112,27 @@ We also indicate that there is a shop and account option by having options for t
 #### Scope Plane
 
 The functional specifications of the site:
-<!-- TODO: Write about Scope Plane -->
 - a responsive website with mobile first design.
 - a main page with a hero image, call to action (join our community) and navbar options indicating the shop and user account functionalities.
 - a navbar which changes if a user is logged in or not.
 - a footer.
 - a profile page, only visible when logged in. Here members can set up their shopping details, but also personal details which map to exercise and nutrition plans.
-- a page where subscribers can share their progress with other subscribers.
+- a page where subscribers can share their progress with other subscribers - not yet implemented.
 - a shop page, containing items for sale. Signed in users have the option to review items.
-- a page containing exercises, only available for subscribers.
-- a page containing nutrition plans, only available for subscribers.
+- a page containing exercises, only available for subscribers - not yet implemented.
+- a page containing nutrition plans, only available for subscribers - not yet implemented.
 
 
 Content requirements:
-<!-- TODO: Write about content requirements -->
 - a hero image evoking the idea of "active, aggressive, simplicity".
-- some exercise and nutrition plans.
+- some exercise and nutrition plans - not yet implemented.
 - some items for sale, with example reviews.
-- some example subscribers.
+- some example subscribers - not yet implemented.
 
 
 ---
 
 #### Structure Plane
-<!-- TODO: Structure Plane -->
 All pages should have the same navigation bar and footer:
 
 - the navigation bar contains links to all the pages, as well as the home page. The content does change depending on login status.
@@ -148,10 +143,9 @@ All pages should have the same navigation bar and footer:
 - a call to action to subscribe.
 
 <ins>The Profile Page</ins>
-- inspiring imagery.
 - a form where subscribers can fill in their shopping details, but also personal details which map to exercise or nutrition.
 
-<ins>The Community Page</ins>
+<ins>The Community Page - not yet implemented</ins>
 - inspiring imagery.
 - a form where subscribers can share their progress with fellow subscribers.
 
@@ -160,29 +154,35 @@ All pages should have the same navigation bar and footer:
 - the option to review items for signed in users.
 - search functionality to search for items
 
-<ins>The Exercise Page</ins>
+<ins>The Exercise Page - not yet implemented</ins>
 - exercises for the subscriber to choose from.
 - search functionality to search for exercises.
 
-<ins>The Nutrition Page</ins>
+<ins>The Nutrition Page - not yet implemented</ins>
 - several nutrition plans to choose from.
 
 
 ---
 
 #### Skeleton Plane
-<!-- TODO: Skeleton Plane -->
-The navigation bar will be added to the top of every page and will always remain visible. There are links to all pages on this navbar, though some links are only visible if the user has logged in. On the left will be the logo, which when clicked upon will take the visitor back to the home page.
+The navigation bar will be added to the top of every page and will always remain visible. It contains a home link on the left side, a search bar for searching in the store in the middle, an icon containing the account options - register and login, and if you're logged in a link to your profile, and if you're a superuser, a link to add a product.
+There is also a cart icon, which updates when you add items to your cart and which links to the cart page, from where you can do checkouts.
+There are links to all pages on this navbar, though some links are only visible if the user has logged in. On the left will be the logo, which when clicked upon will take the visitor back to the home page.
+The home page has a hero image, a call to action to register, a button to take you to the shop and some testimonials and features of subscriptions.
+The shopping page has cards for the products. You can choose different categories of products, sort by price and category and rating and click on a product to get more information and add it to your cart.
+The cart page keeps track of the items you've added to your cart, giving you a running total and the option to check out.
+The checkout page allows you to fill in shipping details and a creditcard for payment.
+The checkout success page contains a summary of your order and order details.
+The profile page contains a form to fill in delivery details or show prefilled delivery details, and has links to the order history for registered users.
 
-The active page is indicated with a different font color for the navigation item. When hovering over navigation items, the navigation item will be highlighted.
-
-At the bottom of every page will be the same footer.
+At the bottom of every page will be the same footer, containing the brand, icons of various payment methods and links to various social media sites.
 
 ---
 
 #### Surface Plane
-<!-- TODO: Surface Plane -->
-We use icons from Font Awesome to add some visual interest but also visual cues to indicate functionality. We use Bootstrap as a basis, but add our own style. Git Fit needs to look no-nonsense, active, almost aggressive. We 
+We use icons from Font Awesome to add some visual interest but also visual cues to indicate functionality. We use Bootstrap as a basis, but add our own style. Git Fit needs to look no-nonsense, active, almost aggressive. To create a bold, active, almost aggressive look we use a black, red and white color scheme, similar to Netflix.
+The header font is also chosen to reflect this: a slab serif font that is bold and in your face.
+Buttons have no rounded borders, to create a sleek design. Red is mainly used as an accent color, to draw attention to elements on the page.
 
 
 <ins>Wireframes</ins>
@@ -233,7 +233,6 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 ## Features
 
 ### Existing Features
-<!-- TODO: Existing features -->
 - the home page, with hero image, call to action, testimonials and features
 - the navbar, with links to login and register hidden behind the "My Account" menu, a search bar, and various shopping links. Also has an icon representing the visitor's shopping cart, which updates when items are added.
 - a shop page, where the user can sort products by for instance price and category, and can select products from different categories. 
@@ -272,19 +271,18 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 - [Balsamiq](https://balsamiq.com): for creating wireframes of all the pages.
 - [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/): for quick debugging and testing of HTML and CSS. 
 - [Am I Responsive?](https://ui.dev/amiresponsive): to generate screenshots of the site at various viewpoints, indicating responsiveness.
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse): an automated tool in Chrome DevTools that audits for performance, accessibility, progressive web apps, SEO and more.
 - [Prettier VS Code plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): a code formatter that helps with code formatting, which is good for creating a consistent style.
 - [Markdown link check](https://github.com/marketplace/actions/markdown-link-check): an automated tool to check for dead links in Markdown files.
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree): to keep track of todos, bugs, things that need to be fixed and such in my project.
 - [autopep8](https://pypi.org/project/autopep8/): a Python package that helps with formatting Python code according to PEP8.
 - [dbdiagram.io](https://dbdiagram.io): an online tool to create a relational database schema.
 - [Chromedriver](https://sites.google.com/chromium.org/driver/): for doing Chrome browser based automated tests
+- [Django](https://www.djangoproject.com/): the Python framework that helped to quickly bootstrap the project.
 
 
 ---
 
 ## Responsiveness of Pages
-<!-- TODO: Responsiveness of Pages -->
 These screenshots indicate the responsiveness of the pages on various screens. Pages that require a login are not included, as are checkout and checkout success, as these require adding items to the cart.
 - [Home](readme-assets/media/home_responsive.png)
 - [Products](readme-assets/media/products_responsive.png)
@@ -312,6 +310,7 @@ test_get_signup (home.tests.TestViews) ... ok`
 Selenium tests for the home app:
 
 The products app: products\test.py
+
 `python manage.py test products.tests --verbosity=2
 test_all_blank_product (products.tests.TestModels)
 Test that when a product is created with no info, we get a ValidationError ... ok
@@ -346,8 +345,6 @@ Test that when a product is created with a sku longer than 254 characters, we ge
 
 
 <ins>Code validation:</ins> 
-<!-- TODO: Code validation: -->
-
 1. [HTML validation](https://validator.w3.org/nu/)
 <!-- TODO: HTML validation -->
 
@@ -367,10 +364,9 @@ python3 -m flake8 # outputs linting problems to the console
 
 
 ### Notable Bugs
-<!-- TODO: Notable Bugs -->
 One big bug was with the checkout process not working: after clicking on the checkout button, the loading spinner would appear, but would never progress to the checkout success page.
 To try and fix this bug I took the following steps:
-1. Check if all the Stripe keys and secrets were correct
+1. Check if all the Stripe keys and secrets were correct.
 1. Check if the environment vars were using the correct Stripe information.
 1. Go through the code for the checkout app: changed some variable names and fixed a typo where a dash was used instead of an underscore.
 1. urls.py was missing the / after checkout_success/<order_number>, fixed that.
@@ -381,13 +377,11 @@ To try and fix this bug I took the following steps:
 
 
 ### Problems
-<!-- TODO: Problems -->
 The only real problem was the implementation of Stripe. Getting this up and running took a lot of time, which meant I did not have time to implement other features. Right now, the project is a basic webshop, but not yet the community it sets out to be.
 
 ---
 
 ## Deployment
-<!-- TODO: Deployment -->
 The project has been deployed to Heroku, with static files hosted on AWS S3. If  you want to do the same:
 1. Fork the repository to your own GitHub: https://github.com/RicardoAzuul/code-institute-ms4-fullstack.
 1. Log in to Heroku (www.heroku.com) - or register if you don't have an account yet.
@@ -396,27 +390,30 @@ The project has been deployed to Heroku, with static files hosted on AWS S3. If 
 1. On the page for your new Heroku app, go to Deployment method and choose "Connect to GitHub". If you haven't connected your GitHub account to Heroku yet, you will be able to do so now.
 1. Choose the forked repository of this project from your own GitHub account.
 1. If you want, you can enable Automatic Deploys here: whenever you perform a push to your GitHub repository, the Heroku app can redeploy. Otherwise you can deploy manually. Heroku will use the PROCFILE and requirements.txt to install dependencies and build the app.
-1. You will also have to set some Config Vars in the Settings section of your Heroku app. These are the Config Vars:
-   1. AWS_ACCESS_KEY_ID: the id for your AWS S3 container
-   1. AWS_SECRET_ACCESS_KEY: the secret key for your AWS S3 container
-   1. DATABASE_URL: the url to the postgress database on Heroku
-   1. EMAIL_HOST_PASS: the password or application key for the email account you use for emailing. This project uses Gmail
-   1. EMAIL_HOST_USER: the emailadress
-   1. SECRET_KEY: the Django secret key
-   1. STRIPE_PUBLIC_KEY: Your Stripe public key
-   1. STRIPE_SECRET_KEY: Your stripe secret key
-   1. STRIPE_WH_SECRET: Your Stripe webhook secret
-   1. USE_AWS: Set to true to tell Django to use the other AWS settings
+1. You will also have to create an S3 bucket on AWS, one that is publicly accessible.
+1. And you will have to set up a Stripe webhook, using a public key, secret key and webhook secret. 
+3. You will also have to set some Config Vars in the Settings section of your Heroku app. These are the Config Vars:
+   - AWS_ACCESS_KEY_ID: the id for your AWS S3 container
+   - AWS_SECRET_ACCESS_KEY: the secret key for your AWS S3 container
+   - DATABASE_URL: the url to the postgress database on Heroku
+   - EMAIL_HOST_PASS: the password or application key for the email account you use for emailing. This project uses Gmail
+   - EMAIL_HOST_USER: the emailadress
+   - SECRET_KEY: the Django secret key
+   - STRIPE_PUBLIC_KEY: Your Stripe public key
+   - STRIPE_SECRET_KEY: Your stripe secret key
+   - STRIPE_WH_SECRET: Your Stripe webhook secret
+   - USE_AWS: Set to true to tell Django to use the other AWS settings
 
 
 ### Run locally
-<!-- TODO: Run locally -->
 If you want to run the project locally:
 1. First, fork the repository to your own GitHub: https://github.com/RicardoAzuul/code-institute-ms4-fullstack.
 1. Clone the forked repository to your own machine.
 1. Install Python 3.8.12, as this is what the project was built with: https://www.python.org/downloads/release/python-3812/ (though if you're running Windows, install 3.8.10)
 1. From the terminal, run the below to install required modules:
-  ``` pip3 install -r requirements.txt ```
+
+   ``` pip3 install -r requirements.txt ```
+
 1. You will need to create an env.py file for running the app locally. The content of this file:
 ```
 import os
@@ -441,25 +438,22 @@ os.environ.setdefault("STRIPE_WH_SECRET ", "[stripe webhook key]")
 ## Credits
 
 ### Inspiration
-<!-- TODO: Inspiration -->
 The color scheme, black with accents of white and red, was inspired by Netflix: it looks bold. For the font I did some research into bold aggressive font types and came upon slab serif fonts. I picked Kelly Slab, as it was available via Google Fonts.
 Initially I wanted to do something different and go for warm and friendly, but I did not like the color scheme and couldn't find suitable images.
 
 
 
 ### Content
-<!-- TODO: Add where I got the Content -->
 Product images, prices, descriptions and ratings: www.decathon.nl
 
 
 ### Media
-<!-- TODO: Add where I got the Media -->
 Main page: https://www.pexels.com/photo/woman-doing-exercise-414029/
 No image available file: https://commons.wikimedia.org/wiki/File:No_Image_Available.jpg
 
 
 ### Code
-<!-- TODO: Add where I got the Code, if using other people's code -->
+I've used some code from Bootstrap, as indicated by comments, and I found a nice way to do a back to top button that only appeared when scrolling down and slowly scrolls you back on Stackoverflow, as indicated by comments.
 
 
 ### Acknowledgements
@@ -468,32 +462,3 @@ No image available file: https://commons.wikimedia.org/wiki/File:No_Image_Availa
 - I would also like to thank to all the people at [Code Institute](https://codeinstitute.net/) for providing the Diploma in Software Development course and giving me the tools and guidance to create this app.
 - And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, [Django](https://www.djangoproject.com/) for their documentation and [Stackoverflow](https://stackoverflow.com/) for helping with finding solutions to coding problems.
 - My wife, Elizabeth Lane, for supporting me during this coding course.
-
-# TODOS
-<!-- TODO: database migrations -->
-Set the database url hardcoded in the project so you can do migrations.
-
-
-<!-- TODO: media migrations -->
-Upload by hand using Upload functionality of AWS
-
-<!-- TODO: Fix bug with product details -->
-
-<!-- TODO:Rename project: https://stackoverflow.com/questions/18293875/easy-way-to-rename-a-django-project -->
-
-<!-- TODO:Add to Heroku: see https://dashboard.heroku.com/apps/ricardoazuul-boutique-ado/settings --> 
-STRIPE_PUBLIC_KEY
-STRIPE_SECRET_KEY
-STRIPE_WH_SECRET
-
-<!-- TODO:Go through Stripe and copy settings --> 
-
-
-
-<!-- TODO: Datasets: --> 
-https://www.kaggle.com/datasets/edoardoba/fitness-exercises-with-animations
-https://www.kaggle.com/datasets/afsaja/workout-supplements-and-nutrition-products
-
-<!-- TODO: Django newsletter: --> 
-
-<!-- TODO: Add margin-bottom to containers?: --> 
