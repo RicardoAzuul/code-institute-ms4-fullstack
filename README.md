@@ -26,6 +26,7 @@ To see the site in action, visit [Git Fit](https://code-institute-ms4.herokuapp.
  
 ### User stories
 <!-- TODO: add screenshots -->
+Not all User Stories have been completed. Basic shopping functionality has been completed, but user stories that are about the community side of the project have yet to be resolved.
   
 **Viewing and Navigation**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
@@ -33,7 +34,7 @@ To see the site in action, visit [Git Fit](https://code-institute-ms4.herokuapp.
 | :heavy_check_mark: | 1 | Shopper | View a list of products | Select some to purchase | |
 | :heavy_check_mark: | 2 | Shopper | View individual product details | Identify the price, description, product rating, product image and available sizes | |
 | :heavy_check_mark: | 3 | Shopper | Quickly identify deals, clearance items and special offers | Take advantage of special savings on products I'd like to purchase | |
-|            | 4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much | |
+| :heavy_check_mark: | 4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much | |
 | :heavy_check_mark: | 5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like | |
 
 **Registration and User Accounts**
@@ -43,8 +44,8 @@ To see the site in action, visit [Git Fit](https://code-institute-ms4.herokuapp.
 | :heavy_check_mark: | 7 | Site User | Easily login or logout | Access my personal account information | |
 | :heavy_check_mark: | 8 | Site User | Easily recover my password in case I forget it | Recover access to my account | |
 | :heavy_check_mark: | 9 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful | |
-|           | 10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information | |
-|           | 11 | Site User | Easily review products | Help my fellow fitness community members to find the right product | |
+| :heavy_check_mark: | 10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information | |
+| - [ ] | 11 | Site User | Easily review products | Help my fellow fitness community members to find the right product | |
 
 **Sorting and Searching**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
