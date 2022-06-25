@@ -67,7 +67,6 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show product details """
-    print("product_id", product_id)
 
     # Get a product model, identified by primary key = product_id
     product = get_object_or_404(Product, pk=product_id)

@@ -1,4 +1,5 @@
 import uuid
+from decimal import Decimal
 
 from django.db import models
 from django.db.models import Sum
@@ -30,7 +31,7 @@ class Order(models.Model):
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default='')
-    stripe_payment_id = models.CharField(max_length=254, null=False, blank=False, default='') 
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='') 
 
     def _generate_order_number(self):
         """ Generate a random, unique order number using UUID """
@@ -44,7 +45,7 @@ class Order(models.Model):
             self.delivery_cost = settings.STANDARD_DELIVERY_COST
         else:
             self.delivery_cost = 0
-        self.grand_total = self.order_total + self.delivery_cost
+        self.grand_total = self.order_total + Decimal(self.delivery_cost)
         self.save()
 
     def save(self, *args, **kwargs):

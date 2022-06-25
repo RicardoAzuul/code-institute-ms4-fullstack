@@ -1,9 +1,8 @@
 from decimal import InvalidOperation
-from this import d
 from unicodedata import category
 from django.forms import ValidationError
 from django.test import TestCase
-from psycopg2 import IntegrityError
+from django.db import IntegrityError
 from .models import Product_Category, Product
 
 # Create your tests here.
@@ -46,7 +45,10 @@ class TestModels(TestCase):
 
     def test_blank_price_product(self):
         """Test that when a product is created with no price, we get a ValidationError"""
-        # TODO: Write test
+        # TODO: Write test        
+        with self.assertRaises(IntegrityError):
+            product = Product.objects.create(name='test_product', description='test description')
+            product.full_clean()
 
     def test_blank_fields_product(self):
         """Test that when a product is created, category, sku, rating, image_url and image are blank"""
@@ -90,98 +92,105 @@ class TestModels(TestCase):
             product.full_clean()
 
 
-    def test_delete_category_of_product(self):
-        """Test that when a category is deleted for a product, the category field on the product is emptied"""
-        # TODO: Write test
+
 
 
 class TestViews(TestCase):
-    @classmethod
-    def setUpTestData(cls):
+
+    def setUp(self):
         # TODO: Figure out how to create categories for use with test data
-        cls.category = Product_Category.objects.create(name="weights")
-        cls.category = Product_Category.objects.create(name="clothes")
-        cls.category = Product_Category.objects.create(name="shoes")
-        cls.category = Product_Category.objects.create(name="accessories")
-        cls.category = Product_Category.objects.create(name="protein_powders")
-        cls.category = Product_Category.objects.create(name="protein_bars")
-        cls.category = Product_Category.objects.create(name="sports_drinks")
-        cls.category = Product_Category.objects.create(name="vitamins")
-        cls.category = Product_Category.objects.create(name="new_arrivals")
-        cls.category = Product_Category.objects.create(name="deals")
-        cls.category = Product_Category.objects.create(name="clearance")
+        # self.category = Product_Category.objects.create(name="weights")
+        # self.category = Product_Category.objects.create(name="clothes")
+        # self.category = Product_Category.objects.create(name="shoes")
+        # self.category = Product_Category.objects.create(name="accessories")
+        # self.category = Product_Category.objects.create(name="protein_powders")
+        # self.category = Product_Category.objects.create(name="protein_bars")
+        # self.category = Product_Category.objects.create(name="sports_drinks")
+        # self.category = Product_Category.objects.create(name="vitamins")
+        # self.category = Product_Category.objects.create(name="new_arrivals")
+        # self.category = Product_Category.objects.create(name="deals")
+        self.category_clearance = Product_Category.objects.create(name="clearance")
 
-        cls.product = Product.objects.create(
-            name="Test Product",
-            description="Ideal",
-            price=1.99,
-            image="No_Image_Available.jpg")
+        # self.product = Product.objects.create(
+        #     name="Test Product",
+        #     description="Ideal",
+        #     price=1.99,
+        #     image="No_Image_Available.jpg")
 
-        cls.product = Product.objects.create(
-            name="Test Weight",
-            description="Weight",
-            price=1.99,
-            category="weights")
+        # self.product = Product.objects.create(
+        #     name="Test Weight",
+        #     description="Weight",
+        #     price=1.99,
+        #     category="weights")
 
-        cls.product = Product.objects.create(
-            name="Test Clothes",
-            description="Clothes",
-            price=1.99,
-            category="clothes")
+        # self.product = Product.objects.create(
+        #     name="Test Clothes",
+        #     description="Clothes",
+        #     price=1.99,
+        #     category="clothes")
 
-        cls.product = Product.objects.create(
-            name="Test Shoes",
-            description="Shoes",
-            price=1.99,
-            category="shoes")
+        # self.product = Product.objects.create(
+        #     name="Test Shoes",
+        #     description="Shoes",
+        #     price=1.99,
+        #     category="shoes")
 
-        cls.product = Product.objects.create(
-            name="Test Accessories",
-            description="Accessories",
-            price=1.99,
-            category="accessories")
+        # self.product = Product.objects.create(
+        #     name="Test Accessories",
+        #     description="Accessories",
+        #     price=1.99,
+        #     category="accessories")
 
-        cls.product = Product.objects.create(
-            name="Test Protein Powders",
-            description="Protein Powders",
-            price=1.99,
-            category="protein_powders")
+        # self.product = Product.objects.create(
+        #     name="Test Protein Powders",
+        #     description="Protein Powders",
+        #     price=1.99,
+        #     category="protein_powders")
             
-        cls.product = Product.objects.create(
-            name="Test Protein Bars",
-            description="Protein Bars",
-            price=1.99,
-            category="protein_bars")
+        # self.product = Product.objects.create(
+        #     name="Test Protein Bars",
+        #     description="Protein Bars",
+        #     price=1.99,
+        #     category="protein_bars")
                         
-        cls.product = Product.objects.create(
-            name="Test Sports Drinks",
-            description="Sports Drinks",
-            price=1.99,
-            category="sports_drinks")
+        # self.product = Product.objects.create(
+        #     name="Test Sports Drinks",
+        #     description="Sports Drinks",
+        #     price=1.99,
+        #     category="sports_drinks")
                                     
-        cls.product = Product.objects.create(
-            name="Test Vitamins",
-            description="Vitamins",
-            price=1.99,
-            category="vitamins")
+        # self.product = Product.objects.create(
+        #     name="Test Vitamins",
+        #     description="Vitamins",
+        #     price=1.99,
+        #     category="vitamins")
                                                 
-        cls.product = Product.objects.create(
-            name="Test New Arrivals",
-            description="New Arrivals",
-            price=1.99,
-            category="new_arrivals")
+        # self.product = Product.objects.create(
+        #     name="Test New Arrivals",
+        #     description="New Arrivals",
+        #     price=1.99,
+        #     category="new_arrivals")
                                                             
-        cls.product = Product.objects.create(
-            name="Test Deals",
-            description="Deals",
-            price=1.99,
-            category="deals")
+        # self.product = Product.objects.create(
+        #     name="Test Deals",
+        #     description="Deals",
+        #     price=1.99,
+        #     category="deals")
                                                                         
-        cls.product = Product.objects.create(
+        self.product_clearance = Product.objects.create(
             name="Test Clearance",
             description="Clearance",
             price=1.99,
-            category="clearance")
+            category=self.category_clearance)
+
+    def test_delete_category_of_product(self):
+        """Test that when a category is deleted for a product, the category field on the product is emptied"""
+        # TODO: Write test
+        self.category_clearance.delete()
+        with self.assertRaises(Product_Category.DoesNotExist):
+            Product_Category.objects.get(name="clearance")
+        product = Product.objects.get(name="Test Clearance")
+        self.assertIsNone(product.category)
 
     def test_get_products(self):
         """ Test that when browsing to /products/ we get a 200 code, products/products.html template, context and that we have 1 product """

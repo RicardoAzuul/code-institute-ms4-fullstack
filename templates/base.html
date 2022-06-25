@@ -36,14 +36,14 @@
 
     {% block extra_js %}{% endblock extra_js %}
 
-    <title>Fit Family {% block extra_title %}{% endblock extra_title %}</title>
+    <title>Git Fit {% block extra_title %}{% endblock extra_title %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top bg-black">
+    <header class="container-fluid fixed-top bg-black border-bottom-white">
       <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="text-white">
-            <h1 class="my-0"><i class="fas fa-bolt fa-lg"></i> Git Fit</h1>
+            <h1 class="my-0 text-uppercase"><i class="fas fa-bolt fa-lg"></i> Git Fit</h1>
           </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -88,7 +88,7 @@
               <a class="{% if grand_total %}font-weight-bold{% else %}{% endif %} text-white"
                 href="{% url 'view_cart' %}">
                 <div class="text-center">
-                  <!-- TODO: add badge to indicate number of items in cart -->
+                  <!-- IMPROVE: add badge to indicate number of items in cart -->
                   <div><i class="fas fa-shopping-cart fa-lg"></i></div>
                   <p class="my-0">
                     {% if grand_total %}
@@ -107,18 +107,11 @@
         <nav class="navbar navbar-expand-lg navbar-light w-100">
           <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#main-nav"
             aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <!-- TODO: change position of hamburger menu -->
             <i class="fas fa-bars fa-lg"></i>
           </button>
           {% include 'includes/mobile-top-header.html' %}
           {% include 'includes/main-nav.html' %} 
         </nav>
-      </div>
-      <div id="delivery-banner" class="row text-center bg-white">
-        <div class="col">
-            <!-- TODO: Hide on most pages -->
-          <h4 class="my-1">Order over ${{ free_delivery_threshold }} for free delivery!</h4>
-        </div>
       </div>
     </header>
 
@@ -150,24 +143,11 @@
     <footer class="container-fluid bg-black text-white border-top-white">
       <div class="row pt-3">
         <div class="col-6">
-          <h4><i class="fas fa-bolt"></i> Git Fit</h4>
+          <h4 class="text-uppercase"><i class="fas fa-bolt"></i> Git Fit</h4>
           <i class="fab fa-cc-visa fa-lg"></i>
           <i class="fab fa-cc-mastercard fa-lg"></i>
           <i class="fab fa-cc-amex fa-lg"></i>
           <i class="fab fa-ideal fa-lg"></i>
-        </div>
-        <div class="col-6">
-          <ul class="list-unstyled">
-            <li>
-              <a href="#" class="text-white">About Us</a>
-            </li>
-            <li>
-              <a href="#" class="text-white">Return Policy</a>
-            </li>
-            <li>              
-              <a href="#" class="text-white">Privacy Policy</a>
-            </li>
-          </ul>
         </div>
         <div class="col-6">
           <p class="d-none d-sm-block">Git Fit on social media</p>
@@ -196,23 +176,6 @@
             rel="external noopener noreferrer">
             <i class="fab fa-pinterest fa-lg" aria-hidden="true" title="Open Pinterest in new tab"></i>
                      </a>
-        </div>
-        <div class="col-6">
-          <form>
-              <div class="form-group">
-                  <label for="email" class="d-none d-sm-block">Join the newsletter</label>
-                  <label for="email" class="d-block d-sm-none">Newsletter</label>
-                  <div class="input-group">
-                    <input class="form-control rounded-0 text-center" type="email" name="email" id="email"
-                    placeholder="Email Address" required>
-                    <!-- TODO: Hide button on small screens (below 576 px) and display Subscribe button underneath -->
-                    <div class="input-group-append">
-                      <button class="form-control btn btn-red rounded-0" type="submit">Subscribe
-                      </button>
-                    </div>
-                  </div>
-              </div>
-          </form>
         </div>
       </div>
     </footer>

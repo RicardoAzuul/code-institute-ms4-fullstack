@@ -1,4 +1,4 @@
-# Simply Fit
+# Git Fit
 <!-- TODO: Add description of project: -->
 Git Fit is a fitness subscription application.
 
@@ -13,7 +13,7 @@ Must haves for this project:
 
 Nice to have: 
 <!-- TODO: nice to haves -->
-- Functionality that allows subscribers to update fellow members on their successes --> a forum?
+- Functionality that allows subscribers to update fellow members on their successes, perhaps a forum?
 - User proﬁles containing information that map to nutrition and/or exercise plans
 - Product reviews
 - A subscription-based payment model: on offer are 3 subscriptions, based on duration of subscription. Subscriptions get you access to workouts, nutrition plans, the community and a discount on the shop
@@ -250,7 +250,9 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 
 ### Features Left to Implement
 <!-- TODO: Features left to implement -->
-
+- newsletter functionality, where visitors can sign up for the newsletter.
+- giving customers the ability to choose the size of an item, where applicable
+- related products functionality, showing related products when looking at product details
 
 
 ---
@@ -356,13 +358,23 @@ Test that when a product is created with a sku longer than 254 characters, we ge
 
 3. [Python Validation](http://pep8online.com/)
 <!-- TODO: Python Validation:  -->
+python3 -m flake8 # outputs linting problems to the console
 
 
 
 
 ### Notable Bugs
 <!-- TODO: Notable Bugs -->
-
+One big bug was with the checkout process not working: after clicking on the checkout button, the loading spinner would appear, but would never progress to the checkout success page.
+To try and fix this bug I took the following steps:
+1. Check if all the Stripe keys and secrets were correct
+1. Check if the environment vars were using the correct Stripe information.
+1. Go through the code for the checkout app: changed some variable names and fixed a typo where a dash was used instead of an underscore.
+1. urls.py was missing the / after checkout_success/<order_number>, fixed that.
+1. After changing variable names, I had to do another database migration.
+2. After this, when trying to checkout, I could an error about adding a float and decimal together: fixed this as well.
+3. It still wasn't working, and I found out the problem was within stripe_elements.js: when I changed code in there, checkout would work.
+4. I was about to start working through the code using console.log when I noticed an error in the log: it couldn't parse $post. This piece of code should have been $.post, missing a period. After adding that, the code worked.
 
 
 ### Problems
@@ -453,3 +465,32 @@ No image available file: https://commons.wikimedia.org/wiki/File:No_Image_Availa
 - I would also like to thank to all the people at [Code Institute](https://codeinstitute.net/) for providing the Diploma in Software Development course and giving me the tools and guidance to create this app.
 - And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, [Django](https://www.djangoproject.com/) for their documentation and [Stackoverflow](https://stackoverflow.com/) for helping with finding solutions to coding problems.
 - My wife, Elizabeth Lane, for supporting me during this coding course.
+
+# TODOS
+<!-- TODO: database migrations -->
+Set the database url hardcoded in the project so you can do migrations.
+
+
+<!-- TODO: media migrations -->
+Upload by hand using Upload functionality of AWS
+
+<!-- TODO: Fix bug with product details -->
+
+<!-- TODO:Rename project: https://stackoverflow.com/questions/18293875/easy-way-to-rename-a-django-project -->
+
+<!-- TODO:Add to Heroku: see https://dashboard.heroku.com/apps/ricardoazuul-boutique-ado/settings --> 
+STRIPE_PUBLIC_KEY
+STRIPE_SECRET_KEY
+STRIPE_WH_SECRET
+
+<!-- TODO:Go through Stripe and copy settings --> 
+
+
+
+<!-- TODO: Datasets: --> 
+https://www.kaggle.com/datasets/edoardoba/fitness-exercises-with-animations
+https://www.kaggle.com/datasets/afsaja/workout-supplements-and-nutrition-products
+
+<!-- TODO: Django newsletter: --> 
+
+<!-- TODO: Add margin-bottom to containers?: --> 

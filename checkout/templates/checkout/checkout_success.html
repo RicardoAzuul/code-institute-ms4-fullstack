@@ -1,128 +1,107 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
-{% load cart_tools %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
-{% endblock extra_css %}
-
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">
-            </div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
-{% endblock page_header %}
+</div>
+{% endblock %}
 
 {% block content %}
-<!-- Todo: Add check to see if from_profile. If so, render button to go back to profile -->
-    <div class="overlay"></div>
-    <div class="container mb-3">
-        <div class="row">
-            <div class="col">
-                <h2 class="text-center">Thank you, {{ order.full_name }}</h2>
-                <hr class="bg-white">
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 order-md-last">
+            <h3>Order Summary</h3>
+            <div class="row">
+                <div class="col">
+                    {% for item in order.lineitems.all %}
+                        <p class="my-0">{{ item.product.name }}: <span class="float-right">{{ item.quantity }} @ {{ item.product.price }} each</span></p>
+                    {% endfor %} 
+                </div>       
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="my-0 mt-3">Order Total: <span class="float-right">${{ order.order_total }}</span></p>
+                    <p class="my-0">Delivery: <span class="float-right">${{ order.delivery_cost }}</span></p>
+                    <p class="my-0">Grand Total: <span class="float-right font-weight-bold">${{ order.grand_total }}</span></p>
+                </div>
+                <div class="col-12">
+                    <hr class="bg-white">
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-5 order-md-last">
-                <h3>Order Summary ({{ product_count }})</h3>
-                <div class="row">
-                    <div class="col-6 offset-3">
-                        <p class="mb-3 font-weight-bold">Item</p>
-                    </div>
-                    <div class="col-3 text-right font-weight-bold">
-                        <p class="mb-3">Subtotal</p>
-                    </div>
-                </div>
-                {% for item in cart_items %}
-                    <div class="row">
-                        <div class="col-3 mb-1">
-                            <a href="{% url 'product_detail' item.product.id %}">
-                                {% if item.product.image %}
-                                    <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="w-100">
-                                {% else %}
-                                    <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" class="w-100">
-                                {% endif %}
-                            </a>
-                        </div>
-                        <div class="col-6">
-                            <p class="my-0">{{ item.quantity }} x {{ item.product.name }}</p>
-                        </div>
-                        <div class="col-3 text-right">
-                            <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
-                        </div>
-                        <div class="col-12">
-                            <hr class="bg-white">
-                        </div>
-                    </div>
-                {% endfor %}
-                <div class="row">
-                    <div class="col-12">
-                        <p class="my-0">Order Total: <span class="float-right">${{ total | floatformat:2 }}</span></p>
-                        <p class="my-0">Delivery: <span class="float-right">${{ delivery | floatformat:2 }}</span></p>
-                        <p class="my-0">Grand Total: <span class="float-right font-weight-bold">${{ grand_total | floatformat:2 }}</span></p>
-                    </div>
-                    <div class="col-12">
-                        <hr class="bg-white">
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-5">
-                <h3>Customer Information</h3>
-                <p><small>Already have an account? <a href="{% url 'account_login' %}" class="link-red">Login</a></small></p>                
-                <form action="{% url 'checkout' %}" method="post" id="payment-form">
-                    {% csrf_token %}
-                    <fieldset class="rounded-0">
-                        {{ order_form.email | as_crispy_field }}
-                    </fieldset>
-                    <fieldset class="rounded-0 mb-3">
-                        <legend class="fieldset-label small">Shipping Address</legend>
-                        {{ order_form.full_name | as_crispy_field }}
-                        {{ order_form.phone_number | as_crispy_field }}
-                        {{ order_form.street_address1 | as_crispy_field }}
-                        {{ order_form.street_address2 | as_crispy_field }}
-                        {{ order_form.town_or_city | as_crispy_field }}
-                        {{ order_form.county | as_crispy_field }}
-                        {{ order_form.postcode | as_crispy_field }}
-                        {{ order_form.country | as_crispy_field }}
-                        <div class="form-check form-check-inline">
-                            {% if user.is_authenticated %}
-                                <label for="id-save-info" class="form-check-label">Save this delivery information to my profile</label>
-                                <input type="checkbox" class="form-check-input ml-2 mr-0" id="id-save-info" name="save-info" checked>
-                            {% else %}
-                                <label for="id-save-info" class="form-check-label">
-                                    <a href="{% url 'account_signup' %}" class="link-red">Create an account</a>
-                                </label>
-                            {% endif %}
-                        </div>
-                    </fieldset>
-                    <fieldset class="">
-                        <legend class="fieldset-label">Payment</legend>
-                        <!-- A Stripe card element will go here -->
-                        <div class="mb-3" id="card-element"></div>
-                        <!-- Used to display form errors -->
-                        <div class="mb-3 text-red" id="card-errors" role="alert"></div>
-                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                    </fieldset>
-                    <a href="{% url 'view_cart' %}" class="link-white-hover-white">
-                        <i class="fas fa-caret-left"></i> Return to Cart
-                    </a>
-                    <div class="submit-button text-center">
-                        <p class="small text-red mt-3">
-                            <span class="icon">
-                                <i class="fas fa-exclamation-circle"></i>
-                            </span>
-                            <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
-                        </p>
-                        <button id="submit-button" class="btn btn-red rounded-0 w-75">Complete Order
-                                <i class="fas fa-wallet"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
+        <div class="col-12 col-md-6 col-lg-8">
+            <p>Order {{ order.order_number }}</p>
+            <h2 class="mb-4"><i class="fas fa-check fa-lg"></i> Thank You, {{ order.full_name }}</h2>
+            <p class="text-white">Your order information is below. A confirmation email will be sent to
+                <strong>{{ order.email }}</strong>.</p>
+            <hr class="bg-white">
         </div>
     </div>
-{% endblock content %}
+    <div class="row">
+        <div class="col-12 col-lg-4">
+            <h3>Customer Info</h3>                             
+            <p class="mb-0">{{ order.date }}</p>
+            <p class="mb-5">{{ order.phone_number }}</p>
+        </div>
+        <div class="col-12 col-lg-4">
+            <h4>Shipping Address</h4>
+            <p class="mb-0">{{ order.full_name }}</p>
+            <p class="mb-0">{{ order.street_address1 }}</p>
+            {% if order.street_address2 %}
+                <p class="mb-0">{{ order.street_address2 }}</p>
+            {% endif %}
+            {% if order.county %}
+                <p class="mb-0">{{ order.county }}</p>
+            {% endif %}
+            <p class="mb-0">{{ order.town_or_city }}</p>
+            {% if order.postcode %}
+                <p class="mb-0">{{ order.postcode }}</p>
+            {% endif %}
+            <p class="mb-5">Country Code: {{ order.country }}</p>
+        </div>
+        <div class="col-12 col-lg-6">
+            <h4>Billing Address</h4>
+            <p class="mb-0">{{ order.full_name }}</p>
+            <p class="mb-0">{{ order.street_address1 }}</p>
+            {% if order.street_address2 %}
+                <p class="mb-0">{{ order.street_address2 }}</p>
+            {% endif %}
+            {% if order.county %}
+                <p class="mb-0">{{ order.county }}</p>
+            {% endif %}
+            <p class="mb-0">{{ order.town_or_city }}</p>
+            {% if order.postcode %}
+                <p class="mb-0">{{ order.postcode }}</p>
+            {% endif %}
+            <p class="mb-5">Country Code: {{ order.country }}</p>
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-12">
+            {% if from_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-red rounded-0 my-2">
+                    <span class="mr-2">
+                        <i class="fas fa-caret-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Profile</span>
+                </a>
+            {% else %}
+                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-red rounded-0 my-2">
+                    <span class="mr-2">
+                        <i class="fas fa-dollar-sign"></i>
+                    </span>
+                    <span class="text-uppercase">Seen the lastest deals?</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
