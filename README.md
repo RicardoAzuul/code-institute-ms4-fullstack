@@ -45,7 +45,7 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 | :heavy_check_mark: | 8 | Site User | Easily recover my password in case I forget it | Recover access to my account | |
 | :heavy_check_mark: | 9 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful | |
 | :heavy_check_mark: | 10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information | |
-| - [ ] | 11 | Site User | Easily review products | Help my fellow fitness community members to find the right product | |
+| [ ] | 11 | Site User | Easily review products | Help my fellow fitness community members to find the right product | |
 
 **Sorting and Searching**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
