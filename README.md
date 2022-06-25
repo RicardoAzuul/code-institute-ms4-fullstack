@@ -29,18 +29,18 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 **Viewing and Navigation**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| ✔️ | 1 | Shopper | View a list of products | Select some to purchase | |
-| ✔️ | 2 | Shopper | View individual product details | Identify the price, description, product rating, product image and available sizes | |
-| ✔️ | 3 | Shopper | Quickly identify deals, clearance items and special offers | Take advantage of special savings on products I'd like to purchase | |
-| ✔️ | 4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much | |
-| ✔️ | 5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like | |
+| ✔️ | 1 | Shopper | View a list of products | Select some to purchase | [Products](readme-assets/media/user_story_1.png) |
+| ✔️ | 2 | Shopper | View individual product details | Identify the price, description, product rating, product image and available sizes | [Product details](readme-assets/media/user_story_2.png) |
+| ✔️ | 3 | Shopper | Quickly identify deals, clearance items and special offers | Take advantage of special savings on products I'd like to purchase | [Deals](readme-assets/media/user_story_3.png) |
+| ✔️ | 4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much | [Cart](readme-assets/media/user_story_4.png) |
+| ✔️ | 5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like | [Responsiveness](## Responsiveness of Pages)  |
 
 **Registration and User Accounts**
 | Done | User Story ID | As A/An   | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------  | :----------------------:| :---------------:| :---------:|
-| ✔️ | 6 | Site User | Easily register for an account | Have a personal account and be able to view my profile | |
-| ✔️ | 7 | Site User | Easily login or logout | Access my personal account information | |
-| ✔️ | 8 | Site User | Easily recover my password in case I forget it | Recover access to my account | |
+| ✔️ | 6 | Site User | Easily register for an account | Have a personal account and be able to view my profile | [Register](readme-assets/media/user_story_6.png) |
+| ✔️ | 7 | Site User | Easily login or logout | Access my personal account information | [Login](readme-assets/media/user_story_7.png) |
+| ✔️ | 8 | Site User | Easily recover my password in case I forget it | Recover access to my account | [Recover](readme-assets/media/user_story_8.png) |
 | ✔️ | 9 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful | |
 | ✔️ | 10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information | |
 | ❌ | 11 | Site User | Easily review products | Help my fellow fitness community members to find the right product | |
@@ -48,20 +48,20 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 **Sorting and Searching**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| :✔️ | 12 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products | |
-| ✔️ | 13 | Shopper | Sort a specific category of product | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name | |
-| ✔️ | 14 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "exercise equipment" | |
-| ✔️ | 15 | Shopper | Search for a product by name or description | Find a specific product I'd like to purchase | |
-| ✔️ | 16 | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available | |
+| :✔️ | 12 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products | [Sort](readme-assets/media/user_story_12.png) |
+| ✔️ | 13 | Shopper | Sort a specific category of product | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name | [Category](readme-assets/media/user_story_13.png) |
+| ✔️ | 14 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "exercise equipment" | [Multi Category](readme-assets/media/user_story_14.png) |
+| ✔️ | 15 | Shopper | Search for a product by name or description | Find a specific product I'd like to purchase | [Search](readme-assets/media/user_story_15.png) |
+| ✔️ | 16 | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available | Screenshot for user story 15 works here too |
 
 **Purchasing and Checkout**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| ✔️ | 17 | Shopper | Easily select the quantity of a product when purchasing it | Ensure I don't accidentally select the wrong quantity | |
-| ✔️ | 18 | Shopper | View items in my cart to be purchased | Identify the total cost of my purchase and all items I will receive | |
-| ✔️ | 19 | Shopper | Adjust the quantity of individual items in my cart | Easily make changes to my purchase before checkout | |
-| ✔️ | 20 | Shopper | Easily enter my payment information  | Check out quickly and with no hassle | |
-| ✔️ | 21 | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase | |
+| ✔️ | 17 | Shopper | Easily select the quantity of a product when purchasing it | Ensure I don't accidentally select the wrong quantity | [Screenshot user story 2](readme-assets/media/user_story_2.png) |
+| ✔️ | 18 | Shopper | View items in my cart to be purchased | Identify the total cost of my purchase and all items I will receive | [Screenshot user story 4](readme-assets/media/user_story_4.png) |
+| ✔️ | 19 | Shopper | Adjust the quantity of individual items in my cart | Easily make changes to my purchase before checkout | Same as above |
+| ✔️ | 20 | Shopper | Easily enter my payment information  | Check out quickly and with no hassle | [Checkout](readme-assets/media/user_story_20.png) |
+| ✔️ | 21 | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase | Same as above |
 | ✔️ | 22 | Shopper | View an order confirmation after checkout | Verify that I haven't made any mistakes | |
 | ✔️ | 23 | Shopper | Receive an email confirmation after checkout | Keep the confirmation of what I've purchased for my records | |
 
