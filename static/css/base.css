@@ -12,7 +12,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--netflix-black);
     background-image: url('/media/woman_doing_exercise.jpg');
-    background-position: 80%;
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--netflix-white);
@@ -320,37 +319,29 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Media queries */
 @media (max-width: 1200px) {
-    body {
-        background-position: 500%;
-    }
-
     .container {
         max-width: 80%;
     }
 }
 
 @media (max-width: 1080px) {
-    body {
-        background-position: 100%;
-    }
-
     .container {
         max-width: 80%;
     }
 }
 
 @media (max-width: 992px) {
-    body {
-        background-position: 60%;
-    }
-
     .fixed-top {
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         z-index: 1030;
-    } 
+    }
+
+    body {
+        background-position: 50%;
+    }
 
     .header-container {
         padding-top: 120px;
@@ -358,14 +349,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 576px) {
-    body {
-        background-position: 58%;
-    }
-
     .header-container {
         padding-top: 120px;
     }
 
+    body {
+        background-position: 50%;
+    }
 
     .call-to-action-header {
         font-size: 1.8rem;
@@ -382,6 +372,6 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 575px) {
     body {
-        background-position: 58%;
+        background-position: 50%;
     }
 }
