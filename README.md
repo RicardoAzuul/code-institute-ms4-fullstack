@@ -31,70 +31,70 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 **Viewing and Navigation**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| :heavy_check_mark: | 1 | Shopper | View a list of products | Select some to purchase | |
-| :heavy_check_mark: | 2 | Shopper | View individual product details | Identify the price, description, product rating, product image and available sizes | |
-| :heavy_check_mark: | 3 | Shopper | Quickly identify deals, clearance items and special offers | Take advantage of special savings on products I'd like to purchase | |
-| :heavy_check_mark: | 4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much | |
-| :heavy_check_mark: | 5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like | |
+| ✔️ | 1 | Shopper | View a list of products | Select some to purchase | |
+| ✔️ | 2 | Shopper | View individual product details | Identify the price, description, product rating, product image and available sizes | |
+| ✔️ | 3 | Shopper | Quickly identify deals, clearance items and special offers | Take advantage of special savings on products I'd like to purchase | |
+| ✔️ | 4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much | |
+| ✔️ | 5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like | |
 
 **Registration and User Accounts**
 | Done | User Story ID | As A/An   | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------  | :----------------------:| :---------------:| :---------:|
-| :heavy_check_mark: | 6 | Site User | Easily register for an account | Have a personal account and be able to view my profile | |
-| :heavy_check_mark: | 7 | Site User | Easily login or logout | Access my personal account information | |
-| :heavy_check_mark: | 8 | Site User | Easily recover my password in case I forget it | Recover access to my account | |
-| :heavy_check_mark: | 9 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful | |
-| :heavy_check_mark: | 10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information | |
-| [ ] | 11 | Site User | Easily review products | Help my fellow fitness community members to find the right product | |
+| ✔️ | 6 | Site User | Easily register for an account | Have a personal account and be able to view my profile | |
+| ✔️ | 7 | Site User | Easily login or logout | Access my personal account information | |
+| ✔️ | 8 | Site User | Easily recover my password in case I forget it | Recover access to my account | |
+| ✔️ | 9 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful | |
+| ✔️ | 10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information | |
+| ❌ | 11 | Site User | Easily review products | Help my fellow fitness community members to find the right product | |
 
 **Sorting and Searching**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| :heavy_check_mark: | 12 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products | |
-| :heavy_check_mark: | 13 | Shopper | Sort a specific category of product | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name | |
-| :heavy_check_mark: | 14 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "exercise equipment" | |
-| :heavy_check_mark: | 15 | Shopper | Search for a product by name or description | Find a specific product I'd like to purchase | |
-| :heavy_check_mark: | 16 | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available | |
+| :✔️ | 12 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products | |
+| ✔️ | 13 | Shopper | Sort a specific category of product | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name | |
+| ✔️ | 14 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "exercise equipment" | |
+| ✔️ | 15 | Shopper | Search for a product by name or description | Find a specific product I'd like to purchase | |
+| ✔️ | 16 | Shopper | Easily see what I've searched for and the number of results | Quickly decide whether the product I want is available | |
 
 **Purchasing and Checkout**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-|           | 17 | Shopper | Easily select the size and quantity of a product when purchasing it | Ensure I don't accidentally select the wrong product, quantity or size | |
-|           | 18 | Shopper | View items in my bag to be purchased | Identify the total cost of my purchase and all items I will receive | |
-|           | 19 | Shopper | Adjust the quantity of individual items in my bag | Easily make changes to my purchase before checkout | |
-|           | 20 | Shopper | Easily enter my payment information  | Check out quickly and with no hassle | |
-|           | 21 | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase | |
-|           | 22 | Shopper | View an order confirmation after checkout | Verify that I haven't made any mistakes | |
-|           | 23 | Shopper | Receiv an email confirmation after checkout | Keep the confirmation of what I've purchased for my records | |
+| ✔️ | 17 | Shopper | Easily select the quantity of a product when purchasing it | Ensure I don't accidentally select the wrong quantity | |
+| ✔️ | 18 | Shopper | View items in my cart to be purchased | Identify the total cost of my purchase and all items I will receive | |
+| ✔️ | 19 | Shopper | Adjust the quantity of individual items in my cart | Easily make changes to my purchase before checkout | |
+| ✔️ | 20 | Shopper | Easily enter my payment information  | Check out quickly and with no hassle | |
+| ✔️ | 21 | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase | |
+| ✔️ | 22 | Shopper | View an order confirmation after checkout | Verify that I haven't made any mistakes | |
+| ✔️ | 23 | Shopper | Receive an email confirmation after checkout | Keep the confirmation of what I've purchased for my records | |
 
 **Community**
 | Done | User Story ID | As A/An      | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:-------------|:-----------------------:| :---------------:| :---------:|
-|           | 24 | Subscriber   | Post updates about my progress | Update my fellow members on my successes | |
-|           | 25 | Subscriber   | Add and edit information on my profile pertaining to my fitness goals | Receive nutrition and exercise plans tailored to my fitness goals | |
-|           | 26 | Subscriber   | Easily find other subscribers | Feel part of a community and get motivated | |
-|           | 27 | Subscriber   | Easily see updates from other subscribers | Feel part of a community and get motivated | |
-|           | 28 | Subscriber   | Easily find information about the subscriptions available | Make an informed choice about my subscription | |
-|           | 29 | Subscriber   | Easily find workouts | Work on my fitness goal | |
-|           | 30 | Subscriber   | Easily find nutrition plans | Work on my fitness goal | |
+| ❌ | 24 | Subscriber   | Post updates about my progress | Update my fellow members on my successes | |
+| ❌ | 25 | Subscriber   | Add and edit information on my profile pertaining to my fitness goals | Receive nutrition and exercise plans tailored to my fitness goals | |
+| ❌ | 26 | Subscriber   | Easily find other subscribers | Feel part of a community and get motivated | |
+| ❌ | 27 | Subscriber   | Easily see updates from other subscribers | Feel part of a community and get motivated | |
+| ❌ | 28 | Subscriber   | Easily find information about the subscriptions available | Make an informed choice about my subscription | |
+| ❌ | 29 | Subscriber   | Easily find workouts | Work on my fitness goal | |
+| ❌ | 30 | Subscriber   | Easily find nutrition plans | Work on my fitness goal | |
 
 
 **Admin and Store Management**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-|           | 31 | Store Owner/Admin | Easily login or logout | Access the admin interface of the webapp | |
-|           | 32 | Store Owner/Admin | Add a product | Add new items to my store | |
-|           | 33 | Store Owner/Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria | |
-|           | 34 | Store Owner/Admin | Delete a product | Remove items that are no longer for sale | |
-|           | 35 | Store Owner/Admin | Add a subscription | Add new subscription options | |
-|           | 36 | Store Owner/Admin | Edit/update a subscription | Change subscription prices, descriptions, linked workouts and nutrition | |
-|           | 37 | Store Owner/Admin | Delete a subscription | Remove subscriptions that are no longer available | |
-|           | 38 | Store Owner/Admin | Add a workout | Add new workouts | |
-|           | 39 | Store Owner/Admin | Edit/update a workout | Change workouts | |
-|           | 40 | Store Owner/Admin | Delete a workout | Remove workouts that are no longer promoted | |
-|           | 41 | Store Owner/Admin | Add a nutrition plan | Add new nutrition plans | |
-|           | 42 | Store Owner/Admin | Edit/update a nutrition plan | Change nutrition plan | |
-|           | 43 | Store Owner/Admin | Delete a nutrition plan | Remove nutrition plans that are no longer promoted | |
+| ✔️ | 31 | Store Owner/Admin | Easily login or logout | Access the admin interface of the webapp | |
+| ✔️ | 32 | Store Owner/Admin | Add a product | Add new items to my store | |
+| ✔️ | 33 | Store Owner/Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria | |
+| ✔️ | 34 | Store Owner/Admin | Delete a product | Remove items that are no longer for sale | |
+| ❌ | 35 | Store Owner/Admin | Add a subscription | Add new subscription options | |
+| ❌ | 36 | Store Owner/Admin | Edit/update a subscription | Change subscription prices, descriptions, linked workouts and nutrition | |
+| ❌ | 37 | Store Owner/Admin | Delete a subscription | Remove subscriptions that are no longer available | |
+| ❌ | 38 | Store Owner/Admin | Add a workout | Add new workouts | |
+| ❌ | 39 | Store Owner/Admin | Edit/update a workout | Change workouts | |
+| ❌ | 40 | Store Owner/Admin | Delete a workout | Remove workouts that are no longer promoted | |
+| ❌ | 41 | Store Owner/Admin | Add a nutrition plan | Add new nutrition plans | |
+| ❌ | 42 | Store Owner/Admin | Edit/update a nutrition plan | Change nutrition plan | |
+| ❌ | 43 | Store Owner/Admin | Delete a nutrition plan | Remove nutrition plans that are no longer promoted | |
 
 ---
 
@@ -182,10 +182,11 @@ At the bottom of every page will be the same footer.
 
 #### Surface Plane
 <!-- TODO: Surface Plane -->
-We use icons from Font Awesome to add some visual interest but also visual cues to indicate functionality. We use Bootstrap as a basis, but add our own style. Fit Family needs to be warm and familiar.
+We use icons from Font Awesome to add some visual interest but also visual cues to indicate functionality. We use Bootstrap as a basis, but add our own style. Git Fit needs to look no-nonsense, active, almost aggressive. We 
 
 
 <ins>Wireframes</ins>
+These wireframes were used as a basis to design the actual webapp. However, sometimes the actual project deviates from the wireframes, because the endresult looked better or was more easily achieved than the wireframe.
 - [Home](readme-assets/media/home.png)
 - [Home - tablet](readme-assets/media/home_tablet_view.png)
 - [Home - mobile](readme-assets/media/home_mobile_view.png)
@@ -209,15 +210,6 @@ We use icons from Font Awesome to add some visual interest but also visual cues 
 - [Profile](readme-assets/media/profile.png)
 - [Profile - tablet](readme-assets/media/profile_tablet_view.png)
 - [Profile - mobile](readme-assets/media/profile_mobile_view.png)
-- [Community](readme-assets/media/community.png)
-- [Community - tablet](readme-assets/media/community_tablet_view.png)
-- [Community - mobile](readme-assets/media/community_mobile_view.png)
-- [Exercises](readme-assets/media/exercises.png)
-- [Exercises - tablet](readme-assets/media/exercises_tablet_view.png)
-- [Exercises - mobile](readme-assets/media/exercises_mobile_view.png)
-- [Nutrition](readme-assets/media/nutrition.png)
-- [Nutrition - tablet](readme-assets/media/nutrition_tablet_view.png)
-- [Nutrition - mobile](readme-assets/media/nutrition_mobile_view.png)
 - [Login](readme-assets/media/login.png)
 - [Login - tablet](readme-assets/media/login_tablet_view.png)
 - [Login - mobile](readme-assets/media/login_mobile_view.png)
@@ -243,8 +235,13 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 ### Existing Features
 <!-- TODO: Existing features -->
 - the home page, with hero image, call to action, testimonials and features
-- the navbar, with links to login and register, a search bar, and various shopping links
-
+- the navbar, with links to login and register hidden behind the "My Account" menu, a search bar, and various shopping links. Also has an icon representing the visitor's shopping cart, which updates when items are added.
+- a shop page, where the user can sort products by for instance price and category, and can select products from different categories. 
+- each product on the shop page links to a product details page, where users can find out more about the product, select a quantity and add it to their cart. This page also contains a breadcrumb and a category label, to allow quick navigation in the shop.
+- a cart, accessible by clicking on the cart icon, where users can see the products in their cart, adjust the quantity, inspect a product's details and actually purchase the items
+- a checkout page, where users can fill in their shipping details and creditcard information
+- a checkout success page, where users get a confirmation of their order
+- various user authentication pages: login, register and forget password. Also includes a profile page, where users can view and edit their delivery details and see their orders.
 
 
 ---
@@ -254,14 +251,14 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 - newsletter functionality, where visitors can sign up for the newsletter.
 - giving customers the ability to choose the size of an item, where applicable
 - related products functionality, showing related products when looking at product details
+- subscriptions: giving registered users the option to sign up for, change and end their subscriptions
+- the subscriber section, where subscribed users get access to exercises, nutrition plans and the community
 
 
 ---
 
 ## Technologies Used 
 <!-- TODO: Technologies Used  -->
-
-
 - [HTML5](https://en.wikipedia.org/wiki/HTML5): provides the content and structure of the site.
 - [CSS3](https://en.wikipedia.org/wiki/CSS3): provides the formatting, layout and styling of the site.
 - [Bootstrap](https://getbootstrap.com/): provides a popular CSS framework with many custom elements to quickly bootstrap a site. I've used Bootstrap 4.6.
@@ -281,7 +278,6 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree): to keep track of todos, bugs, things that need to be fixed and such in my project.
 - [autopep8](https://pypi.org/project/autopep8/): a Python package that helps with formatting Python code according to PEP8.
 - [dbdiagram.io](https://dbdiagram.io): an online tool to create a relational database schema.
-- [UI Avatars](https://ui-avatars.com/): an API for creating avatars based on the initials of a username.
 - [Chromedriver](https://sites.google.com/chromium.org/driver/): for doing Chrome browser based automated tests
 
 
@@ -289,8 +285,14 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 
 ## Responsiveness of Pages
 <!-- TODO: Responsiveness of Pages -->
-These screenshots indicate the responsiveness of the pages on various screens. Pages that require a login are not included.
-
+These screenshots indicate the responsiveness of the pages on various screens. Pages that require a login are not included, as are checkout and checkout success, as these require adding items to the cart.
+- [Home](readme-assets/media/home_responsive.png)
+- [Products](readme-assets/media/products_responsive.png)
+- [Product Details](readme-assets/media/product_details_responsive.png)
+- [Cart](readme-assets/media/cart_responsive.png)
+- [Login](readme-assets/media/login_responsive.png)
+- [Register](readme-assets/media/register_responsive.png)
+- [Forgot Password](readme-assets/media/forgot_password_responsive.png)
 
 
 ---
@@ -380,7 +382,7 @@ To try and fix this bug I took the following steps:
 
 ### Problems
 <!-- TODO: Problems -->
-
+The only real problem was the implementation of Stripe. Getting this up and running took a lot of time, which meant I did not have time to implement other features. Right now, the project is a basic webshop, but not yet the community it sets out to be.
 
 ---
 
