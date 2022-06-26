@@ -450,19 +450,40 @@ Below are more elaborate tests:
 
 
 <ins>Code validation:</ins> 
+<!-- TODO: HTML Validation:  -->
 1. [HTML validation](https://validator.w3.org/nu/)
 - https://code-institute-ms4.herokuapp.com/
    1. First check: 5 errors, 4 warnings
+   2. Second check: 1 error, 4 warnings. The error I ignore: the duplicate ID is no problem, as one is used on mobile screens, the other on desktop screens. https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2F#l248c81
+- https://code-institute-ms4.herokuapp.com/products/
+   1. First check: 1 error, 4 warnings, same as home page: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2Fproducts%2F#l248c81
+- https://code-institute-ms4.herokuapp.com/products/1/
+   1. First check: 1 error, 3 warnings, same as home page: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2Fproducts%2F1%2F#l248c81
+- https://code-institute-ms4.herokuapp.com/accounts/signup/
+   1. First check: 1 error, 2 warnings, same as home page: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2Faccounts%2Fsignup%2F#l248c81
+- https://code-institute-ms4.herokuapp.com/accounts/login/
+   1. First check: 1 error, 2 warnings, same as home page: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2Faccounts%2Flogin%2F#l248c81
+- https://code-institute-ms4.herokuapp.com/accounts/password/reset/
+   1. First check: 1 error, 2 warnings, same as home page: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2Faccounts%2Fpassword%2Freset%2F#l248c81
+- https://code-institute-ms4.herokuapp.com/cart/
+   1. First check: 1 error, 3 warnings, same as home page: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2Fcart%2F#l248c81
+- https://code-institute-ms4.herokuapp.com/checkout/
+   1. First check: 1 error, 3 warnings, same as home page: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2Fcheckout%2F#l248c81
+
 
 
 
 
 1. [CSS validation](https://jigsaw.w3.org/css-validator/)
-<!-- TODO: CSS validation -->
+- https://code-institute-ms4.herokuapp.com/ 
+Validation: https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en 
+1 warning in base.css, which is on purpose. Then there's a whole bunch of warnings in Bootstrap.css, which I'm not going to fix.
+- profile.css: no errors.
+- checkout.css: no errors.
 
 
 
-3. [Python Validation](http://pep8online.com/)
+1. [Python Validation](http://pep8online.com/)
 <!-- TODO: Python Validation:  -->
 python3 -m flake8 # outputs linting problems to the console
 
