@@ -325,52 +325,52 @@ These screenshots indicate the responsiveness of the pages on various screens. P
 
 <ins>Automated tests</ins>
 
-There are some unit tests using Django's own testing capabilities.
+There are some automated tests using Django's own testing capabilities.
+```python manage.py test --verbosity=2```
 
-For the home app, tests can be found in home\tests.py:
+Output:
 ```
-python manage.py test home.tests --verbosity=2
-test_get_home (home.tests.TestViews) ... ok
-test_get_login (home.tests.TestViews) ... ok
-test_get_password_reset (home.tests.TestViews) ... ok
-test_get_signup (home.tests.TestViews) ... ok
-```
-
-Selenium tests for the home app:
-
-The products app: products\test.py
-
-```
-python manage.py test products.tests --verbosity=2
-test_all_blank_product (products.tests.TestModels)
-Test that when a product is created with no info, we get a ValidationError ... ok
+test_get_cart (cart.tests.TestViews)
+Test that when browsing to /cart/ we get ... ok
+test_get_home (home.tests.TestViews)
+Test that when browsing to / we get a 200 code ... ok
+test_get_login (home.tests.TestViews)
+Test that when browsing to /accounts/login we ... ok
+test_get_password_reset (home.tests.TestViews)
+Test that when browsing to /accounts/password/reset ... ok
+test_get_signup (home.tests.TestViews)
+Test that when browsing to /accounts/signup we ... ok
 test_all_blank_product_category (products.tests.TestModels)
-Test that when a category is created with no info, we get a ValidationError ... ok
+Test that when a category is created with no ... ok
 test_blank_description_product (products.tests.TestModels)
-Test that when a product is created with no description, we get a ValidationError ... ok
+Test that when a product is created with no description, ... ok
 test_blank_fields_product (products.tests.TestModels)
-Test that when a product is created, category, sku, rating, image_url and image are blank ... ok
+Test that when a product is created, category, sku, ... ok
 test_blank_name_product (products.tests.TestModels)
-Test that when a product is created with no name, we get a ValidationError ... ok
+Test that when a product is created with no name, ... ok
 test_blank_price_product (products.tests.TestModels)
-Test that when a product is created with no price, we get a ValidationError ... ok
-test_delete_category_of_product (products.tests.TestModels)
-Test that when a category is deleted for a product, the category field on the product is emptied ... ok
+Test that when a product is created with no price, ... ok
 test_friendly_name_blank_product_category (products.tests.TestModels)
 Test that when a category is created, friendly name is blank ... ok
 test_max_length_image_url_product (products.tests.TestModels)
-Test that when a product is created with an image_url longer than 1024 characters, we get a ValidationError ... ok
+Test that when a product is created with an image_url ... ok
 test_max_length_name_product (products.tests.TestModels)
-Test that when a product is created with a name longer than 254 characters, we get a ValidationError ... ok
+Test that when a product is created with a name ... ok
 test_max_length_name_product_category (products.tests.TestModels)
-Test that when a category is created with a name longer than 254 characters, we get a ValidationError ... ok
-test_max_length_price_product (products.tests.TestModels)
-Test that when a product is created with a price longer than 6 characters, we get a ValidationError ... ok
-test_max_length_rating_product (products.tests.TestModels)
-Test that when a product is created with a rating longer than 6 characters, we get a ValidationError ... ok
+Test that when a category is created with a name longer than ... ok
 test_max_length_sku_product (products.tests.TestModels)
-Test that when a product is created with a sku longer than 254 characters, we get a ValidationError ... ok
+Test that when a product is created with a sku ... ok
+test_delete_category_of_product (products.tests.TestViews)
+Test that when a category is deleted for a product, ... ok
+test_get_products (products.tests.TestViews)
+Test that when browsing to /products/ we get a 200 code, ... ok
+test_search_products (products.tests.TestViews)
+Test that when searching for 'Clearance' we get a 200 code, ... ok
+test_select_categories (products.tests.TestViews)
+Test that when selecting categories we get a 200 code, ... ok
 ```
+
+
 
 <ins>Manual tests</ins>
 
