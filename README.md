@@ -296,7 +296,12 @@ These screenshots indicate the responsiveness of the pages on various screens. P
 
 ## Testing
 <!-- TODO: Testing, either manual or automated -->
-<!-- TODO: Look through Hello Django Github for tests -->
+
+<ins>Tests for Readme.md:</ins>
+- :heavy_check_mark: A Github Action Workflow checks all the links in markdown files. 
+
+<ins>Automated tests</ins>
+
 There are some unit tests using Django's own testing capabilities.
 
 For the home app, tests can be found in home\tests.py:
@@ -340,6 +345,78 @@ Test that when a product is created with a rating longer than 6 characters, we g
 test_max_length_sku_product (products.tests.TestModels)
 Test that when a product is created with a sku longer than 254 characters, we get a ValidationError ... ok`
 
+<ins>Manual tests</ins>
+
+Manually testing the webapp is quite involved: things change depending on whether a visitor is logged in, has added a book, reviewed a book or upvoted a book. Some functionality has already been tested by automatic tests: things like whether a visitor who is not logged in can only see certain nav items in the navbar, whether a logged in user sees other nav items and even what happens when you register or login and logout. 
+The webapp has been tested with Google Chrome, Firefox and Microsoft Edge, and on a Huawei P smart+ 2019 Android smartphone and found to be working fine.
+Below are more elaborate tests:
+
+
+
+**Viewing and Navigation**
+| Test | Expected | Passed |
+| :--: | :------: | :----: |
+| Browsing to the home page as an anonymous user | I see a call to action to sign up, as well as several features that signing up will get me | ✔️ |
+| Browsing to the home page as a logged in user | I just see the hero image and the 'Buy' button | ✔️ |
+| Clicking on the social media links as either an anonymous user or logged in user | A new tab opens going to that social media page | ✔️ |
+| Clicking on the navbar brand as either an anonymous user or logged in user | I go back to the home page | ✔️ |
+| Clicking on the 'Buy' button as either an anonymous user or logged in user | I go to the products page and see a list of products | ✔️ |
+| Clicking on the 'Register' button as an anonymous user | I go to the register page and see a form to register for an account | ✔️ |
+| Clicking on the 'My Account' button as an anonymous user | I see options to either register or login, which take me to either a register or login page | ✔️ |
+| Clicking on the 'My Account' button as a logged in user | I see options to go to my profile or to logout, which take me to either my profile page or logout page | ✔️ |
+| Clicking on a product image as an anonymous or a logged in user | I see product details and the option to add a product to my cart | ✔️ |
+| Clicking on the 'Special Offers/All Specials' link as an anonymous or a logged in user | I see a list of products that are on some kind of special offer | ✔️ |
+| Clicking on the cart icon as an anonymous or a logged in user after I added products to my cart | I see a list of products in my cart, with subtotals, delivery costs and the order total. The cart icon itself also indicates my current order total | ✔️ |
+
+
+
+**Registration and User Accounts**
+| Test | Expected | Passed |
+| :--: | :------: | :----: |
+| Registering for an account via either the Register button on the home screen or the Register link in 'My Account' | I can fill in a form, receive an email with a confirmation link, confirm my account and then I have an account | ✔️ | 
+| Opening the 'My Account' menu | I can either login to my account, or logout if I'm already logged in | ✔️ |
+| Recover my password | I can use the 'Forgot Password' button on the login page, fill in my email and then receive a working link to recover my password | ✔️ |
+| Register for an account | I can use the 'Forgot Password' button on the login page, fill in my email and then receive a working link to recover my password | ✔️ |
+| Clicking on 'My Account/My Profile' as a logged in user after I made an order | I see a form where I can fill in personal details, which I can update. I also see my order history, with links to the order confirmations | ✔️ |
+
+
+
+**Sorting and Searching**
+| Test | Expected | Passed |
+| :--: | :------: | :----: |
+| As either an anonymous user or logged in user, I click on the sorting menu on the products page | I can sort the list of products using the sort menu, sorting by price, category, rating or name | ✔️ | 
+| As either an anonymous user or logged in user, I choose a collection of product categories and  click on the sorting menu on the products page | I can sort this subcollection of products using the sort menu, sorting by price, category, rating or name | ✔️ | 
+| As either an anonymous user or logged in user, I enter a search term in the search bar | I get a page with the term I searched for, a counter with how many products were found, and if there are any products, a list of these products | ✔️ | 
+
+
+
+**Purchasing and Checkout**
+| Test | Expected | Passed |
+| :--: | :------: | :----: |
+| As either an anonymous user or logged in user, I use the quantity selector functionality on the product details page | I can adjust the quantity and add the product and desired quantity to my cart | ✔️ | 
+| As either an anonymous user or logged in user, I click on the cart icon in the navbar | I can view the items in my cart, subtotals, delivery costs and my order total | ✔️ | 
+| As either an anonymous user or logged in user, I use the quantity selector or delete functionality in the cart | I can adjust the quantity of a product in my cart or delete the product from my cart |  | 
+| As either an anonymous user or logged in user, I click on the 'Checkout' button | I can fill in my delivery details and card details and then checkout | ✔️ | 
+| As either an anonymous user or logged in user, I click on the 'Complete Order' button | I am taken to a checkout confirmation page, with details for my order | ✔️ | 
+| As either an anonymous user or logged in user, I click on the 'Complete Order' button | I receive an email with confirmation of my order | ✔️ | 
+
+
+
+**Admin and Store Management**
+| I log in using superuser credentials at https://code-institute-ms4.herokuapp.com/admin | I am taken to the admin portal, where I can see and edit elements of the webapp | ✔️ | 
+| Logged in as a superuser, I click on 'My Account' | I see a link for 'Add Product' which allows me to add a product to the store | ✔️ | 
+| Logged in as a superuser, I go to the Products page | I see links on each product that allow me to edit the product  | ✔️ | 
+| Logged in as a superuser, I go to the product details page for a product | I see a link that allows me to edit the product  | ✔️ | 
+| Logged in as a superuser, I go to the Products page | I see links on each product that allow me to delete the product  | ✔️ | 
+| Logged in as a superuser, I go to the product details page for a product | I see a link that allows me to delete the product  | ✔️ | 
+
+
+
+
+
+
+
+
 
 
 
@@ -373,6 +450,12 @@ To try and fix this bug I took the following steps:
 2. After this, when trying to checkout, I could an error about adding a float and decimal together: fixed this as well.
 3. It still wasn't working, and I found out the problem was within stripe_elements.js: when I changed code in there, checkout would work.
 4. I was about to start working through the code using console.log when I noticed an error in the log: it couldn't parse $post. This piece of code should have been $.post, missing a period. After adding that, the code worked.
+
+Another bug I discovered was that updating the quantity in the cart didn't always work. Troubleshooting steps:
+1. Checking the browser console for errors
+2. Adding debugging statements to the code for updating the quantity, both the jQuery that triggers the form submit as the actual Python code for the view.
+3. I discovered that sometimes the Python code would not run, while the jQuery code would always run.
+4. I also noticed that in the VS Code console there would be an error if the Python code did run: Broken pipe from ('127.0.0.1', 62554)
 
 
 ### Problems
