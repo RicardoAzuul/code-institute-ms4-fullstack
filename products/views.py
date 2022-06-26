@@ -95,6 +95,7 @@ def add_product(request):
     template = 'products/add_product.html'
     context = {
         'form': form,
+        'disable_add_to_bag': True,
     }
 
     return render(request, template, context)
@@ -126,6 +127,7 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'product': product,
+        'disable_add_to_bag': True,
     }
 
     return render(request, template, context)
