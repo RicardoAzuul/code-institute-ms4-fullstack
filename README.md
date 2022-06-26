@@ -319,7 +319,6 @@ These screenshots indicate the responsiveness of the pages on various screens. P
 ---
 
 ## Testing
-<!-- TODO: Testing, either manual or automated -->
 
 <ins>Tests for Readme.md:</ins>
 - :heavy_check_mark: A Github Action Workflow checks all the links in markdown files. There are some errors in here, but these are acceptable: 1 is for the locally running server, the other two are for websites that have received too many requests from this Github Action Workflow 
@@ -441,16 +440,7 @@ Below are more elaborate tests:
 
 
 
-
-
-
-
-
-
-
-
 <ins>Code validation:</ins> 
-<!-- TODO: HTML Validation:  -->
 1. [HTML validation](https://validator.w3.org/nu/)
 - https://code-institute-ms4.herokuapp.com/
    1. First check: 5 errors, 4 warnings
@@ -483,10 +473,24 @@ Validation: https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcode
 
 
 
-1. [Python Validation](http://pep8online.com/)
-<!-- TODO: Python Validation:  -->
-python3 -m flake8 # outputs linting problems to the console
-
+1. [Python Validation]
+1. Run ```python3 -m flake8``` and fix problems:
+- Lots of messages about line too long, whitespace, no newline. Installed autopep8 ```pip install -U autopep8``` and ran it to fix many of the problems
+- Ignoring all the migrations files
+- Ignoring env.py, as it is only a local file and used for development
+- Ignoring tests.py, as these are not production code
+- .\fit_family\settings.py:17:5: F401 'env' imported but unused --> env is used
+- .\fit_family\settings.py:145:80: E501 line too long (91 > 79 characters) --> acceptable, as it belongs to the Django framework. I also don't know how to adjust the layout --> # noqa
+- .\fit_family\settings.py:148:80: E501 line too long (81 > 79 characters) --> acceptable, as it belongs to the Django framework. I also don't know how to adjust the layout --> # noqa
+- .\fit_family\settings.py:151:80: E501 line too long (82 > 79 characters) --> acceptable, as it belongs to the Django framework. I also don't know how to adjust the layout --> # noqa
+- .\fit_family\settings.py:154:80: E501 line too long (83 > 79 characters) --> acceptable, as it belongs to the Django framework. I also don't know how to adjust the layout --> # noqa
+- .\checkout\apps.py:9:9: F401 'checkout.signals' imported but unused --> used in another file 
+- .\checkout\views.py:1:80: E501 line too long (87 > 79 characters) --> no easy way to adjust the layout --> # noqa
+- .\checkout\webhook_handler.py:71:80: E501 line too long (80 > 79 characters) --> no easy way to adjust the layout --> # noqa
+- .\checkout\webhook_handler.py:72:80: E501 line too long (80 > 79 characters) --> no easy way to adjust the layout --> # noqa
+- .\checkout\webhooks.py:43:80: E501 line too long (86 > 79 characters) --> no easy way to adjust the layout --> # noqa
+- .\profiles\forms.py:33:80: E501 line too long (85 > 79 characters) --> no easy way to adjust the layout --> # noqa
+- .\products\widgets.py:9:80: E501 line too long (87 > 79 characters) --> no easy way to adjust the layout --> # noqa
 
 
 

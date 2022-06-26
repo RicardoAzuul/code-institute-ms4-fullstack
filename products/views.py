@@ -2,10 +2,9 @@ from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Product_Category 
+from .models import Product, Product_Category
 from django.contrib.auth.decorators import login_required
 
-from django.conf import settings
 from .forms import ProductForm
 
 
@@ -13,7 +12,6 @@ from .forms import ProductForm
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    # Get all products and store in products
     products = Product.objects.all()
     # set to None in case of no search term or category
     query = None
@@ -21,7 +19,6 @@ def all_products(request):
     sort = None
     direction = None
 
-    # Logic to handle search = GET requests
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -37,7 +34,6 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -48,13 +44,13 @@ def all_products(request):
             if not query:
                 messages.error(request, "No search terms entered.")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
     selected_sorting = f'{sort}_{direction}'
 
-    # Pass products to the context. This becomes available as a template variable.
     context = {
         'products': products,
         'search_term': query,
@@ -68,10 +64,8 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to show product details """
 
-    # Get a product model, identified by primary key = product_id
     product = get_object_or_404(Product, pk=product_id)
 
-    # Pass product to the context. This becomes available as a template variable.
     context = {
         'product': product,
     }
@@ -93,7 +87,8 @@ def add_product(request):
             messages.success(request, 'Product added')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure form is valid.')
+            messages.error(
+                request, 'Failed to add product. Please ensure form is valid.')
     else:
         form = ProductForm()
 
@@ -107,7 +102,7 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """Update a product n the store"""
+    """Update a product in the store"""
     if not request.user.is_superuser:
         messages.error(request, 'Super User permissions required')
         return redirect(reverse('home'))
@@ -120,7 +115,9 @@ def edit_product(request, product_id):
             messages.success(request, 'Product updated')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure form is valid.')
+            messages.error(
+                request, 'Failed to update product. \
+                    Please ensure form is valid.')
     else:
         form = ProductForm(instance=product)
     messages.info(request, f'Editing {product.name}')

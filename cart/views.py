@@ -5,10 +5,12 @@ from products.models import Product
 
 # Create your views here.
 
+
 def view_cart(request):
     """ A view to return the cart """
 
     return render(request, 'cart/cart.html')
+
 
 def add_to_cart(request, item_id):
     """ A view to add items to the cart """
@@ -20,14 +22,16 @@ def add_to_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
-        messages.success(request, f'Updated quantity of {product.name} in your cart')
+        messages.success(
+            request, f'Updated quantity of {product.name} in your cart')
     else:
         cart[item_id] = quantity
         messages.success(request, f'Added {product.name} to your cart')
-    
+
     request.session['cart'] = cart
 
     return redirect(redirect_url)
+
 
 def update_cart(request, item_id):
     """ A view to update items in the cart """
@@ -38,14 +42,16 @@ def update_cart(request, item_id):
 
     if quantity > 0:
         cart[item_id] = quantity
-        messages.success(request, f'Updated quantity of {product.name} in your cart')
+        messages.success(
+            request, f'Updated quantity of {product.name} in your cart')
     else:
         cart.pop(item_id)
         messages.success(request, f'Removed {product.name} from your cart')
-    
+
     request.session['cart'] = cart
 
     return redirect(reverse('view_cart'))
+
 
 def remove_from_cart(request, item_id):
     """ A view to remove items from the cart """
@@ -56,11 +62,11 @@ def remove_from_cart(request, item_id):
 
         cart.pop(item_id)
         messages.success(request, f'Removed {product.name} from your cart')
-        
+
         request.session['cart'] = cart
 
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, f'Error removing {product.name} from your cart: {e}')
+        messages.error(
+            request, f'Error removing {product.name} from your cart: {e}')
         return HttpResponse(status=500)
-        
