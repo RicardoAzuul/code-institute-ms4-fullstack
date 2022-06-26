@@ -1,5 +1,4 @@
 # Git Fit
-<!-- TODO: Add description of project: -->
 Git Fit is a fitness subscription application.
 
 The user's goal is to join a fitness community and purchase exercise plans and merchandise.
@@ -18,6 +17,8 @@ Nice to have:
 
 To see the site in action, visit [Git Fit](https://code-institute-ms4.herokuapp.com/)
 
+Initially I wanted to name the project Fit Family, and create a more family oriented webapp, but I didn't like the colour palette and couldn't find suitable images. Leftovers from this are still present in the code, but it doesn't affect the webapp.
+
 ---
 
 ## UI and UX
@@ -32,7 +33,7 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 | ✔️ | 2 | Shopper | View individual product details | Identify the price, description, product rating, product image and available sizes | [Product details](readme-assets/media/user_story_2.png) |
 | ✔️ | 3 | Shopper | Quickly identify deals, clearance items and special offers | Take advantage of special savings on products I'd like to purchase | [Deals](readme-assets/media/user_story_3.png) |
 | ✔️ | 4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much | [Cart](readme-assets/media/user_story_4.png) |
-| ✔️ | 5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like | [Responsiveness](#Responsiveness of Pages)  |
+| ✔️ | 5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like | See the Responsiveness of Pages section  |
 
 **Registration and User Accounts**
 | Done | User Story ID | As A/An   | I Want To Be Able To... | So That I Can... | Screenshot |
@@ -47,7 +48,7 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 **Sorting and Searching**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| :✔️ | 12 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products | [Sort](readme-assets/media/user_story_12.png) |
+| ✔️ | 12 | Shopper | Sort the list of available products | Easily identify the best rated, best priced and categorically sorted products | [Sort](readme-assets/media/user_story_12.png) |
 | ✔️ | 13 | Shopper | Sort a specific category of product | Find the best-priced or best-rated product in a specific category, or sort the products in that category by name | [Category](readme-assets/media/user_story_13.png) |
 | ✔️ | 14 | Shopper | Sort multiple categories of products simultaneously | Find the best-priced or best-rated products across broad categories, such as "clothing" or "exercise equipment" | [Multi Category](readme-assets/media/user_story_14.png) |
 | ✔️ | 15 | Shopper | Search for a product by name or description | Find a specific product I'd like to purchase | [Search](readme-assets/media/user_story_15.png) |
@@ -100,10 +101,15 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 Jesse James Garret's 5 planes of UX design were used to design the site. I started off at the Strategy Plane:
 
 #### Strategy Plane
-<!-- TODO: Write about Strategy Plane -->
-The main goal for visitors is to find and join a fitness community they might like. This means giving visitors a feeling about the kind of community they are joining. Git Fit sets out to be no nonsense and active, aggressive almost. Git Fit is for goal-oriented people. For now it is just a shop, but by adding subscriptions, we can create a community, with exercise and nutrition plans and a way for subscribers to connect.
+The main goal for visitors is to find and join a fitness community they might like.
+
+This means giving visitors a feeling about the kind of community they are joining. 
+
+Git Fit sets out to be no nonsense and active, aggressive almost. Git Fit is for goal-oriented people. For now it is just a shop, but by adding subscriptions, we can create a community, with exercise and nutrition plans and a way for subscribers to connect.
+
 So the main page has to have a call to action in the form of a button to take you to subscriptions. We also need a hero image that exemplifies the image of Git Fit.
 Some brief text to indicate what subscribers gain access to would also be good.
+
 We also indicate that there is a shop and account option by having options for these in the navbar.
 
 ---
@@ -135,7 +141,7 @@ Content requirements:
 All pages should have the same navigation bar and footer:
 
 - the navigation bar contains links to all the pages, as well as the home page. The content does change depending on login status.
-- the footer contains copyright info.
+- the footer contains the company logo, icons for various creditcards and links to social media pages.
 
 <ins>The Home Page</ins>
 - a hero image evoking the idea of "active, aggressive, simplicity".
@@ -165,13 +171,21 @@ All pages should have the same navigation bar and footer:
 
 #### Skeleton Plane
 The navigation bar will be added to the top of every page and will always remain visible. It contains a home link on the left side, a search bar for searching in the store in the middle, an icon containing the account options - register and login, and if you're logged in a link to your profile, and if you're a superuser, a link to add a product.
+
 There is also a cart icon, which updates when you add items to your cart and which links to the cart page, from where you can do checkouts.
+
 There are links to all pages on this navbar, though some links are only visible if the user has logged in. On the left will be the logo, which when clicked upon will take the visitor back to the home page.
+
 The home page has a hero image, a call to action to register, a button to take you to the shop and some testimonials and features of subscriptions.
+
 The shopping page has cards for the products. You can choose different categories of products, sort by price and category and rating and click on a product to get more information and add it to your cart.
+
 The cart page keeps track of the items you've added to your cart, giving you a running total and the option to check out.
+
 The checkout page allows you to fill in shipping details and a creditcard for payment.
+
 The checkout success page contains a summary of your order and order details.
+
 The profile page contains a form to fill in delivery details or show prefilled delivery details, and has links to the order history for registered users.
 
 At the bottom of every page will be the same footer, containing the brand, icons of various payment methods and links to various social media sites.
@@ -179,12 +193,17 @@ At the bottom of every page will be the same footer, containing the brand, icons
 ---
 
 #### Surface Plane
-We use icons from Font Awesome to add some visual interest but also visual cues to indicate functionality. We use Bootstrap as a basis, but add our own style. Git Fit needs to look no-nonsense, active, almost aggressive. To create a bold, active, almost aggressive look we use a black, red and white color scheme, similar to Netflix.
+We use icons from Font Awesome to add some visual interest but also visual cues to indicate functionality. 
+
+We use Bootstrap as a basis, but add our own style. Git Fit needs to look no-nonsense, active, almost aggressive. To create a bold, active, almost aggressive look we use a black, red and white color scheme, similar to Netflix.
+
 The header font is also chosen to reflect this: a slab serif font that is bold and in your face.
+
 Buttons have no rounded borders, to create a sleek design. Red is mainly used as an accent color, to draw attention to elements on the page.
 
 
 <ins>Wireframes</ins>
+
 These wireframes were used as a basis to design the actual webapp. However, sometimes the actual project deviates from the wireframes, because the endresult looked better or was more easily achieved than the wireframe.
 - [Home](readme-assets/media/home.png)
 - [Home - tablet](readme-assets/media/home_tablet_view.png)
@@ -223,9 +242,15 @@ These wireframes were used as a basis to design the actual webapp. However, some
 ---
 
 ## Database Design
-<!-- TODO: Database design -->
 The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c17efc98)
+There are 5 models:
+1. Profiles
+2. Orders
+3. Order Line Items
+4. Products
+5. Product Categories
 
+The Profiles model is linked to the allauth User model, but I don't know how this model is constructed.
 
 ---
 
@@ -245,18 +270,17 @@ The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c
 ---
 
 ### Features Left to Implement
-<!-- TODO: Features left to implement -->
 - newsletter functionality, where visitors can sign up for the newsletter.
 - giving customers the ability to choose the size of an item, where applicable
 - related products functionality, showing related products when looking at product details
 - subscriptions: giving registered users the option to sign up for, change and end their subscriptions
 - the subscriber section, where subscribed users get access to exercises, nutrition plans and the community
+- the option for subscribers to review products
 
 
 ---
 
 ## Technologies Used 
-<!-- TODO: Technologies Used  -->
 - [HTML5](https://en.wikipedia.org/wiki/HTML5): provides the content and structure of the site.
 - [CSS3](https://en.wikipedia.org/wiki/CSS3): provides the formatting, layout and styling of the site.
 - [Bootstrap](https://getbootstrap.com/): provides a popular CSS framework with many custom elements to quickly bootstrap a site. I've used Bootstrap 4.6.
@@ -298,24 +322,27 @@ These screenshots indicate the responsiveness of the pages on various screens. P
 <!-- TODO: Testing, either manual or automated -->
 
 <ins>Tests for Readme.md:</ins>
-- :heavy_check_mark: A Github Action Workflow checks all the links in markdown files. 
+- :heavy_check_mark: A Github Action Workflow checks all the links in markdown files. There are some errors in here, but these are acceptable: 1 is for the locally running server, the other two are for websites that have received too many requests from this Github Action Workflow 
 
 <ins>Automated tests</ins>
 
 There are some unit tests using Django's own testing capabilities.
 
 For the home app, tests can be found in home\tests.py:
-`python manage.py test home.tests --verbosity=2
+```
+python manage.py test home.tests --verbosity=2
 test_get_home (home.tests.TestViews) ... ok
 test_get_login (home.tests.TestViews) ... ok
 test_get_password_reset (home.tests.TestViews) ... ok
-test_get_signup (home.tests.TestViews) ... ok`
+test_get_signup (home.tests.TestViews) ... ok
+```
 
 Selenium tests for the home app:
 
 The products app: products\test.py
 
-`python manage.py test products.tests --verbosity=2
+```
+python manage.py test products.tests --verbosity=2
 test_all_blank_product (products.tests.TestModels)
 Test that when a product is created with no info, we get a ValidationError ... ok
 test_all_blank_product_category (products.tests.TestModels)
@@ -343,11 +370,11 @@ Test that when a product is created with a price longer than 6 characters, we ge
 test_max_length_rating_product (products.tests.TestModels)
 Test that when a product is created with a rating longer than 6 characters, we get a ValidationError ... ok
 test_max_length_sku_product (products.tests.TestModels)
-Test that when a product is created with a sku longer than 254 characters, we get a ValidationError ... ok`
+Test that when a product is created with a sku longer than 254 characters, we get a ValidationError ... ok
+```
 
 <ins>Manual tests</ins>
 
-Manually testing the webapp is quite involved: things change depending on whether a visitor is logged in, has added a book, reviewed a book or upvoted a book. Some functionality has already been tested by automatic tests: things like whether a visitor who is not logged in can only see certain nav items in the navbar, whether a logged in user sees other nav items and even what happens when you register or login and logout. 
 The webapp has been tested with Google Chrome, Firefox and Microsoft Edge, and on a Huawei P smart+ 2019 Android smartphone and found to be working fine.
 Below are more elaborate tests:
 
@@ -403,6 +430,8 @@ Below are more elaborate tests:
 
 
 **Admin and Store Management**
+| Test | Expected | Passed |
+| :--: | :------: | :----: |
 | I log in using superuser credentials at https://code-institute-ms4.herokuapp.com/admin | I am taken to the admin portal, where I can see and edit elements of the webapp | ✔️ | 
 | Logged in as a superuser, I click on 'My Account' | I see a link for 'Add Product' which allows me to add a product to the store | ✔️ | 
 | Logged in as a superuser, I go to the Products page | I see links on each product that allow me to edit the product  | ✔️ | 
@@ -422,12 +451,13 @@ Below are more elaborate tests:
 
 <ins>Code validation:</ins> 
 1. [HTML validation](https://validator.w3.org/nu/)
-<!-- TODO: HTML validation -->
+- https://code-institute-ms4.herokuapp.com/
+   1. First check: 5 errors, 4 warnings
 
 
 
 
-2. [CSS validation](https://jigsaw.w3.org/css-validator/)
+1. [CSS validation](https://jigsaw.w3.org/css-validator/)
 <!-- TODO: CSS validation -->
 
 
