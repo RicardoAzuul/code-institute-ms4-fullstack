@@ -23,7 +23,6 @@ To see the site in action, visit [Git Fit](https://code-institute-ms4.herokuapp.
 ## UI and UX
  
 ### User stories
-<!-- TODO: add screenshots -->
 Not all User Stories have been completed. Basic shopping functionality has been completed, but user stories that are about the community side of the project have yet to be resolved.
   
 **Viewing and Navigation**
@@ -33,7 +32,7 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 | ✔️ | 2 | Shopper | View individual product details | Identify the price, description, product rating, product image and available sizes | [Product details](readme-assets/media/user_story_2.png) |
 | ✔️ | 3 | Shopper | Quickly identify deals, clearance items and special offers | Take advantage of special savings on products I'd like to purchase | [Deals](readme-assets/media/user_story_3.png) |
 | ✔️ | 4 | Shopper | Easily view the total of my purchases at any time | Avoid spending too much | [Cart](readme-assets/media/user_story_4.png) |
-| ✔️ | 5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like | [Responsiveness](## Responsiveness of Pages)  |
+| ✔️ | 5 | Site User | Easily view the site on any device | Use the site whenever and wherever I'd like | [Responsiveness](#Responsiveness of Pages)  |
 
 **Registration and User Accounts**
 | Done | User Story ID | As A/An   | I Want To Be Able To... | So That I Can... | Screenshot |
@@ -41,8 +40,8 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 | ✔️ | 6 | Site User | Easily register for an account | Have a personal account and be able to view my profile | [Register](readme-assets/media/user_story_6.png) |
 | ✔️ | 7 | Site User | Easily login or logout | Access my personal account information | [Login](readme-assets/media/user_story_7.png) |
 | ✔️ | 8 | Site User | Easily recover my password in case I forget it | Recover access to my account | [Recover](readme-assets/media/user_story_8.png) |
-| ✔️ | 9 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful | |
-| ✔️ | 10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information | |
+| ✔️ | 9 | Site User | Receive an email confirmation after registering | Verify that my account registration was successful | [Registration](readme-assets/media/user_story_9.png) |
+| ✔️ | 10 | Site User | Have a personalized user profile | View my personal order history and order confirmations, and save my payment information | [Profile](readme-assets/media/user_story_10.png) |
 | ❌ | 11 | Site User | Easily review products | Help my fellow fitness community members to find the right product | |
 
 **Sorting and Searching**
@@ -62,8 +61,8 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 | ✔️ | 19 | Shopper | Adjust the quantity of individual items in my cart | Easily make changes to my purchase before checkout | Same as above |
 | ✔️ | 20 | Shopper | Easily enter my payment information  | Check out quickly and with no hassle | [Checkout](readme-assets/media/user_story_20.png) |
 | ✔️ | 21 | Shopper | Feel my personal and payment information is safe and secure | Confidently provide the needed information to make a purchase | Same as above |
-| ✔️ | 22 | Shopper | View an order confirmation after checkout | Verify that I haven't made any mistakes | |
-| ✔️ | 23 | Shopper | Receive an email confirmation after checkout | Keep the confirmation of what I've purchased for my records | |
+| ✔️ | 22 | Shopper | View an order confirmation after checkout | Verify that I haven't made any mistakes | [Confirmation](readme-assets/media/user_story_22.png) |
+| ✔️ | 23 | Shopper | Receive an email confirmation after checkout | Keep the confirmation of what I've purchased for my records | [Email](readme-assets/media/user_story_23.png) |
 
 **Community**
 | Done | User Story ID | As A/An      | I Want To Be Able To... | So That I Can... | Screenshot |
@@ -80,10 +79,10 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 **Admin and Store Management**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| ✔️ | 31 | Store Owner/Admin | Easily login or logout | Access the admin interface of the webapp | |
-| ✔️ | 32 | Store Owner/Admin | Add a product | Add new items to my store | |
-| ✔️ | 33 | Store Owner/Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria | |
-| ✔️ | 34 | Store Owner/Admin | Delete a product | Remove items that are no longer for sale | |
+| ✔️ | 31 | Store Owner/Admin | Easily login or logout | Access the admin interface of the webapp | [Admin](readme-assets/media/user_story_31.png) |
+| ✔️ | 32 | Store Owner/Admin | Add a product | Add new items to my store | [Add Product](readme-assets/media/user_story_32.png) |
+| ✔️ | 33 | Store Owner/Admin | Edit/update a product | Change product prices, descriptions, images and other product criteria | [Edit Product](readme-assets/media/user_story_33.png) |
+| ✔️ | 34 | Store Owner/Admin | Delete a product | Remove items that are no longer for sale | [Delete Product](readme-assets/media/user_story_34.png) |
 | ❌ | 35 | Store Owner/Admin | Add a subscription | Add new subscription options | |
 | ❌ | 36 | Store Owner/Admin | Edit/update a subscription | Change subscription prices, descriptions, linked workouts and nutrition | |
 | ❌ | 37 | Store Owner/Admin | Delete a subscription | Remove subscriptions that are no longer available | |
