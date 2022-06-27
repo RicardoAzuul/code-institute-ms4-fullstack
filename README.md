@@ -421,7 +421,7 @@ Below are more elaborate tests:
 | :--: | :------: | :----: |
 | As either an anonymous user or logged in user, I use the quantity selector functionality on the product details page | I can adjust the quantity and add the product and desired quantity to my cart | ✔️ | 
 | As either an anonymous user or logged in user, I click on the cart icon in the navbar | I can view the items in my cart, subtotals, delivery costs and my order total | ✔️ | 
-| As either an anonymous user or logged in user, I use the quantity selector or delete functionality in the cart | I can adjust the quantity of a product in my cart or delete the product from my cart |  | 
+| As either an anonymous user or logged in user, I use the quantity selector or delete functionality in the cart | I can adjust the quantity of a product in my cart or delete the product from my cart | ✔️ | 
 | As either an anonymous user or logged in user, I click on the 'Checkout' button | I can fill in my delivery details and card details and then checkout | ✔️ | 
 | As either an anonymous user or logged in user, I click on the 'Complete Order' button | I am taken to a checkout confirmation page, with details for my order | ✔️ | 
 | As either an anonymous user or logged in user, I click on the 'Complete Order' button | I receive an email with confirmation of my order | ✔️ | 
@@ -444,7 +444,7 @@ Below are more elaborate tests:
 1. [HTML validation](https://validator.w3.org/nu/)
 - https://code-institute-ms4.herokuapp.com/
    1. First check: 5 errors, 4 warnings
-   2. Second check: 1 error, 4 warnings. The error I ignore: the duplicate ID is no problem, as one is used on mobile screens, the other on desktop screens. https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2F#l248c81
+   2. Second check: 2 error, 4 warnings. The errors I ignore: the duplicate ID is no problem, as one is used on mobile screens, the other on desktop screens. Removing the stray </div> actually breaks the footer container, so it has to stay. https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2F
 - https://code-institute-ms4.herokuapp.com/products/
    1. First check: 1 error, 4 warnings, same as home page: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2Fproducts%2F#l248c81
 - https://code-institute-ms4.herokuapp.com/products/1/
@@ -511,6 +511,8 @@ Another bug I discovered was that updating the quantity in the cart didn't alway
 2. Adding debugging statements to the code for updating the quantity, both the jQuery that triggers the form submit as the actual Python code for the view.
 3. I discovered that sometimes the Python code would not run, while the jQuery code would always run.
 4. I also noticed that in the VS Code console there would be an error if the Python code did run: Broken pipe from ('127.0.0.1', 62554)
+5. While troubleshooting, I realized that the product_details page handled submitting the form differently: on this page it was just a button to submit the form. Adding this to cart.html worked all the time, while using jQuery did not.
+6. I replaced the <a href> with a submit button, applied some CSS and adjusting the quantity in the cart now works.
 
 
 ### Problems

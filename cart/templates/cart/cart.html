@@ -64,10 +64,14 @@
                                         <button class="increase-qty btn btn-sm btn-white rounded-0" data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}"><i class="fas fa-plus fa-sm"></i></button>
                                     </div>
                                 </div>
+                                <div>
+                                    <input type="submit" class="btn btn-sm btn-white rounded-0 float-left mt-3" value="Update Cart">
+                                    <a href="" id="remove_{{ item.item_id }}" class="remove-item btn btn-sm btn-red rounded-0 float-right mt-3"><i class="fas fa-trash fa-sm"></i></a>
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
                             </div>
                         </form>
-                        <a href="" class="update-link btn btn-sm btn-white rounded-0 float-left">Update Cart</a>
-                        <a href="" id="remove_{{ item.item_id }}" class="remove-item btn btn-sm btn-red rounded-0 float-right"><i class="fas fa-trash fa-sm"></i></a>
                     </div>
                     <div class="col-12">
                         <hr class="bg-white">
@@ -104,11 +108,6 @@
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
-
     $('.remove-item').click(function(e) {        
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
