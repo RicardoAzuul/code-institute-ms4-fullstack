@@ -5,13 +5,6 @@
     <div class="container header-container">
         <div class="row">
             <div class="col">
-                <!-- Alert from Bootstrap: https://getbootstrap.com/docs/4.0/components/alerts/#dismissing -->
-                <div class="alert alert-primary alert-dismissible fade show text-center" role="alert">
-                    <strong>Free delivery</strong> when spending $50 or more.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
             </div>
         </div>
     </div>
@@ -22,9 +15,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center">
-            <h2>Products</h2>
+            <h2>Workouts</h2>
             {% for category in selected_categories  %}
-                <a href="{% url 'products' %}?category={{ category.name }}" class="btn btn-red rounded-0 mb-1">{{ category.friendly_name }}</a>
+                <a href="{% url 'workouts' %}?category={{ category.name }}" class="btn btn-red rounded-0 mb-1">{{ category.friendly_name }}</a>
             {% endfor %}                
             <hr class="bg-white w-75">
         </div>
@@ -35,9 +28,9 @@
                 <div class="col-6 text-left">
                     <p>                        
                         {% if search_term or selected_categories or selected_sorting != 'None_None' %}
-                            <a href="{% url 'products' %}" class="link-white-hover-white">Products Home</a> |
+                            <a href="{% url 'workouts' %}" class="link-white-hover-white">Workouts Home</a> |
                         {% endif %}
-                        {{ products|length }} Products{% if search_term %} found for search term "{{ search_term }}"{% endif %}
+                        {{ workouts|length }} Workouts{% if search_term %} found for search term "{{ search_term }}"{% endif %}
                     </p>
                 </div>
                 <div class="col-6 text-right">
@@ -64,44 +57,44 @@
                 </div>
             </div>
             <div class="row">
-                {% for product in products %}
+                {% for workout in workouts %}
                     <div class="col-12 col-md-6 col-lg-3 mb-5">
                         <div class="card h-100 text-black rounded-0">                            
-                            {% if product.image %}
-                                <a href="{% url 'product_detail' product.id %}" class="link-card">
-                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0">
+                            {% if workout.image %}
+                                <a href="{% url 'workout_detail' workout.id %}" class="link-card">
+                                    <img src="{{ workout.image.url }}" alt="{{ workout.name }}" class="card-img-top img-fluid rounded-0">
                                 </a>
                             {% else %}
-                                <a href="{% url 'product_detail' product.id %}" class="link-card">
-                                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0">
+                                <a href="{% url 'workout_detail' workout.id %}" class="link-card">
+                                    <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="{{ workout.name }}" class="card-img-top img-fluid rounded-0">
                                 </a>
                             {% endif %}
                             <div class="card-body p-2">
                                 <p class="text-center text-uppercase
-                                font-weight-bold m-0">{{ product.name }}</p>
+                                font-weight-bold m-0">{{ workout.name }}</p>
                             </div>
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="float-right font-weight-bold m-0">${{ product.price }}</p>                                   
+                                        <p class="float-right font-weight-bold m-0">${{ workout.price }}</p>                                   
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        {% if product.category %}
+                                        {% if workout.category %}
                                             <p class="float-left small m-0">
-                                                <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted"><i class="fas fa-tag"></i> {{ product.category.friendly_name }}</a>
+                                                <a href="{% url 'workouts' %}?category={{ workout.category.name }}" class="text-muted"><i class="fas fa-tag"></i> {{ workout.category.friendly_name }}</a>
                                             </p>
                                         {% endif %}
-                                        {% if product.rating %}
-                                            <p class="small float-right text-muted m-0"><i class="fas fa-star"></i> {{ product.rating }}/5</p>
+                                        {% if workout.rating %}
+                                            <p class="small float-right text-muted m-0"><i class="fas fa-star"></i> {{ workout.rating }}/5</p>
                                         {% else %}
                                             <p class="float-right text-muted m-0">No Rating</p>
                                         {% endif %}
                                         {% if request.user.is_superuser %}
                                             <br>
-                                            <a href="{% url 'edit_product' product.id %}" class="small link-black">Edit</a>
-                                            <a href="{% url 'delete_product' product.id %}" class="small link-black float-right">Delete</a>
+                                            <a href="{% url 'edit_workout' workout.id %}" class="small link-black">Edit</a>
+                                            <a href="{% url 'delete_workout' workout.id %}" class="small link-black float-right">Delete</a>
                                         {% endif %}
                                     </div>
                                 </div>
