@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container-fluid minheight mb-5">
+    <div class="row">
+        <div class="col">
+            <!-- Breadcrumb taken from Bootstrap: https://getbootstrap.com/docs/4.6/components/breadcrumb/ -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-black">
+                  <li class="breadcrumb-item"><a href="{% url 'workouts' %}" class="text-white">Home</a></li>
+                  <li class="breadcrumb-item"><a href="{% url 'workouts' %}?body_part={{ workout.body_part.name }}" class="text-white">{{ workout.body_part.friendly_name }}</a></li>
+                  <li class="breadcrumb-item text-white active" aria-current="page">{{ workout.name}} </li>
+                </ol>
+              </nav>
+            <!-- End Breadcrumb -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-4 offset-lg-2">
+            {% if workout.image %}
+                <a href="{{ workout.image.url }}" target="_blank">
+                 <img src="{{ workout.image.url }}" alt="{{ workout.name }}" class="card-img-top img-fluid rounded-0 mb-3 ">
+                </a>
+            {% else %}
+                <a href="">
+                    <img src="/media/No_Image_Available.jpg" alt="{{ workout.name }}" class="card-img-top img-fluid rounded-0 mb-3">
+                </a>
+            {% endif %}
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="row">
+                <div class="col-12">
+                    <h3>{{ workout.name }}</h3>
+                </div>
+                {% if request.user.is_superuser %}
+                    <div class="col-8">
+                        <a href="#" class="link-white">Edit</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#" class="link-white float-right">Delete</a>
+                    </div>                
+                {% endif %} 
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <hr class="bg-white">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {% if workout.body_part %}
+                        <p>
+                            <a href="{% url 'workouts' %}?body_part={{ workout.body_part.name }}" class="link-white-hover-white"><i class="fas fa-tag"></i> Body part: {{ workout.body_part.friendly_name }}</a>
+                        </p>
+                    {% endif %}
+                    {% if workout.equipment %}
+                        <p>
+                            <a href="{% url 'workouts' %}?equipment={{ workout.equipment.name }}" class="link-white-hover-white"><i class="fas fa-tools"></i> Equipment: {{ workout.equipment.friendly_name }}</a>
+                        </p>
+                    {% endif %} 
+                    {% if workout.target %}
+                        <p>
+                            <a href="{% url 'workouts' %}?target={{ workout.target.name }}" class="link-white-hover-white"><i class="fas fa-bullseye"></i> Target: {{ workout.target.friendly_name }}</a>
+                        </p>
+                    {% endif %}
+                    {% if workout.rating %}
+                        <p><i class="fas fa-star"></i> {{ workout.rating }}/5</p>
+                    {% else %}
+                        <p>No Rating</p>
+                    {% endif %} 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <hr class="bg-white">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Instructions</h4>
+                    <p>{{ workout.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -27,3 +27,15 @@ def all_workouts(request):
     }
 
     return render(request, 'workouts/workouts.html', context)
+
+
+def workout_detail(request, workout_id):
+    """ A view to show workout details """
+
+    workout = get_object_or_404(Workout, pk=workout_id)
+
+    context = {
+        'workout': workout,
+    }
+
+    return render(request, 'workouts/workout_detail.html', context)
