@@ -61,11 +61,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-5">
                         <div class="card h-100 text-black rounded-0">                            
                             {% if workout.image %}
-                                <a href="{% url 'workout_detail' workout.id %}" class="link-card">
+                                <a href="{#}" class="link-card">
                                     <img src="{{ workout.image.url }}" alt="{{ workout.name }}" class="card-img-top img-fluid rounded-0">
                                 </a>
                             {% else %}
-                                <a href="{% url 'workout_detail' workout.id %}" class="link-card">
+                                <a href="{#}" class="link-card">
                                     <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="{{ workout.name }}" class="card-img-top img-fluid rounded-0">
                                 </a>
                             {% endif %}
@@ -76,25 +76,30 @@
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="float-right font-weight-bold m-0">${{ workout.price }}</p>                                   
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        {% if workout.category %}
-                                            <p class="float-left small m-0">
-                                                <a href="{% url 'workouts' %}?category={{ workout.category.name }}" class="text-muted"><i class="fas fa-tag"></i> {{ workout.category.friendly_name }}</a>
+                                        {% if workout.body_part %}
+                                            <p class="small m-0">
+                                                <a href="{% url 'workouts' %}?body_part={{ workout.body_part.name }}" class="text-muted"><i class="fas fa-tag"></i> Body part: {{ workout.body_part.friendly_name }}</a>
+                                            </p>
+                                        {% endif %}
+                                        {% if workout.equipment %}
+                                            <p class="small m-0">
+                                                <a href="{% url 'workouts' %}?equipment={{ workout.equipment.name }}" class="text-muted"><i class="fas fa-tools"></i> Equipment: {{ workout.equipment.friendly_name }}</a>
+                                            </p>
+                                        {% endif %}
+                                        {% if workout.target %}
+                                            <p class="small m-0">
+                                                <a href="{% url 'workouts' %}?target={{ workout.target.name }}" class="text-muted"><i class="fas fa-bullseye"></i> Target: {{ workout.target.friendly_name }}</a>
                                             </p>
                                         {% endif %}
                                         {% if workout.rating %}
-                                            <p class="small float-right text-muted m-0"><i class="fas fa-star"></i> {{ workout.rating }}/5</p>
+                                            <p class="small text-muted m-0"><i class="fas fa-star"></i> {{ workout.rating }}/5</p>
                                         {% else %}
-                                            <p class="float-right text-muted m-0">No Rating</p>
+                                            <p class="text-muted m-0">No Rating</p>
                                         {% endif %}
                                         {% if request.user.is_superuser %}
                                             <br>
-                                            <a href="{% url 'edit_workout' workout.id %}" class="small link-black">Edit</a>
-                                            <a href="{% url 'delete_workout' workout.id %}" class="small link-black float-right">Delete</a>
+                                            <a href="{#}" class="small link-black">Edit</a>
+                                            <a href="{#}" class="small link-black float-right">Delete</a>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -114,6 +119,7 @@
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
+        // TODO: Move JavaScript code into its own file, since we use it twice
         // Code from Stackoverflow, the second answer: https://stackoverflow.com/questions/14249998/jquery-back-to-top
         $(window).scroll(function() {
             if ($(this).scrollTop()) {
