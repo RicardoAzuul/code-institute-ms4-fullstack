@@ -12,11 +12,10 @@ from .forms import WorkoutForm
 @login_required
 def all_workouts(request):
     """ A view to show all workouts, including sorting and search queries """
-    # TODO: use views.py in products as a basis
 
     workouts = Workout.objects.all()
     # set to None in case of no search term or category
-    body_parts = None
+    bodyparts = None
     equipment = None
     targets = None
     sort = None
@@ -29,8 +28,8 @@ def all_workouts(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 workouts = workouts.annotate(lower_name=Lower('name'))
-            if sortkey == 'body_part':
-                sortkey = 'body_part__name'
+            if sortkey == 'bodypart':
+                sortkey = 'bodypart__name'
             if sortkey == 'equipment':
                 sortkey = 'equipment__name'
             if sortkey == 'target':
@@ -41,11 +40,10 @@ def all_workouts(request):
                     sortkey = f'-{sortkey}'
             workouts = workouts.order_by(sortkey)
 
-        if 'body_part' in request.GET:
-            print("body part in request")
-            body_parts = request.GET['body_part'].split(',')
-            workouts = workouts.filter(body_part__name__in=body_parts)
-            body_parts = BodyPart.objects.filter(name__in=body_parts)
+        if 'bodypart' in request.GET:
+            bodyparts = request.GET['bodypart'].split(',')
+            workouts = workouts.filter(bodypart__name__in=bodyparts)
+            bodyparts = BodyPart.objects.filter(name__in=bodyparts)
         
         if 'equipment' in request.GET: 
             equipment = request.GET['equipment'].split(',')
@@ -61,7 +59,7 @@ def all_workouts(request):
 
     context = {
         'workouts': workouts,
-        'selected_body_parts': body_parts,
+        'selected_bodyparts': bodyparts,
         'selected_equipment': equipment,
         'selected_targets': targets,
         'selected_sorting': selected_sorting,

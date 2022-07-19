@@ -16,10 +16,10 @@
     <div class="row">
         <div class="col text-center">
             <h2>Workouts</h2>
-            {% if selected_body_parts %}
+            {% if selected_bodyparts %}
                 <p>Body parts selected:</p>
-                {% for body_part in selected_body_parts %}
-                    <a href="{% url 'workouts' %}?body_part={{ body_part.name }}" class="btn btn-red rounded-0 mb-1">{{ body_part.friendly_name }}</a>
+                {% for bodypart in selected_bodyparts %}
+                    <a href="{% url 'workouts' %}?bodypart={{ bodypart.name }}" class="btn btn-red rounded-0 mb-1">{{ bodypart.friendly_name }}</a>
                 {% endfor %}
             {% endif %}
             {% if selected_equipment %}
@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-6 text-left">
                     <p>                        
-                        {% if selected_body_parts or selected_equipment or selected_targets or selected_sorting != 'None_None' %}
+                        {% if selected_bodyparts or selected_equipment or selected_targets or selected_sorting != 'None_None' %}
                             <a href="{% url 'workouts' %}" class="link-white-hover-white">Workouts Home</a> |
                         {% endif %}
                         {{ workouts|length }} Workouts
@@ -95,9 +95,9 @@
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col">
-                                        {% if workout.body_part %}
+                                        {% if workout.bodypart %}
                                             <p class="small m-0">
-                                                <a href="{% url 'workouts' %}?body_part={{ workout.body_part.name }}" class="text-muted"><i class="fas fa-tag"></i> Body part: {{ workout.body_part.friendly_name }}</a>
+                                                <a href="{% url 'workouts' %}?bodypart={{ workout.bodypart.name }}" class="text-muted"><i class="fas fa-tag"></i> Body part: {{ workout.bodypart.friendly_name }}</a>
                                             </p>
                                         {% endif %}
                                         {% if workout.equipment %}
@@ -161,10 +161,6 @@
             var selectedVal = selector.val();
             if(selectedVal != "reset"){
                 var sort = selectedVal.split("_")[0];
-                // 
-                if(sort == "bodypart"){
-                    sort = "body_part";
-                }
                 var direction = selectedVal.split("_")[1];
 
                 currentUrl.searchParams.set("sort", sort);

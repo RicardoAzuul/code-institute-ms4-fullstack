@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-# TODO: use models.py in products as basis
 class BodyPart(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -43,8 +42,7 @@ class Target(models.Model):
 
 
 class Workout(models.Model):
-    # TODO: Change body_part to bodypart
-    body_part = models.ForeignKey(
+    bodypart = models.ForeignKey(
         'BodyPart', null=True, blank=True, on_delete=models.SET_NULL)
     equipment = models.ForeignKey(
         'Equipment', null=True, blank=True, on_delete=models.SET_NULL)

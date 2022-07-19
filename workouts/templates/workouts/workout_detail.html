@@ -19,7 +19,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-black">
                   <li class="breadcrumb-item"><a href="{% url 'workouts' %}" class="text-white">Workouts Home</a></li>
-                  <li class="breadcrumb-item"><a href="{% url 'workouts' %}?body_part={{ workout.body_part.name }}" class="text-white">Body part: {{ workout.body_part.friendly_name }}</a></li>
+                  <li class="breadcrumb-item"><a href="{% url 'workouts' %}?bodypart={{ workout.bodypart.name }}" class="text-white">Body part: {{ workout.bodypart.friendly_name }}</a></li>
                   <li class="breadcrumb-item text-white active" aria-current="page">{{ workout.name}} </li>
                 </ol>
               </nav>
@@ -59,9 +59,9 @@
             </div>
             <div class="row">
                 <div class="col">
-                    {% if workout.body_part %}
+                    {% if workout.bodypart %}
                         <p>
-                            <a href="{% url 'workouts' %}?body_part={{ workout.body_part.name }}" class="link-white-hover-white"><i class="fas fa-tag"></i> Body part: {{ workout.body_part.friendly_name }}</a>
+                            <a href="{% url 'workouts' %}?bodypart={{ workout.bodypart.name }}" class="link-white-hover-white"><i class="fas fa-tag"></i> Body part: {{ workout.bodypart.friendly_name }}</a>
                         </p>
                     {% endif %}
                     {% if workout.equipment %}

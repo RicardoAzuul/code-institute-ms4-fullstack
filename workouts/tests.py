@@ -4,7 +4,6 @@ from .models import BodyPart, Equipment, Target, Workout
 from django.test import TestCase
 
 # Create your tests here.
-# TODO: use tests in products as basis
 
 class TestViews(TestCase):
 
@@ -18,26 +17,26 @@ class TestViews(TestCase):
 class TestModels(TestCase):
 
     # Tests for BodyPart model
-    def test_all_blank_body_part(self):
-        """Test that when a body_part is created with no
+    def test_all_blank_bodypart(self):
+        """Test that when a bodypart is created with no
         info, we get a ValidationError"""
-        body_part = BodyPart.objects.create()
+        bodypart = BodyPart.objects.create()
         with self.assertRaises(ValidationError):
-            body_part.full_clean()
+            bodypart.full_clean()
 
-    def test_friendly_name_blank_body_part(self):
-        """Test that when a body_part is created, friendly name is blank"""
-        body_part = BodyPart.objects.create(
+    def test_friendly_name_blank_bodypart(self):
+        """Test that when a bodypart is created, friendly name is blank"""
+        bodypart = BodyPart.objects.create(
             name='test_part')
-        self.assertFalse(body_part.friendly_name)
+        self.assertFalse(bodypart.friendly_name)
 
-    def test_max_length_name_body_part(self):
-        """Test that when a body_part is created with a name longer than
+    def test_max_length_name_bodypart(self):
+        """Test that when a bodypart is created with a name longer than
         254 characters, we get a ValidationError"""
         long_name = "x" * 255
-        body_part = BodyPart.objects.create(name=long_name)
+        bodypart = BodyPart.objects.create(name=long_name)
         with self.assertRaises(ValidationError):
-            body_part.full_clean()
+            bodypart.full_clean()
     
     # Tests for Equipment model
     def test_all_blank_equipment(self):
@@ -108,11 +107,11 @@ class TestModels(TestCase):
             workout.full_clean()
     
     def test_blank_fields_workout(self):
-        """Test that when a workout is created, body_part, equipment,
+        """Test that when a workout is created, bodypart, equipment,
         rating and target are blank"""
         workout = Workout.objects.create(
             name='test_workout', description='test description', image='test.gif')
-        self.assertFalse(workout.body_part)
+        self.assertFalse(workout.bodypart)
         self.assertFalse(workout.equipment)
         self.assertFalse(workout.rating)
         self.assertFalse(workout.target)

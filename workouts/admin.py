@@ -2,12 +2,11 @@ from django.contrib import admin
 from .models import BodyPart, Equipment, Target, Workout
 
 # Register your models here.
-# TODO: Use admin.py in products as basis
 
 class WorkoutAdmin(admin.ModelAdmin):
     list_display = (
         'name',
-        'body_part',
+        'bodypart',
         'equipment',
         'target',
         'rating',
