@@ -43,6 +43,7 @@ class Target(models.Model):
 
 
 class Workout(models.Model):
+    # TODO: Change body_part to bodypart
     body_part = models.ForeignKey(
         'BodyPart', null=True, blank=True, on_delete=models.SET_NULL)
     equipment = models.ForeignKey(

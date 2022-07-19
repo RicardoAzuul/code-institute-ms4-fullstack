@@ -60,6 +60,10 @@
                             (A-Z)</option>
                         <option value="name_desc" {% if selected_sorting == 'name_desc' %}selected{% endif %}>Name
                             (Z-A)</option>
+                        <option value="bodypart_asc"
+                            {% if selected_sorting == 'bodypart_asc' %}selected{% endif %}>Body Part (A-Z)</option>
+                        <option value="bodypart_desc"
+                            {% if selected_sorting == 'bodypart_desc' %}selected{% endif %}>Body Part (Z-A)</option>
                         <option value="equipment_asc"
                             {% if selected_sorting == 'equipment_asc' %}selected{% endif %}>Equipment (A-Z)</option>
                         <option value="equipment_desc"
@@ -114,6 +118,7 @@
                                         {% if request.user.is_superuser %}
                                             <br>
                                             <a href="{% url 'edit_workout' workout.id %}" class="small link-black">Edit</a>
+                                            <!-- TODO: Change text color for delete to red -->
                                             <a href="{% url 'delete_workout' workout.id %}" class="small link-black float-right">Delete</a>
                                         {% endif %}
                                     </div>
@@ -156,6 +161,10 @@
             var selectedVal = selector.val();
             if(selectedVal != "reset"){
                 var sort = selectedVal.split("_")[0];
+                // 
+                if(sort == "bodypart"){
+                    sort = "body_part";
+                }
                 var direction = selectedVal.split("_")[1];
 
                 currentUrl.searchParams.set("sort", sort);
