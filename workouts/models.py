@@ -15,6 +15,10 @@ class BodyPart(models.Model):
 
 
 class Equipment(models.Model):
+    # Equipment has no plural, so we have to set the plural
+    class Meta:
+        verbose_name_plural = 'Equipment'
+        
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 

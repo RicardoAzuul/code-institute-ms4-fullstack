@@ -16,9 +16,24 @@
     <div class="row">
         <div class="col text-center">
             <h2>Workouts</h2>
-            {% for category in selected_categories  %}
-                <a href="{% url 'workouts' %}?category={{ category.name }}" class="btn btn-red rounded-0 mb-1">{{ category.friendly_name }}</a>
-            {% endfor %}                
+            {% if selected_body_parts %}
+                <p>Body parts selected:</p>
+                {% for body_part in selected_body_parts %}
+                    <a href="{% url 'workouts' %}?body_part={{ body_part.name }}" class="btn btn-red rounded-0 mb-1">{{ body_part.friendly_name }}</a>
+                {% endfor %}
+            {% endif %}
+            {% if selected_equipment %}
+                <p>Equipment selected:</p>
+                {% for equipment in selected_equipment %}
+                    <a href="{% url 'workouts' %}?equipment={{ equipment.name }}" class="btn btn-red rounded-0 mb-1">{{ equipment.friendly_name }}</a>
+                {% endfor %}  
+            {% endif %}
+            {% if selected_targets %}
+                <p>Targets selected:</p>
+                {% for target in selected_targets %}
+                    <a href="{% url 'workouts' %}?target={{ target.name }}" class="btn btn-red rounded-0 mb-1">{{ target.friendly_name }}</a>
+                {% endfor %}   
+            {% endif %}             
             <hr class="bg-white w-75">
         </div>
     </div>
@@ -27,20 +42,16 @@
             <div class="row">
                 <div class="col-6 text-left">
                     <p>                        
-                        {% if search_term or selected_categories or selected_sorting != 'None_None' %}
+                        {% if selected_body_parts or selected_equipment or selected_targets or selected_sorting != 'None_None' %}
                             <a href="{% url 'workouts' %}" class="link-white-hover-white">Workouts Home</a> |
                         {% endif %}
-                        {{ workouts|length }} Workouts{% if search_term %} found for search term "{{ search_term }}"{% endif %}
+                        {{ workouts|length }} Workouts
                     </p>
                 </div>
                 <div class="col-6 text-right">
                     <select id="sort-selector" class="border-white rounded-0 mb-3 w-75">
                         <option value="reset" {% if selected_sorting == 'None_None' %}selected{% endif %}>Sort by...
                         </option>
-                        <option value="price_asc" {% if selected_sorting == 'price_asc' %}selected{% endif %}>Price
-                            (low to high)</option>
-                        <option value="price_desc" {% if selected_sorting == 'price_desc' %}selected{% endif %}>Price
-                            (high to low)</option>
                         <option value="rating_asc" {% if selected_sorting == 'rating_asc' %}selected{% endif %}>
                             Rating (low to high)</option>
                         <option value="rating_desc" {% if selected_sorting == 'rating_desc' %}selected{% endif %}>
@@ -49,10 +60,14 @@
                             (A-Z)</option>
                         <option value="name_desc" {% if selected_sorting == 'name_desc' %}selected{% endif %}>Name
                             (Z-A)</option>
-                        <option value="category_asc" {% if selected_sorting == 'category_asc' %}selected{% endif %}>
-                            Category (A-Z)</option>
-                        <option value="category_desc"
-                            {% if selected_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                        <option value="equipment_asc"
+                            {% if selected_sorting == 'equipment_asc' %}selected{% endif %}>Equipment (A-Z)</option>
+                        <option value="equipment_desc"
+                            {% if selected_sorting == 'equipment_desc' %}selected{% endif %}>Equipment (Z-A)</option>
+                        <option value="target_asc"
+                            {% if selected_sorting == 'target_asc' %}selected{% endif %}>Target (A-Z)</option>
+                        <option value="target_desc"
+                            {% if selected_sorting == 'target_desc' %}selected{% endif %}>Target (Z-A)</option>
                     </select>
                 </div>
             </div>
@@ -98,8 +113,8 @@
                                         {% endif %}
                                         {% if request.user.is_superuser %}
                                             <br>
-                                            <a href="{#}" class="small link-black">Edit</a>
-                                            <a href="{#}" class="small link-black float-right">Delete</a>
+                                            <a href="{% url 'edit_workout' workout.id %}" class="small link-black">Edit</a>
+                                            <a href="{% url 'delete_workout' workout.id %}" class="small link-black float-right">Delete</a>
                                         {% endif %}
                                     </div>
                                 </div>

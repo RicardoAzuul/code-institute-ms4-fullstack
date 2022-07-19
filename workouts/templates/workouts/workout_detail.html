@@ -18,8 +18,8 @@
             <!-- Breadcrumb taken from Bootstrap: https://getbootstrap.com/docs/4.6/components/breadcrumb/ -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-black">
-                  <li class="breadcrumb-item"><a href="{% url 'workouts' %}" class="text-white">Home</a></li>
-                  <li class="breadcrumb-item"><a href="{% url 'workouts' %}?body_part={{ workout.body_part.name }}" class="text-white">{{ workout.body_part.friendly_name }}</a></li>
+                  <li class="breadcrumb-item"><a href="{% url 'workouts' %}" class="text-white">Workouts Home</a></li>
+                  <li class="breadcrumb-item"><a href="{% url 'workouts' %}?body_part={{ workout.body_part.name }}" class="text-white">Body part: {{ workout.body_part.friendly_name }}</a></li>
                   <li class="breadcrumb-item text-white active" aria-current="page">{{ workout.name}} </li>
                 </ol>
               </nav>
@@ -45,10 +45,10 @@
                 </div>
                 {% if request.user.is_superuser %}
                     <div class="col-8">
-                        <a href="#" class="link-white">Edit</a>
+                        <a href="{% url 'edit_workout' workout.id %}" class="link-white">Edit</a>
                     </div>
                     <div class="col-4">
-                        <a href="#" class="link-white float-right">Delete</a>
+                        <a href="{% url 'delete_workout' workout.id %}" class="link-white float-right">Delete</a>
                     </div>                
                 {% endif %} 
             </div>

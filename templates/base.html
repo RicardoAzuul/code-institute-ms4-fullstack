@@ -35,7 +35,7 @@
     {% endblock corejs %}
 
     {% block extra_js %}{% endblock extra_js %}
-
+    <!-- TODO: Extra titles for pages -->
     <title>Git Fit {% block extra_title %}{% endblock extra_title %}</title>
   </head>
   <body>
@@ -50,7 +50,7 @@
           <form method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
               <input class="form-control border rounded-0" type="text" name="q"
-                placeholder="Search Git Fit">
+                placeholder="Search Git Fit Shop">
               <div class="input-group-append">
                 <button class="form-control btn btn-red rounded-0" type="submit">Search
                   <span class="icon">
@@ -75,6 +75,7 @@
                 {% if request.user.is_authenticated %}
                   {% if request.user.is_superuser %}
                     <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
+                    <a href="{% url 'add_workout' %}" class="dropdown-item">Add Workout</a>
                   {% endif %}
                   <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                   <a href="{% url 'workouts' %}" class="dropdown-item">Workouts</a>
