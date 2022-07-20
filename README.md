@@ -87,12 +87,25 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 | ❌ | 35 | Store Owner/Admin | Add a subscription | Add new subscription options | |
 | ❌ | 36 | Store Owner/Admin | Edit/update a subscription | Change subscription prices, descriptions, linked workouts and nutrition | |
 | ❌ | 37 | Store Owner/Admin | Delete a subscription | Remove subscriptions that are no longer available | |
-| ❌ | 38 | Store Owner/Admin | Add a workout | Add new workouts | |
-| ❌ | 39 | Store Owner/Admin | Edit/update a workout | Change workouts | |
-| ❌ | 40 | Store Owner/Admin | Delete a workout | Remove workouts that are no longer promoted | |
+| ✔️ | 38 | Store Owner/Admin | Add a workout | Add new workouts | |
+| ✔️ | 39 | Store Owner/Admin | Edit/update a workout | Change workouts | |
+| ✔️ | 40 | Store Owner/Admin | Delete a workout | Remove workouts that are no longer promoted | |
 | ❌ | 41 | Store Owner/Admin | Add a nutrition plan | Add new nutrition plans | |
 | ❌ | 42 | Store Owner/Admin | Edit/update a nutrition plan | Change nutrition plan | |
 | ❌ | 43 | Store Owner/Admin | Delete a nutrition plan | Remove nutrition plans that are no longer promoted | |
+
+**Viewing and Navigation - Workouts**
+| Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
+| :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
+| ✔️ | 44 | Registered User | View a list of workouts | Select workouts to do |  |
+| ✔️ | 45 | Registered User | View individual workout details | Identify the description, rating, equipment needed and what the workout targets |  |
+
+**Sorting and Searching - Workouts**
+| Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
+| :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
+| ✔️ | 12 | Registered User | Sort the list of available workouts | Easily identify the best rated, categorically sorted workouts |  |
+| ✔️ | 13 | Registered User | Sort a specific category of workout | Find the best-rated workout in a specific category, or sort the workouts in that category by name |  |
+
 
 ---
 
@@ -159,9 +172,9 @@ All pages should have the same navigation bar and footer:
 - the option to review items for signed in users.
 - search functionality to search for items
 
-<ins>The Exercise Page - not yet implemented</ins>
+<ins>The Workouts Page </ins>
 - exercises for the subscriber to choose from.
-- search functionality to search for exercises.
+- search functionality to search for exercises: not yet implemented.
 
 <ins>The Nutrition Page - not yet implemented</ins>
 - several nutrition plans to choose from.
@@ -187,6 +200,8 @@ The checkout page allows you to fill in shipping details and a creditcard for pa
 The checkout success page contains a summary of your order and order details.
 
 The profile page contains a form to fill in delivery details or show prefilled delivery details, and has links to the order history for registered users.
+
+The workouts page has cards for different workouts. You can choose workouts by body part they target, equipment needed or specific muscle groups they target. You can click on a workout to get more information about it.
 
 At the bottom of every page will be the same footer, containing the brand, icons of various payment methods and links to various social media sites.
 
@@ -242,13 +257,17 @@ These wireframes were used as a basis to design the actual webapp. However, some
 ---
 
 ## Database Design
-The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c17efc98)
-There are 5 models:
+The database design can be found [here](https://dbdiagram.ario/d/628bc76ff040f104c17efc98)
+There are 9 models:
 1. Profiles
 2. Orders
 3. Order Line Items
 4. Products
 5. Product Categories
+6. Workouts
+7. BodyParts (linked to Workouts)
+8. Equipment (linked to Workouts)
+9. Targets (linked to Workouts)
 
 The Profiles model is linked to the allauth User model, but I don't know how this model is constructed.
 
@@ -265,7 +284,8 @@ The Profiles model is linked to the allauth User model, but I don't know how thi
 - a checkout page, where users can fill in their shipping details and creditcard information
 - a checkout success page, where users get a confirmation of their order
 - various user authentication pages: login, register and forget password. Also includes a profile page, where users can view and edit their delivery details and see their orders.
-
+- a workout page, where the user can sort workouts by for instance rating and category, and can select workouts from different categories. 
+- each workout on the workouts page links to a workout details page, where users can find out more about the workout. This page also contains a breadcrumb and a category label, to allow quick navigation in the workouts page.
 
 ---
 
@@ -373,6 +393,7 @@ Test that when selecting categories we get a 200 code, ... ok
 
 
 <ins>Manual tests</ins>
+<!-- TODO: Update -->
 
 The webapp has been tested with Google Chrome, Firefox and Microsoft Edge, and on a Huawei P smart+ 2019 Android smartphone and found to be working fine.
 Below are more elaborate tests:

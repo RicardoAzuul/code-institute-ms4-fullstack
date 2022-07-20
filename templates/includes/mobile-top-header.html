@@ -9,7 +9,7 @@
       <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
           <form class="form" method="GET" action="{% url 'products' %}">
               <div class="input-group w-100">
-                  <input class="form-control border rounded-0" type="text" name="q" placeholder="Search Git Fit">
+                  <input class="form-control border rounded-0" type="text" name="q" placeholder="Search Git Fit Shop">
                   <div class="input-group-append">
                       <button class="form-control form-control btn border rounded-0" type="submit">
                           <span class="icon">
@@ -32,8 +32,10 @@
           {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
                   <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
+                  <a href="{% url 'add_workout' %}" class="dropdown-item">Add Workout</a>
               {% endif %}
               <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+              <a href="{% url 'workouts' %}" class="dropdown-item">Workouts</a>
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
           {% else %}
               <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>

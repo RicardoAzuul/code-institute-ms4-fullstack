@@ -35,7 +35,7 @@
     {% endblock corejs %}
 
     {% block extra_js %}{% endblock extra_js %}
-
+    <!-- TODO: Extra titles for pages -->
     <title>Git Fit {% block extra_title %}{% endblock extra_title %}</title>
   </head>
   <body>
@@ -50,7 +50,7 @@
           <form method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
               <input class="form-control border rounded-0" type="text" name="q"
-                placeholder="Search Git Fit">
+                placeholder="Search Git Fit Shop">
               <div class="input-group-append">
                 <button class="form-control btn btn-red rounded-0" type="submit">Search
                   <span class="icon">
@@ -63,6 +63,30 @@
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+            <li class="list-inline-item dropdown d-none d-lg-inline-block">
+              <a class="text-white" href="#" id="workouts" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <div class="text-center">
+                  <div><i class="fas fa-dumbbell fa-lg"></i></div>
+                  <p class="my-0">Workouts</p>
+                </div>
+              </a>
+              <div class="dropdown-menu border-0" aria-labelledby="workouts">
+                {% if request.user.is_authenticated %}
+                  {% if request.user.is_superuser %}
+                    <a href="{% url 'add_workout' %}" class="dropdown-item">Add Workout</a>
+                  {% endif %}
+                  <a href="{% url 'workouts' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                  <a href="{% url 'workouts' %}?sort=bodypart&direction=asc" class="dropdown-item ">By Body Part</a>
+                  <a href="{% url 'workouts' %}?sort=equipment&direction=asc" class="dropdown-item ">By Equipment</a>
+                  <a href="{% url 'workouts' %}?sort=target&direction=asc" class="dropdown-item ">By Target</a>
+                  <a href="{% url 'workouts' %}" class="dropdown-item">All Workouts</a>
+                {% else %}
+                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+              </div>
+            </li>
             <li class="list-inline-item dropdown">
               <a class="text-white" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">

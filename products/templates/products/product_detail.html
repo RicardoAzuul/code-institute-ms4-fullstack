@@ -18,7 +18,7 @@
             <!-- Breadcrumb taken from Bootstrap: https://getbootstrap.com/docs/4.6/components/breadcrumb/ -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-black">
-                  <li class="breadcrumb-item"><a href="{% url 'products' %}" class="text-white">Home</a></li>
+                  <li class="breadcrumb-item"><a href="{% url 'products' %}" class="text-white">Products Home</a></li>
                   <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ product.category.name }}" class="text-white">{{ product.category.friendly_name }}</a></li>
                   <li class="breadcrumb-item text-white active" aria-current="page">{{ product.name}} </li>
                 </ol>
