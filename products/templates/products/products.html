@@ -7,11 +7,11 @@
             <div class="col">
                 <!-- Alert from Bootstrap: https://getbootstrap.com/docs/4.0/components/alerts/#dismissing -->
                 <div class="alert alert-primary alert-dismissible fade show text-center" role="alert">
-                    <strong>Free delivery</strong> when spending $50 or more.
+                    {% autoescape off %}{{ shop_alerts_textstrings|random }}{% endautoescape %}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
-                  </div>
+                </div>
             </div>
         </div>
     </div>

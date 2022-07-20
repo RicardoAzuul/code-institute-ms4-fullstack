@@ -1,12 +1,27 @@
 from django.forms import ValidationError
 from django.test import TestCase
 from django.db import IntegrityError
-from .models import Product_Category, Product
+from .models import Product_Category, Product, ShopAlert
 
 # Create your tests here.
 
 
 class TestModels(TestCase):
+
+    def test_blank_shopalert(self):
+        """Test that when a shopalert is created with no
+        info, we get a ValidationError"""
+        test_shopalert = ShopAlert.objects.create()
+        with self.assertRaises(ValidationError):
+            test_shopalert.full_clean()
+
+    def test_max_length_name_shopalert(self):
+        """Test that when a shopalert is created with a name longer than
+        254 characters, we get a ValidationError"""
+        long_name = "x" * 255
+        test_shopalert = ShopAlert.objects.create(name=long_name)
+        with self.assertRaises(ValidationError):
+            test_shopalert.full_clean()
 
     def test_all_blank_product_category(self):
         """Test that when a category is created with no

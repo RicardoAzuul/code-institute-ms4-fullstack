@@ -1,7 +1,23 @@
+from .models import Feature
+from django.forms import ValidationError
 from django.test import TestCase
 
-# Create your tests here.
+class TestModels(TestCase):
 
+    def test_blank_feature(self):
+        """Test that when a feature is created with no
+        info, we get a ValidationError"""
+        test_feature = Feature.objects.create()
+        with self.assertRaises(ValidationError):
+            test_feature.full_clean()
+
+    def test_max_length_name_feature(self):
+        """Test that when a feature is created with a header longer than
+        254 characters, we get a ValidationError"""
+        long_header = "x" * 255
+        test_feature = Feature.objects.create(header=long_header)
+        with self.assertRaises(ValidationError):
+            test_feature.full_clean()
 
 class TestViews(TestCase):
 

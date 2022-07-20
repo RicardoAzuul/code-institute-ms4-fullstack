@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Product_Category
+from .models import Product, Product_Category, ShopAlert
 from django.contrib.auth.decorators import login_required
 
 from .forms import ProductForm
@@ -13,6 +13,13 @@ def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
+
+    # Retrieve just textfields, convert to string and append to list so we can use Django's random template variable
+    shop_alerts_textfields = ShopAlert.objects.all().values_list('text')
+    shop_alerts_textstrings = []
+    for x in shop_alerts_textfields:
+        shop_alerts_textstrings.append(''.join(x))
+
     # set to None in case of no search term or category
     query = None
     categories = None
@@ -53,6 +60,7 @@ def all_products(request):
 
     context = {
         'products': products,
+        'shop_alerts_textstrings': shop_alerts_textstrings,
         'search_term': query,
         'selected_categories': categories,
         'selected_sorting': selected_sorting,
