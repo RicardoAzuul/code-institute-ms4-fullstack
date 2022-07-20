@@ -10,8 +10,7 @@
             <a class="link-white font-weight-bold mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
-            <!-- TODO: Change border-purple to border-black -->
-            <div class="dropdown-menu border-purple" aria-labelledby="all-products-link">
+            <div class="dropdown-menu border-black" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                 <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
@@ -23,7 +22,7 @@
             <a class="link-white font-weight-bold mr-5" href="#" id="exercise-equipment-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Exercise Equipment
             </a>
-            <div class="dropdown-menu border-purple" aria-labelledby="exercise-equipment-link">
+            <div class="dropdown-menu border-black" aria-labelledby="exercise-equipment-link">
                 <a href="{% url 'products' %}?category=weights" class="dropdown-item">Weights</a>
                 <a href="{% url 'products' %}?category=clothes" class="dropdown-item">Clothes</a>
                 <a href="{% url 'products' %}?category=shoes" class="dropdown-item">Shoes</a>
@@ -36,7 +35,7 @@
             <a class="link-white font-weight-bold mr-5" href="#" id="nutrition-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Nutrition
             </a>
-            <div class="dropdown-menu border-purple" aria-labelledby="nutrition-link">
+            <div class="dropdown-menu border-black" aria-labelledby="nutrition-link">
                 <a href="{% url 'products' %}?category=protein_powders" class="dropdown-item">Protein Powders</a>
                 <a href="{% url 'products' %}?category=protein_bars" class="dropdown-item">Protein Bars</a>
                 <a href="{% url 'products' %}?category=sports_drinks" class="dropdown-item">Sports Drinks</a>
@@ -49,7 +48,7 @@
             <a class="link-white font-weight-bold" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Special Offers
             </a>
-            <div class="dropdown-menu border-purple" aria-labelledby="specials-link">
+            <div class="dropdown-menu border-black" aria-labelledby="specials-link">
                 <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
                 <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
                 <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
@@ -62,8 +61,7 @@
             <a class="link-white font-weight-bold mr-5" href="#" id="all-workouts-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Workouts
             </a>
-            <!-- TODO: Change border-purple to border-black -->
-            <div class="dropdown-menu border-purple" aria-labelledby="all-workouts-link">
+            <div class="dropdown-menu border-black" aria-labelledby="all-workouts-link">
                 <a href="{% url 'workouts' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                 <a href="{% url 'workouts' %}?sort=bodypart&direction=asc" class="dropdown-item ">By Body Part</a>
                 <a href="{% url 'workouts' %}?sort=equipment&direction=asc" class="dropdown-item ">By Equipment</a>

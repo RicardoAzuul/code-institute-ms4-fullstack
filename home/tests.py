@@ -6,11 +6,12 @@ from django.test import TestCase
 class TestViews(TestCase):
 
     def test_get_home(self):
-        """ Test that when browsing to / we get a 200 code
-        and home/index.html template """
+        """ Test that when browsing to / we get a 200 code,
+        context and home/index.html template """
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'home/index.html')
+        self.assertTrue(response.context)
 
     def test_get_signup(self):
         """ Test that when browsing to /accounts/signup we

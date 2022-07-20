@@ -11,7 +11,7 @@
 {% endblock page_header %}
 
 {% block content %}
-        <div class="container minheight mb-5">
+        <div class="container minheight">
             <div class="row">
                 {% if request.user.is_authenticated %}
                     <section id="call-to-action-section_auth">
@@ -68,54 +68,24 @@
                     </section>
                     <section id="features-section">
                         <div class="row">
-                            <div class="feature-btn-xs col-8 offset-2 d-block d-sm-none text-center">
-                                <div class="feature-collapse mb-5">
-                                    <button class="btn btn-collapse bg-white rounded-0 w-100" type="button" data-toggle="collapse" data-target="#collapseFeature1" aria-expanded="false" aria-controls="collapseFeature1">
-                                        <span class="feature-header span-as-h2"><i class="fas fa-angle-right"></i> <u>Shop with discount</u></span>
-                                      </button>
-                                    <div class="collapse" id="collapseFeature1">
-                                        <p class="p-3 bg-white text-left">Join the community and receive a 5% discount on items in our shop, ranging from exercise equipment and nutrition to merchandise.</p>
+                            {% for feature in features %}
+                                <div class="feature-btn-xs col-8 offset-2 d-block d-sm-none text-center">
+                                    <div class="feature-collapse mb-5">
+                                        <button class="btn btn-collapse bg-white rounded-0 w-100" type="button" data-toggle="collapse" data-target="#collapse{{ feature.id }}" aria-expanded="false" aria-controls="collapse{{ feature.id }}">
+                                            <span class="feature-header span-as-h2"><i class="fas fa-angle-right"></i> <u>{{ feature.header }}</u></span>
+                                        </button>
+                                        <div class="collapse" id="collapse{{ feature.id }}">
+                                            <p class="p-3 bg-white text-left">{{ feature.text }}</p>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-8 offset-2 d-none d-sm-block">
+                                    <div class="feature-div mb-5 bg-white p-3">
+                                        <h2 class="mt-3 feature-header"><u>{{ feature.header }}</u></h2>
+                                        <p>{{ feature.text }}</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="feature-btn-xs col-8 offset-2 d-block d-sm-none text-center">
-                                <div class="feature-collapse mb-5">
-                                    <button class="btn btn-collapse bg-white rounded-0 w-100" type="button" data-toggle="collapse" data-target="#collapseFeature2" aria-expanded="false" aria-controls="collapseFeature2">
-                                        <span class="feature-header span-as-h2"><i class="fas fa-angle-right"></i> <u>Be part of a community</u></span>
-                                      </button>
-                                    <div class="collapse" id="collapseFeature2">
-                                        <p class="p-3 bg-white text-left">Git Fit members get access to the Git Fit Community, a place where you can keep your Git Fit members up to date on your progress, support each other and celebrate success together.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="feature-btn-xs col-8 offset-2 d-block d-sm-none text-center">
-                                <div class="feature-collapse">
-                                    <button class="btn btn-collapse bg-white rounded-0 w-100" type="button" data-toggle="collapse" data-target="#collapseFeature3" aria-expanded="false" aria-controls="collapseFeature3">
-                                        <span class="feature-header span-as-h2"><i class="fas fa-angle-right"></i> <u>Access fitness plans</u></span>
-                                      </button>
-                                    <div class="collapse" id="collapseFeature3">
-                                        <p class="p-3 bg-white text-left">Git Fit members are also able to purchase exercise and nutrition plans, based on your fitness goals. These exercise and nutrition plans are created and updated by our staff.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-8 offset-2 d-none d-sm-block">
-                                <div class="feature-div mb-5 bg-white p-3">
-                                    <h2 class="mt-3 feature-header"><u>Shop with discount</u></h2>
-                                    <p>Join the community and receive a 5% discount on items in our shop, ranging from exercise equipment and nutrition to merchandise.</p>
-                                </div>
-                             </div>
-                            <div class="col-8 offset-2 d-none d-sm-block">
-                                <div class="feature-div mb-5 bg-white p-3">
-                                    <h2 class="mt-3 feature-header"><u>Join the community</u></h2>
-                                    <p>Git Fit members get access to the Git Fit Community, a place where you can keep your fellow Git Fit members up to date on your progress, support each other and celebrate success together.</p>
-                                </div>
-                             </div>
-                            <div class="col-8 offset-2 d-none d-sm-block">
-                                <div class="feature-div bg-white p-3">
-                                    <h2 class="mt-3 feature-header"><u>Access fitness plans</u></h2>
-                                    <p>Git Fit members are also able to purchase exercise and nutrition plans, based on your fitness goals. These exercise and nutrition plans are created and updated by our staff.</p>
-                                </div>
-                             </div>
+                            {% endfor %}
                         </div>
                     </section>
                 {% endif %}

@@ -118,8 +118,8 @@
                                         {% if request.user.is_superuser %}
                                             <br>
                                             <a href="{% url 'edit_workout' workout.id %}" class="small link-black">Edit</a>
-                                            <!-- TODO: Change text color for delete to red -->
-                                            <a href="{% url 'delete_workout' workout.id %}" class="small link-black float-right">Delete</a>
+                                            <!-- TODO: Change text color for delete to  a lighter red, for contrast? -->
+                                            <a href="{% url 'delete_workout' workout.id %}" class="small link-red float-right">Delete</a>
                                         {% endif %}
                                     </div>
                                 </div>
