@@ -242,7 +242,7 @@ These wireframes were used as a basis to design the actual webapp. However, some
 ---
 
 ## Database Design
-The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c17efc98)
+The database design can be found [here](https://dbdiagram.ario/d/628bc76ff040f104c17efc98)
 There are 5 models:
 1. Profiles
 2. Orders

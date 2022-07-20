@@ -14,7 +14,45 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 302)
 
 
-class TestModels(TestCase):
+class TestModels(TestCase): 
+
+    # Create some test objects
+    def setUp(self):
+        self.test_bodypart = BodyPart.objects.create(
+            name="test_bodypart")
+
+        self.test_equipment = Equipment.objects.create(
+            name="test_equipment")
+
+        self.test_target = Target.objects.create(
+            name="test_target")    
+            
+
+        self.test_workout = Workout.objects.create(
+            name="Test Workout",
+            description="Test",
+            image="test.jpg",
+            bodypart=self.test_bodypart,
+            equipment=self.test_equipment,
+            target=self.test_target            
+            )
+    
+    def test_delete_fields_of_workout(self):
+        """Test that when the bodypart, equipment and target objects are deleted for a workout,
+        those fields on the workout are set to null"""
+        self.test_bodypart.delete()
+        self.test_equipment.delete()
+        self.test_target.delete()
+        with self.assertRaises(BodyPart.DoesNotExist):
+            BodyPart.objects.get(name="test_bodypart")
+        with self.assertRaises(Equipment.DoesNotExist):
+            Equipment.objects.get(name="test_equipment")
+        with self.assertRaises(Target.DoesNotExist):
+            Target.objects.get(name="test_target")
+        workout = Workout.objects.get(name="Test Workout")
+        self.assertIsNone(workout.bodypart)
+        self.assertIsNone(workout.equipment)
+        self.assertIsNone(workout.target)
 
     # Tests for BodyPart model
     def test_all_blank_bodypart(self):
@@ -124,3 +162,4 @@ class TestModels(TestCase):
             name=long_name, description='test description', image='test.gif')
         with self.assertRaises(ValidationError):
             workout.full_clean()
+
