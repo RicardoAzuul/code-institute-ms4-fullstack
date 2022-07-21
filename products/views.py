@@ -78,7 +78,7 @@ def product_detail(request, product_id):
         'product': product,
     }
 
-    return render(request, 'products/product_detail.html', context)
+    return render(request, 'products/product-detail.html', context)
 
 
 @login_required
@@ -100,7 +100,7 @@ def add_product(request):
     else:
         form = ProductForm()
 
-    template = 'products/add_product.html'
+    template = 'products/add-product.html'
     context = {
         'form': form,
         'disable_add_to_bag': True,
@@ -131,7 +131,7 @@ def edit_product(request, product_id):
         form = ProductForm(instance=product)
     messages.info(request, f'Editing {product.name}')
 
-    template = 'products/edit_product.html'
+    template = 'products/edit-product.html'
     context = {
         'form': form,
         'product': product,
