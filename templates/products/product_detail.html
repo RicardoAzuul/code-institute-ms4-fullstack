@@ -120,6 +120,6 @@
 {% endblock content %}
 
 {% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+    {{ block.super }}
+    {% include 'products/includes/quantity-input-script.html' %}
 {% endblock postloadjs %}

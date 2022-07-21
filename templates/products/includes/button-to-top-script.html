@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    // Code from Stackoverflow, the second answer: https://stackoverflow.com/questions/14249998/jquery-back-to-top
+    $(window).scroll(function() {
+        if ($(this).scrollTop()) {
+            $('#button-to-top').fadeIn();
+        } else {
+            $('#button-to-top').fadeOut();
+        }
+    });
+    
+    $("#button-to-top").click(function() {
+        $("html, body").animate({scrollTop: 0}, 1000);
+     });
+</script>

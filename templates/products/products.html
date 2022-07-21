@@ -120,41 +120,6 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
-        // Code from Stackoverflow, the second answer: https://stackoverflow.com/questions/14249998/jquery-back-to-top
-        $(window).scroll(function() {
-            if ($(this).scrollTop()) {
-                $('#button-to-top').fadeIn();
-            } else {
-                $('#button-to-top').fadeOut();
-            }
-        });
-        
-        $("#button-to-top").click(function() {
-            $("html, body").animate({scrollTop: 0}, 1000);
-         });
-    </script>
-    <script type="text/javascript">
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
-
-            var selectedVal = selector.val();
-            if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
-
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
-
-                window.location.replace(currentUrl);
-            }
-            else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
-                
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
+    {% include 'products/includes/button-to-top-script.html' %}
+    {% include 'products/includes/sort-selector-script.html' %}
 {% endblock %}

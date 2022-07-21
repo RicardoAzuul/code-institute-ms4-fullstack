@@ -93,7 +93,7 @@ TEMPLATES = [
                 'crispy_forms.templatetags.crispy_forms_field',
             ],
             'libraries':{
-                'custom_templatetage': 'cart.templatetags.cart_tools',
+                'custom_templatetags': 'cart.templatetags.cart_tools',
             }
         },
     },
