@@ -25,6 +25,7 @@ Initially I wanted to name the project Fit Family, and create a more family orie
  
 ### User stories
 Not all User Stories have been completed. Basic shopping functionality has been completed, but user stories that are about the community side of the project have yet to be resolved.
+<!-- TODO: Update -->
   
 **Viewing and Navigation**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
@@ -93,18 +94,24 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 | ❌ | 41 | Store Owner/Admin | Add a nutrition plan | Add new nutrition plans | |
 | ❌ | 42 | Store Owner/Admin | Edit/update a nutrition plan | Change nutrition plan | |
 | ❌ | 43 | Store Owner/Admin | Delete a nutrition plan | Remove nutrition plans that are no longer promoted | |
+| ✔️ | 44 | Store Owner/Admin | Add subscription features to the home page | To entice visitors to subscribe | |
+| ✔️ | 45 | Store Owner/Admin | Edit subscription features visible on the home page | To tweak the features and entice visitors to subscribe | |
+| ✔️ | 46 | Store Owner/Admin | Delete subscription features visible on the home page | To remove features that are no longer offered  | |
+| ✔️ | 44 | Store Owner/Admin | Add shop alerts to the products page | To update the shop and make visitors aware of for example new deals | |
+| ✔️ | 45 | Store Owner/Admin | Edit shop alerts visible on the products page | To change shop alerts | |
+| ✔️ | 46 | Store Owner/Admin | Delete shop alerts visible on the products page | To remove shop alerts that are no longer applicable  | |
 
 **Viewing and Navigation - Workouts**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| ✔️ | 44 | Registered User | View a list of workouts | Select workouts to do |  |
-| ✔️ | 45 | Registered User | View individual workout details | Identify the description, rating, equipment needed and what the workout targets |  |
+| ✔️ | 47 | Registered User | View a list of workouts | Select workouts to do |  |
+| ✔️ | 48 | Registered User | View individual workout details | Identify the description, rating, equipment needed and what the workout targets |  |
 
 **Sorting and Searching - Workouts**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| ✔️ | 12 | Registered User | Sort the list of available workouts | Easily identify the best rated, categorically sorted workouts |  |
-| ✔️ | 13 | Registered User | Sort a specific category of workout | Find the best-rated workout in a specific category, or sort the workouts in that category by name |  |
+| ✔️ | 49 | Registered User | Sort the list of available workouts | Easily identify the best rated, categorically sorted workouts |  |
+| ✔️ | 50 | Registered User | Sort a specific category of workout | Find the best-rated workout in a specific category, or sort the workouts in that category by name |  |
 
 
 ---
@@ -159,6 +166,7 @@ All pages should have the same navigation bar and footer:
 <ins>The Home Page</ins>
 - a hero image evoking the idea of "active, aggressive, simplicity".
 - a call to action to subscribe.
+- features that indicate the benefits of subscribing.
 
 <ins>The Profile Page</ins>
 - a form where subscribers can fill in their shopping details, but also personal details which map to exercise or nutrition.
@@ -169,6 +177,7 @@ All pages should have the same navigation bar and footer:
 
 <ins>The Shop Page</ins>
 - items for sale.
+- shop alerts, to make visitors aware of deals for instance.
 - the option to review items for signed in users.
 - search functionality to search for items
 
@@ -218,6 +227,7 @@ Buttons have no rounded borders, to create a sleek design. Red is mainly used as
 
 
 <ins>Wireframes</ins>
+<!-- TODO: Update -->
 
 These wireframes were used as a basis to design the actual webapp. However, sometimes the actual project deviates from the wireframes, because the endresult looked better or was more easily achieved than the wireframe.
 - [Home](readme-assets/media/home.png)
@@ -257,8 +267,9 @@ These wireframes were used as a basis to design the actual webapp. However, some
 ---
 
 ## Database Design
+<!-- TODO: Update -->
 The database design can be found [here](https://dbdiagram.ario/d/628bc76ff040f104c17efc98)
-There are 9 models:
+There are 11 models:
 1. Profiles
 2. Orders
 3. Order Line Items
@@ -268,6 +279,8 @@ There are 9 models:
 7. BodyParts (linked to Workouts)
 8. Equipment (linked to Workouts)
 9. Targets (linked to Workouts)
+10. Features
+11. ShopAlerts
 
 The Profiles model is linked to the allauth User model, but I don't know how this model is constructed.
 
@@ -346,6 +359,7 @@ These screenshots indicate the responsiveness of the pages on various screens. P
 <ins>Automated tests</ins>
 
 There are some automated tests using Django's own testing capabilities.
+<!-- TODO: Add coverage -->
 ```python manage.py test --verbosity=2```
 
 Output:
@@ -409,6 +423,7 @@ Below are more elaborate tests:
 | Clicking on the navbar brand as either an anonymous user or logged in user | I go back to the home page | ✔️ |
 | Clicking on the 'Buy' button as either an anonymous user or logged in user | I go to the products page and see a list of products | ✔️ |
 | Clicking on the 'Register' button as an anonymous user | I go to the register page and see a form to register for an account | ✔️ |
+| Clicking on the 'Workouts' button as an anonymous user | I see options to either register or login, which take me to either a register or login page | ❌ |
 | Clicking on the 'My Account' button as an anonymous user | I see options to either register or login, which take me to either a register or login page | ✔️ |
 | Clicking on the 'My Account' button as a logged in user | I see options to go to my profile or to logout, which take me to either my profile page or logout page | ✔️ |
 | Clicking on a product image as an anonymous or a logged in user | I see product details and the option to add a product to my cart | ✔️ |
@@ -608,6 +623,7 @@ Product images, prices, descriptions and ratings: www.decathon.nl
 
 
 ### Media
+<!-- TODO: UPdate -->
 Main page: https://www.pexels.com/photo/woman-doing-exercise-414029/
 No image available file: https://commons.wikimedia.org/wiki/File:No_Image_Available.jpg
 
@@ -620,5 +636,6 @@ I've used some code from Bootstrap, as indicated by comments, and I found a nice
 
 - I received help and support from my mentor at Code Institute, [Jack Wachira](https://github.com/iamjackwachira). 
 - I would also like to thank to all the people at [Code Institute](https://codeinstitute.net/) for providing the Diploma in Software Development course and giving me the tools and guidance to create this app.
+- I also received help from the Code Institute Slack Community when I had to resubmit my project, so thanks to the community as well.
 - And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, [Django](https://www.djangoproject.com/) for their documentation and [Stackoverflow](https://stackoverflow.com/) for helping with finding solutions to coding problems.
 - My wife, Elizabeth Lane, for supporting me during this coding course.

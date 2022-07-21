@@ -1,6 +1,6 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item d-block d-md-none">
+        <li class="nav-item d-block d-lg-none">
             <a class="link-white font-weight-bold mr-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
@@ -62,11 +62,19 @@
                 All Workouts
             </a>
             <div class="dropdown-menu border-black" aria-labelledby="all-workouts-link">
-                <a href="{% url 'workouts' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'workouts' %}?sort=bodypart&direction=asc" class="dropdown-item ">By Body Part</a>
-                <a href="{% url 'workouts' %}?sort=equipment&direction=asc" class="dropdown-item ">By Equipment</a>
-                <a href="{% url 'workouts' %}?sort=target&direction=asc" class="dropdown-item ">By Target</a>
-                <a href="{% url 'workouts' %}" class="dropdown-item">All Workouts</a>
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'add_workout' %}" class="dropdown-item">Add Workout</a>
+                    {% endif %}
+                    <a href="{% url 'workouts' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                    <a href="{% url 'workouts' %}?sort=bodypart&direction=asc" class="dropdown-item ">By Body Part</a>
+                    <a href="{% url 'workouts' %}?sort=equipment&direction=asc" class="dropdown-item ">By Equipment</a>
+                    <a href="{% url 'workouts' %}?sort=target&direction=asc" class="dropdown-item ">By Target</a>
+                    <a href="{% url 'workouts' %}" class="dropdown-item">All Workouts</a>
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
             </div>
         </li>
     </ul>
