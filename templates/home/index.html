@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_title %} - Home{% endblock extra_title %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -14,6 +16,7 @@
         <div class="container minheight">
             <div class="row">
                 {% if request.user.is_authenticated %}
+                    <!-- Logged in users don't see the Jumbotron or features -->
                     <section id="call-to-action-section_auth">
                         <div class="col-8 offset-2 offset-sm-3 offset-lg-5">
                             <h1 class="text-white text-uppercase call-to-action-header text-center px-4 my-5">Make it simple.<br> Get fit.</h1>
@@ -25,6 +28,7 @@
                         </div>
                     </section>
                 {% else %}
+                    <!-- Anonymous users see the Jumbotron and features to get them to sign up -->
                     <section id="call-to-action-section_unauth">
                         <div class="col-8 offset-2 offset-sm-3 offset-lg-5">
                             <h1 class="text-white text-uppercase call-to-action-header text-center px-4 my-5">Make it simple.<br> Get fit.</h1>
@@ -37,6 +41,7 @@
                     </section>
             </div>
                     <section id="jumbotron-section">
+                        <!-- Jumbotron: call to action to sign up -->
                         <div class="row">
                             <div class="col-8 offset-2 offset-sm-2 jumbotron-btn-xs d-block d-md-none">
                                 <div id="jumbotron-collapse-div" class="my-5">
@@ -67,6 +72,7 @@
                         </div>
                     </section>
                     <section id="features-section">
+                        <!-- Loop through the features of signing up -->
                         <div class="row">
                             {% for feature in features %}
                                 <div class="feature-btn-xs col-8 offset-2 d-block d-sm-none text-center">

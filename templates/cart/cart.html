@@ -2,6 +2,8 @@
 {% load static %}
 {% load cart_tools %}
 
+{% block extra_title %} - Cart{% endblock extra_title %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -22,12 +24,14 @@
         </div>
         <div class="row">
             {% if cart_items %}
+                <!-- When there are items in the cart, loop through them -->
                 {% for item in cart_items  %}           
                     <div class="col-12 col-md-6 mb-3">
                         <p class="font-weight-bold">Item</p>
                         <hr class="bg-white">
                         <div class="row">
                             <div class="col-6">
+                                <!-- Show product image if exists, otherwise a default image -->
                                 {% if item.product.image %}
                                     <a href="{% url 'product_detail' item.product.id %}" target="_blank">
                                         <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded-0">
@@ -51,6 +55,7 @@
                     <div class="col">
                         <p class="font-weight-bold text-right">Quantity</p>
                         <hr class="bg-white d-none d-md-block">
+                        <!-- Form to update the quantity of items in the cart -->
                         <form action="{% url 'update_cart' item.item_id %}" class="form update-form" method="POST">
                             {% csrf_token %}
                             <div class="form-group">
@@ -94,6 +99,7 @@
                     <a href="{% url 'checkout' %}" class="btn btn-red rounded-0 float-right"><i class="fas fa-wallet"></i> Secure Checkout</a>
                 </div>
             {% else %}
+                <!-- Displays when cart is empty -->
                 <div class="col-12 col-md-6 mb-3">
                     <p class="lead mb-5">Your cart is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-lg btn-white rounded-0"><i class="fas fa-caret-left"></i> Back to Shop</a>
@@ -107,6 +113,7 @@
 {{ block.super }}
 {% include 'products/includes/quantity-input-script.html' %}
 
+<!-- Listens for click on the remove button, then deletes item from cart -->
 <script type="text/javascript">
     $('.remove-item').click(function(e) {        
         var csrfToken = "{{ csrf_token }}";

@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_title %} - Products{% endblock extra_title %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
             <div class="col">
                 <!-- Alert from Bootstrap: https://getbootstrap.com/docs/4.0/components/alerts/#dismissing -->
                 <div class="alert alert-primary alert-dismissible fade show text-center" role="alert">
+                    <!-- Alert is randomly chosen from all available alerts in the db -->
                     {% autoescape off %}{{ shop_alerts_textstrings|random }}{% endautoescape %}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -23,6 +26,7 @@
     <div class="row">
         <div class="col text-center">
             <h2>Products</h2>
+            <!-- If the user selected categories, show them here -->
             {% for category in selected_categories  %}
                 <a href="{% url 'products' %}?category={{ category.name }}" class="btn btn-red rounded-0 mb-1">{{ category.friendly_name }}</a>
             {% endfor %}                
@@ -41,6 +45,7 @@
                     </p>
                 </div>
                 <div class="col-6 text-right">
+                    <!-- Sorting options -->
                     <select id="sort-selector" class="border-white rounded-0 mb-3 w-75">
                         <option value="reset" {% if selected_sorting == 'None_None' %}selected{% endif %}>Sort by...
                         </option>
@@ -64,9 +69,11 @@
                 </div>
             </div>
             <div class="row">
+                <!-- Loop through the products -->
                 {% for product in products %}
                     <div class="col-12 col-md-6 col-lg-3 mb-5">
-                        <div class="card h-100 text-black rounded-0">                            
+                        <div class="card h-100 text-black rounded-0"> 
+                            <!-- Show the product's image, otherwise show a default image -->
                             {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}" class="link-card">
                                     <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0">
@@ -98,6 +105,7 @@
                                         {% else %}
                                             <p class="float-right text-muted m-0">No Rating</p>
                                         {% endif %}
+                                        <!-- Show admin functions for superusers -->
                                         {% if request.user.is_superuser %}
                                             <br>
                                             <a href="{% url 'edit_product' product.id %}" class="small link-black">Edit</a>
@@ -120,6 +128,8 @@
 
 {% block postloadjs %}
     {{ block.super }}
+    <!-- Contains script for scroll to top button -->
     {% include 'products/includes/button-to-top-script.html' %}
+    <!-- Contains script for sort selector -->
     {% include 'products/includes/sort-selector-script.html' %}
 {% endblock %}

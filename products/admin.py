@@ -1,10 +1,11 @@
 from django.contrib import admin
 from .models import Product_Category, Product, ShopAlert
 
-# Register your models here.
-
 
 class ProductAdmin(admin.ModelAdmin):
+    """
+    Registers the product model to the admin dashboard for CRUD operations
+    """
     list_display = (
         'name',
         'sku',
@@ -18,6 +19,9 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class Product_CategoryAdmin(admin.ModelAdmin):
+    """
+    Registers the product_category model to the admin dashboard for CRUD operations
+    """
     list_display = (
         'friendly_name',
         'name',
@@ -27,6 +31,9 @@ class Product_CategoryAdmin(admin.ModelAdmin):
 
 
 class ShopAlertAdmin(admin.ModelAdmin):
+    """
+    Registers the shop alert model to the admin dashboard for CRUD operations
+    """
     list_display = (
         'name',
         'text',

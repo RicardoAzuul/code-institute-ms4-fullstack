@@ -11,13 +11,17 @@ from .models import Order, OrderLineItem
 
 
 class StripeWebHook_Handler:
-    """Handle Stripe webhooks"""
+    """
+    Handle Stripe webhooks
+    """
 
     def __init__(self, request):
         self.request = request
 
     def _send_confirmation_email(self, order):
-        """Send the user a confirmation email"""
+        """
+        Send the user a confirmation email
+        """
         cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
@@ -73,6 +77,7 @@ class StripeWebHook_Handler:
                 profile.default_county = shipping_details.address.state
                 profile.save()
 
+        # Try 5 times to get the order from the db
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -104,6 +109,7 @@ class StripeWebHook_Handler:
                 SUCCESS: Order already in db',
                 status=200)
         else:
+            # If after 5 times we can't get the order from the db, we create the order
             order = None
             try:
                 order = Order.objects.create(

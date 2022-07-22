@@ -6,6 +6,7 @@
     https://stripe.com/docs/stripe-js
 */
 
+// Set up Stripe element
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
@@ -30,6 +31,7 @@ var card = elements.create('card', {
 });
 card.mount('#card-element');
 
+// Listen for error and add some HTML
 card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
     if (event.error) {
@@ -113,7 +115,6 @@ form.addEventListener('submit', function (ev) {
                     $('#submit-button').attr('disabled', false);
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
-                        // Comment out to fail checkout
                         form.submit();
                     }
                 }

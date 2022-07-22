@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_title %} - Product Details{% endblock extra_title %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -27,6 +29,7 @@
     </div>
     <div class="row">
         <div class="col-12 col-lg-4 offset-lg-2">
+            <!-- Load either the product image or a default image if no image -->
             {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
                  <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid rounded-0 mb-3 ">
@@ -45,6 +48,7 @@
                 <div class="col-4">
                     <h3 class="float-right">${{ product.price }}</h3>
                 </div>
+                <!-- Show extra functiosn for superusers -->
                 {% if request.user.is_superuser %}
                     <div class="col-8">
                         <a href="{% url 'edit_product' product.id %}" class="link-white">Edit</a>
@@ -59,6 +63,7 @@
                     <hr class="bg-white">
                 </div>
             </div>
+            <!-- Form to add product to cart -->
             <form action="{% url 'add_to_cart' product.id %}" class="form" method="post">
                 {% csrf_token %}        
                 <div class="form-row">

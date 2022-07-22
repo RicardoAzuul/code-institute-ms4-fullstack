@@ -4,6 +4,9 @@ from .models import Product, Product_Category
 
 
 class ProductForm(forms.ModelForm):
+    """
+    Creates a form to add or edit products in the webapp itself
+    """
 
     class Meta:
         model = Product

@@ -1,17 +1,19 @@
 from django.contrib import admin
 from .models import Order, OrderLineItem
 
-# Register your models here.
-
 
 class OrderLineItemAdminInline(admin.TabularInline):
-    """ Adds OrderLineItem as an editable field to Orders """
+    """
+    Makes OrderLineItem available and editable in the admin portal
+    """
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):
-    """ Makes orders available for editing via the admin portal """
+    """
+    Makes orders available for editing via the admin portal
+    """
     inlines = (OrderLineItemAdminInline,)
     readonly_fields = ('order_number', 'date',
                        'delivery_cost', 'order_total',

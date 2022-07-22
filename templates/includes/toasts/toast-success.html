@@ -1,3 +1,4 @@
+<!-- Toast for success messages -->
 <div class="toast rounded-0 border-black" data-delay="3000">
     <div class="toast-header bg-white text-black">
         <strong class="mr-auto"><i class="fas fa-check"></i> Success</strong>
@@ -12,6 +13,7 @@
                 <hr>
             </div>
         </div>
+        <!-- Show content of cart when updating it -->
         {% if grand_total and not disable_add_to_bag %}
             <p class="bg-white text-black">Your Cart ({{ product_count }})</p>
             <div class="cart-toast-div">

@@ -12,8 +12,9 @@
     {% block extra_meta %}
     {% endblock extra_meta %}
 
-
+    
     {% block corecss %}
+      <!-- Bootstrap, Google Fonts, base.css -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,16 +27,15 @@
     {% endblock extra_css %}
 
     {% block corejs %}
+      <!-- FontAwesome, jQuery, Bootstrap JS, Stripe -->
       <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-      <!-- Stripe -->
       <script src="https://js.stripe.com/v3/"></script>
     {% endblock corejs %}
 
     {% block extra_js %}{% endblock extra_js %}
-    <!-- IMPROVE: Extra titles for pages -->
     <title>Git Fit {% block extra_title %}{% endblock extra_title %}</title>
   </head>
   <body>
@@ -47,6 +47,7 @@
           </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+          <!-- Search bar -->
           <form method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
               <input class="form-control border rounded-0" type="text" name="q"
@@ -63,6 +64,7 @@
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+            <!-- Workouts menu -->
             <li class="list-inline-item dropdown d-none d-lg-inline-block">
               <a class="text-white" href="#" id="workouts" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
@@ -82,11 +84,12 @@
                   <a href="{% url 'workouts' %}?sort=target&direction=asc" class="dropdown-item ">By Target</a>
                   <a href="{% url 'workouts' %}" class="dropdown-item">All Workouts</a>
                 {% else %}
-                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                  <a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a>
+                  <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
                 {% endif %}
               </div>
             </li>
+            <!-- Account menu -->
             <li class="list-inline-item dropdown">
               <a class="text-white" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
@@ -101,13 +104,14 @@
                     <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
                   {% endif %}
                   <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                  <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                  <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
                 {% else %}
-                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                  <a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a>
+                  <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
                 {% endif %}
               </div>
             </li>
+            <!-- Shopping cart and checkout -->
             <li class="list-inline-item">
               <a class="{% if grand_total %}font-weight-bold{% else %}{% endif %} text-white"
                 href="{% url 'view_cart' %}">
@@ -140,6 +144,7 @@
 
     
     {% if messages %}
+      <!-- Container for messages, such as errors, adding items to cart, etc -->
       <div class="message-container">
         {% for message in messages %}
           {% with message.level as level %}
@@ -163,6 +168,7 @@
     {% block content %}
     {% endblock content %}
 
+    <!-- Footer -->
     <footer class="container-fluid bg-black text-white border-top-white">
       <div class="row pt-3">
         <div class="col-6">
@@ -193,17 +199,18 @@
             </a>
             <a href="https://www.youtube.com" class="text-white text-decoration-none social-link" aria-label="Open Youtube in new tab" target="_blank"
             rel="external noopener noreferrer">
-            <i class="fab fa-youtube fa-lg" aria-hidden="true" title="Open Youtube in new tab"></i>
+              <i class="fab fa-youtube fa-lg" aria-hidden="true" title="Open Youtube in new tab"></i>
             </a>
             <a href="https://www.pinterest.com" class="text-white text-decoration-none social-link" aria-label="Open Pinterest in new tab" target="_blank"
             rel="external noopener noreferrer">
-            <i class="fab fa-pinterest fa-lg" aria-hidden="true" title="Open Pinterest in new tab"></i>
-                     </a>
+              <i class="fab fa-pinterest fa-lg" aria-hidden="true" title="Open Pinterest in new tab"></i>
+            </a>
         </div>
       </div>
     </footer>
 
     {% block postloadjs %}
+    <!-- Show toasts messages -->
     <script type="text/javascript">
       $('.toast').toast('show');
     </script>

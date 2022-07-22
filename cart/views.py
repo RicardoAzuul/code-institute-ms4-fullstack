@@ -3,17 +3,19 @@ from django.shortcuts import redirect, render, reverse, get_object_or_404
 from django.contrib import messages
 from products.models import Product
 
-# Create your views here.
-
 
 def view_cart(request):
-    """ A view to return the cart """
+    """
+    A view to return the cart
+    """
 
     return render(request, 'cart/cart.html')
 
 
 def add_to_cart(request, item_id):
-    """ A view to add items to the cart """
+    """
+    A view to add items to the cart
+    """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -34,7 +36,9 @@ def add_to_cart(request, item_id):
 
 
 def update_cart(request, item_id):
-    """ A view to update items in the cart """
+    """
+    A view to update items in the cart
+    """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -54,7 +58,9 @@ def update_cart(request, item_id):
 
 
 def remove_from_cart(request, item_id):
-    """ A view to remove items from the cart """
+    """
+    A view to remove items from the cart
+    """
 
     try:
         product = get_object_or_404(Product, pk=item_id)

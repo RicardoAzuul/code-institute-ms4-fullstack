@@ -1,3 +1,4 @@
+<!-- Main navigation: home, products and workouts. Hides behind hamburger menu on smaller screens -->
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item d-block d-lg-none">
@@ -63,6 +64,7 @@
             </a>
             <div class="dropdown-menu border-black" aria-labelledby="all-workouts-link">
                 {% if request.user.is_authenticated %}
+                    <!-- Workouts are only available to signed in users -->
                     {% if request.user.is_superuser %}
                         <a href="{% url 'add_workout' %}" class="dropdown-item">Add Workout</a>
                     {% endif %}
@@ -72,8 +74,8 @@
                     <a href="{% url 'workouts' %}?sort=target&direction=asc" class="dropdown-item ">By Target</a>
                     <a href="{% url 'workouts' %}" class="dropdown-item">All Workouts</a>
                 {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
                 {% endif %}
             </div>
         </li>

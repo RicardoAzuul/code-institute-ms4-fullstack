@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock extra_css %}
 
+{% block extra_title %} - Profile{% endblock extra_title %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -27,6 +28,7 @@
         <div class="row">
             <div class="col-12 col-lg-6 mb-5">
                 <h3>Default Delivery Information</h3>
+                <!-- Form to view and edit delivery info -->
                 <form id="update-profile-form" action="{% url 'profile' %}" method="POST">
                     {% csrf_token %}
                     {{ form|crispy }}
@@ -46,6 +48,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Loop through the user's orders, showing a summary for each -->
                             {% for order in orders %}
                             <tr>
                                 <td>
@@ -76,5 +79,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
+<!-- Contains script for the formatting of the CountryField -->
 <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}

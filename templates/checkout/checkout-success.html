@@ -2,8 +2,11 @@
 {% load static %}
 
 {% block extra_css %}
+<!-- Extra CSS for checkout -->
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
+
+{% block extra_title %} - Checkout succes{% endblock extra_title %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -18,6 +21,7 @@
 <div class="container minheight">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 order-md-last">
+            <!-- Order summary, with subtotals, order total, delivery costs and grand total -->
             <h3>Order Summary</h3>
             <div class="row">
                 <div class="col">
@@ -47,6 +51,7 @@
     </div>
     <div class="row">
         <div class="col-12 col-lg-4">
+            <!-- Full order details -->
             <h3>Customer Info</h3>                             
             <p class="mb-0">{{ order.date }}</p>
             <p class="mb-5">{{ order.phone_number }}</p>
@@ -87,6 +92,7 @@
     <div class="row">
         <div class="col-12">
             {% if from_profile %}
+                <!-- Signed in users can view their order history: this button takes them back to their profile -->
                 <a href="{% url 'profile' %}" class="btn btn-red rounded-0 my-2">
                     <span class="mr-2">
                         <i class="fas fa-caret-left"></i>

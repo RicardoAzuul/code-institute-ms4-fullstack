@@ -5,7 +5,9 @@ from .models import Feature
 
 
 def index(request):
-    """ A view to return the index page """
+    """
+    A view to return the index page
+    """
 
     # Get all features from the db to populate on the index page
     features = Feature.objects.all()

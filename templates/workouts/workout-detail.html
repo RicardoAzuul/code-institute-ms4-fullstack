@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_title %} - Workout Details{% endblock extra_title %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -28,6 +30,7 @@
     </div>
     <div class="row">
         <div class="col-12 col-lg-4 offset-lg-2">
+            <!-- Show the workout's image if exists, otherwise show default image -->
             {% if workout.image %}
                 <a href="{{ workout.image.url }}" target="_blank">
                  <img src="{{ workout.image.url }}" alt="{{ workout.name }}" class="card-img-top img-fluid rounded-0 mb-3 ">
@@ -43,6 +46,7 @@
                 <div class="col-12">
                     <h3>{{ workout.name }}</h3>
                 </div>
+                <!-- Show admin functions for superusers -->
                 {% if request.user.is_superuser %}
                     <div class="col-8">
                         <a href="{% url 'edit_workout' workout.id %}" class="link-white">Edit</a>
