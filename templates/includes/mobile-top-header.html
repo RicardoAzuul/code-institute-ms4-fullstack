@@ -23,13 +23,13 @@
       </div>
   </li>
   <li class="list-inline-item dropdown">
-      <a class="d-block d-lg-none text-white" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="d-block d-lg-none text-white" href="#" id="user-options-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="text-center">
               <div><i class="fas fa-user fa-lg"></i></div>
               <p class="my-0">My Account</p>
           </div>
       </a>
-      <div class="dropdown-menu border-0" aria-labelledby="user-options">
+      <div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
           {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
                   <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>

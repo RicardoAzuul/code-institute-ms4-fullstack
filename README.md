@@ -227,7 +227,6 @@ Buttons have no rounded borders, to create a sleek design. Red is mainly used as
 
 
 <ins>Wireframes</ins>
-<!-- TODO: Update -->
 
 These wireframes were used as a basis to design the actual webapp. However, sometimes the actual project deviates from the wireframes, because the endresult looked better or was more easily achieved than the wireframe.
 - [Home](readme-assets/media/home.png)
@@ -239,6 +238,9 @@ These wireframes were used as a basis to design the actual webapp. However, some
 - [Product](readme-assets/media/product.png)
 - [Product - tablet](readme-assets/media/product_tablet_view.png)
 - [Product - mobile](readme-assets/media/product_mobile_view.png)
+
+The layout of the workouts section is very similar to the shop and product pages, just with some slight change in details.
+
 - [Product: add to cart](readme-assets/media/product_add-to-cart.png)
 - [Cart](readme-assets/media/cart.png)
 - [Cart - tablet](readme-assets/media/cart_tablet_view.png)
@@ -335,6 +337,7 @@ The Profiles model is linked to the allauth User model, but I don't know how thi
 - [dbdiagram.io](https://dbdiagram.io): an online tool to create a relational database schema.
 - [Chromedriver](https://sites.google.com/chromium.org/driver/): for doing Chrome browser based automated tests
 - [Django](https://www.djangoproject.com/): the Python framework that helped to quickly bootstrap the project.
+- [black](https://pypi.org/project/black/): a Python package that helps with formatting Python code according to PEP8.
 
 
 ---
