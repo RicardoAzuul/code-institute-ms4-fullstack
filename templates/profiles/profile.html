@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock extra_css %}
+
+{% block extra_title %} - Profile{% endblock extra_title %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container minheight mb-3">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Profile</h2>
+                <hr class="bg-white">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-6 mb-5">
+                <h3>Default Delivery Information</h3>
+                <!-- Form to view and edit delivery info -->
+                <form id="update-profile-form" action="{% url 'profile' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-red rounded-0">Update Information</button>
+                </form>
+            </div>
+            <div class="col-12 col-lg-6 mb-5">
+                <h3>Order History</h3>
+                <div class="order-history table-responsive">
+                    <table class="table table-sm table-borderless text-white">
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Order Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Loop through the user's orders, showing a summary for each -->
+                            {% for order in orders %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'order_history' order.order_number %}" class="link-red"
+                                        title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}</a>
+                                </td>
+                                <td class="small">{{ order.date }}</td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        {% for item in order.lineitems.all %}
+                                        <li class="small">
+                                            {{ item.product.name }}
+                                            x{{ item.quantity }}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                                <td>${{ order.grand_total }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!-- Contains script for the formatting of the CountryField -->
+<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+{% endblock %}

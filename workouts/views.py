@@ -77,7 +77,7 @@ def workout_detail(request, workout_id):
         'workout': workout,
     }
 
-    return render(request, 'workouts/workout_detail.html', context)
+    return render(request, 'workouts/workout-detail.html', context)
 
 
 @login_required
@@ -99,7 +99,7 @@ def add_workout(request):
     else:
         form = WorkoutForm()
 
-    template = 'workouts/add_workout.html'
+    template = 'workouts/add-workout.html'
     context = {
         'form': form,
         'disable_add_to_bag': True,
@@ -130,7 +130,7 @@ def edit_workout(request, workout_id):
         form = WorkoutForm(instance=workout)
     messages.info(request, f'Editing {workout.name}')
 
-    template = 'workouts/edit_workout.html'
+    template = 'workouts/edit-workout.html'
     context = {
         'form': form,
         'workout': workout,

@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} - Home{% endblock extra_title %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+        <div class="container minheight">
+            <div class="row">
+                {% if request.user.is_authenticated %}
+                    <!-- Logged in users don't see the Jumbotron or features -->
+                    <section id="call-to-action-section_auth">
+                        <div class="col-8 offset-2 offset-sm-3 offset-lg-5">
+                            <h1 class="text-white text-uppercase call-to-action-header text-center px-4 my-5">Make it simple.<br> Get fit.</h1>
+                            <div class="text-center">
+                                <h4>
+                                    <a href="{% url 'products' %}" class="btn btn-lg btn-red rounded-0 text-uppercase mb-5">Buy</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </section>
+                {% else %}
+                    <!-- Anonymous users see the Jumbotron and features to get them to sign up -->
+                    <section id="call-to-action-section_unauth">
+                        <div class="col-8 offset-2 offset-sm-3 offset-lg-5">
+                            <h1 class="text-white text-uppercase call-to-action-header text-center px-4 my-5">Make it simple.<br> Get fit.</h1>
+                            <div class="text-center">
+                                <h4 class="px-4">
+                                    <a href="{% url 'products' %}" class="btn btn-lg btn-red rounded-0 text-uppercase mb-5">Buy</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </section>
+            </div>
+                    <section id="jumbotron-section">
+                        <!-- Jumbotron: call to action to sign up -->
+                        <div class="row">
+                            <div class="col-8 offset-2 offset-sm-2 jumbotron-btn-xs d-block d-md-none">
+                                <div id="jumbotron-collapse-div" class="my-5">
+                                    <button id="jumbotron-collapse-button" class="btn btn-collapse bg-white rounded-0 w-100 mt-5" type="button" data-toggle="collapse" data-target="#collapseJumbotron" aria-expanded="false" aria-controls="collapseJumbotron">
+                                        <span class="feature-header span-as-h2 text-uppercase"><i class="fas fa-angle-right"></i> Join The Git Fit Community</span>
+                                      </button>
+                                    <div class="jumbotron collapse" id="collapseJumbotron">
+                                        <div class="col">
+                                            <p class="lead text-center">Join the community for support from your peers and access to our exercise and nutritions plans designed to help you git fit.</p>
+                                            <h4 class="text-center">
+                                                <a href="{% url 'account_signup' %}" class="btn btn-lg btn-red rounded-0 text-uppercase"><i class="fas fa-user-plus"></i> Register</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="jumbotron d-none d-md-block my-5">
+                                    <div class="col-8 offset-2">
+                                        <h2 class="text-center text-uppercase"><i class="fas fa-tools"></i> Join The Git Fit Community</h2>
+                                        <p class="lead text-center">Register now and get access to our Git Fit Community once it's finished. Read about some features below.</p>
+                                        <h4 class="text-center">
+                                            <a href="{% url 'account_signup' %}" class="btn btn-lg btn-red rounded-0 text-uppercase"><i class="fas fa-user-plus"></i> Register</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="features-section">
+                        <!-- Loop through the features of signing up -->
+                        <div class="row">
+                            {% for feature in features %}
+                                <div class="feature-btn-xs col-8 offset-2 d-block d-sm-none text-center">
+                                    <div class="feature-collapse mb-5">
+                                        <button class="btn btn-collapse bg-white rounded-0 w-100" type="button" data-toggle="collapse" data-target="#collapse{{ feature.id }}" aria-expanded="false" aria-controls="collapse{{ feature.id }}">
+                                            <span class="feature-header span-as-h2"><i class="fas fa-angle-right"></i> <u>{{ feature.header }}</u></span>
+                                        </button>
+                                        <div class="collapse" id="collapse{{ feature.id }}">
+                                            <p class="p-3 bg-white text-left">{{ feature.text }}</p>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-8 offset-2 d-none d-sm-block">
+                                    <div class="feature-div mb-5 bg-white p-3">
+                                        <h2 class="mt-3 feature-header"><u>{{ feature.header }}</u></h2>
+                                        <p>{{ feature.text }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+                {% endif %}
+        </div>
+    </div>
+{% endblock content %}
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        // Change Font Awesome icon based on aria-expanded === true or false
+        $('.btn-collapse').click(function(e) {
+            var buttonClicked = $(this);
+            var buttonAttr = buttonClicked.attr('aria-expanded');
+            var fontAwesomeElement = buttonClicked.find("i");
+            fontAwesomeElement.removeClass( "fa-angle-right" );
+            fontAwesomeElement.addClass( "fa-angle-down" );
+            if (buttonAttr === "false") {
+                fontAwesomeElement.removeClass( "fa-angle-right" );
+                fontAwesomeElement.addClass( "fa-angle-down" );
+            } else {
+                fontAwesomeElement.addClass( "fa-angle-right" );
+                fontAwesomeElement.removeClass( "fa-angle-down" );
+            }
+        });
+    </script>
+{% endblock %}

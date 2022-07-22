@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cart_tools %}
+
+{% block extra_title %} - Cart{% endblock extra_title %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container mb-3 minheight">
+        <div class="row">
+            <div class="col">
+                <h2>Your Cart</h2>
+                <hr class="bg-white">
+            </div>
+        </div>
+        <div class="row">
+            {% if cart_items %}
+                <!-- When there are items in the cart, loop through them -->
+                {% for item in cart_items  %}           
+                    <div class="col-12 col-md-6 mb-3">
+                        <p class="font-weight-bold">Item</p>
+                        <hr class="bg-white">
+                        <div class="row">
+                            <div class="col-6">
+                                <!-- Show product image if exists, otherwise a default image -->
+                                {% if item.product.image %}
+                                    <a href="{% url 'product_detail' item.product.id %}" target="_blank">
+                                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded-0">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'product_detail' item.product.id %}" target="_blank">
+                                        <img src="{{ MEDIA_URL }}No_Image_Available.jpg" alt="{{ item.product.name }}" class="img-fluid rounded-0">
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="col-6">
+                                <h5>{{ item.product.name }}</h5>
+                            </div>                        
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p class="font-weight-bold text-md-right">Price</p>
+                        <hr class="bg-white d-none d-md-block">
+                        <h4 class="text-md-right">${{ item.product.price }}</h4>
+                    </div>
+                    <div class="col">
+                        <p class="font-weight-bold text-right">Quantity</p>
+                        <hr class="bg-white d-none d-md-block">
+                        <!-- Form to update the quantity of items in the cart -->
+                        <form action="{% url 'update_cart' item.item_id %}" class="form update-form" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prefix">
+                                        <button class="decrease-qty btn btn-sm btn-white rounded-0" data-item_id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}"><i class="fas fa-minus fa-sm"></i></button>
+                                    </div>
+                                    <input type="number" class="form-control form-control-sm qty_input bg-white rounded-0" name="quantity" value="{{ item.quantity }}"
+                                        min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                    <div class="input-group-suffix">
+                                        <button class="increase-qty btn btn-sm btn-white rounded-0" data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}"><i class="fas fa-plus fa-sm"></i></button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="submit" class="btn btn-sm btn-white rounded-0 float-left mt-3" value="Update Cart">
+                                    <a href="" id="remove_{{ item.item_id }}" class="remove-item btn btn-sm btn-red rounded-0 float-right mt-3"><i class="fas fa-trash fa-sm"></i></a>
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-12">
+                        <hr class="bg-white">
+                        <p class="text-right">Subtotal: ${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        <hr class="bg-white">
+                    </div>
+                {% endfor %}
+                <div class="col-12 col-md-8 offset-md-2 border-white py-3">
+                    <h3>Summary ({{ product_count }} {% if product_count > 1 %}items{% else %}item{% endif %})</h3>
+                    <p class="font-weight-light">Subtotal <span class="float-right">${{ total|floatformat:2 }}</span></p>
+                    <p class="font-weight-light">Shipping <span class="float-right">${{ delivery|floatformat:2 }}</span></p>
+                    {% if free_delivery_difference > 0 %}
+                        <p>
+                            Spend ${{ free_delivery_difference }} more for free delivery
+                        </p>
+                    {% endif %}
+                    <br>  
+                    <p>Total <span class="float-right">${{ grand_total|floatformat:2 }}</span></p>
+                    <a href="{% url 'products' %}" class="btn btn-white rounded-0"><i class="fas fa-caret-left"></i> Back to Shop</a>
+                    <a href="{% url 'checkout' %}" class="btn btn-red rounded-0 float-right"><i class="fas fa-wallet"></i> Secure Checkout</a>
+                </div>
+            {% else %}
+                <!-- Displays when cart is empty -->
+                <div class="col-12 col-md-6 mb-3">
+                    <p class="lead mb-5">Your cart is empty.</p>
+                    <a href="{% url 'products' %}" class="btn btn-lg btn-white rounded-0"><i class="fas fa-caret-left"></i> Back to Shop</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity-input-script.html' %}
+
+<!-- Listens for click on the remove button, then deletes item from cart -->
+<script type="text/javascript">
+    $('.remove-item').click(function(e) {        
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/cart/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+                location.reload();
+         });
+    })
+</script>
+{% endblock postloadjs %}

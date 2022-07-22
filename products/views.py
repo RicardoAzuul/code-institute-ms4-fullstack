@@ -2,17 +2,28 @@ from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Product_Category
+from .models import Product, Product_Category, ShopAlert
 from django.contrib.auth.decorators import login_required
 
 from .forms import ProductForm
 
 
-# Create your views here.
 def all_products(request):
-    """ A view to show all products, including sorting and search queries """
+    """
+    A view to show all products, including sorting and search queries
+    """
 
     products = Product.objects.all()
+
+    """
+    Retrieve just textfields, convert to string and append to list
+    so we can use Django's random template variable
+    """
+    shop_alerts_textfields = ShopAlert.objects.all().values_list('text')
+    shop_alerts_textstrings = []
+    for x in shop_alerts_textfields:
+        shop_alerts_textstrings.append(''.join(x))
+
     # set to None in case of no search term or category
     query = None
     categories = None
@@ -20,6 +31,7 @@ def all_products(request):
     direction = None
 
     if request.GET:
+        # Handle sorting requests
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -34,11 +46,13 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
+        # Handle requests to view particular product categories
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Product_Category.objects.filter(name__in=categories)
 
+        # Handle search requests
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -53,6 +67,7 @@ def all_products(request):
 
     context = {
         'products': products,
+        'shop_alerts_textstrings': shop_alerts_textstrings,
         'search_term': query,
         'selected_categories': categories,
         'selected_sorting': selected_sorting,
@@ -62,7 +77,9 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show product details """
+    """
+    A view to show product details
+    """
 
     product = get_object_or_404(Product, pk=product_id)
 
@@ -70,12 +87,14 @@ def product_detail(request, product_id):
         'product': product,
     }
 
-    return render(request, 'products/product_detail.html', context)
+    return render(request, 'products/product-detail.html', context)
 
 
 @login_required
 def add_product(request):
-    """Add a product to the store"""
+    """
+    Add a product to the store
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Super User permissions required')
         return redirect(reverse('home'))
@@ -92,7 +111,7 @@ def add_product(request):
     else:
         form = ProductForm()
 
-    template = 'products/add_product.html'
+    template = 'products/add-product.html'
     context = {
         'form': form,
         'disable_add_to_bag': True,
@@ -103,7 +122,9 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """Update a product in the store"""
+    """
+    Update a product in the store
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Super User permissions required')
         return redirect(reverse('home'))
@@ -123,7 +144,7 @@ def edit_product(request, product_id):
         form = ProductForm(instance=product)
     messages.info(request, f'Editing {product.name}')
 
-    template = 'products/edit_product.html'
+    template = 'products/edit-product.html'
     context = {
         'form': form,
         'product': product,
@@ -135,7 +156,9 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """Delete a product from the store"""
+    """
+    Delete a product from the store
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Super User permissions required')
         return redirect(reverse('home'))

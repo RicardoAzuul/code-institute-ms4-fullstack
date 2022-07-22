@@ -5,6 +5,10 @@ from products.models import Product
 
 
 def cart_contents(request):
+    """
+    Function to get the cart from the session
+    and calculate a number of values
+    """
 
     cart_items = []
     total = 0

@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<!-- Extra CSS for checkout -->
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block extra_title %} - Checkout succes{% endblock extra_title %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container minheight">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 order-md-last">
+            <!-- Order summary, with subtotals, order total, delivery costs and grand total -->
+            <h3>Order Summary</h3>
+            <div class="row">
+                <div class="col">
+                    {% for item in order.lineitems.all %}
+                        <p class="my-0">{{ item.product.name }}: <span class="float-right">{{ item.quantity }} @ {{ item.product.price }} each</span></p>
+                    {% endfor %} 
+                </div>       
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="my-0 mt-3">Order Total: <span class="float-right">${{ order.order_total }}</span></p>
+                    <p class="my-0">Delivery: <span class="float-right">${{ order.delivery_cost }}</span></p>
+                    <p class="my-0">Grand Total: <span class="float-right font-weight-bold">${{ order.grand_total }}</span></p>
+                </div>
+                <div class="col-12">
+                    <hr class="bg-white">
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-8">
+            <p>Order {{ order.order_number }}</p>
+            <h2 class="mb-4"><i class="fas fa-check fa-lg"></i> Thank You, {{ order.full_name }}</h2>
+            <p class="text-white">Your order information is below. A confirmation email will be sent to
+                <strong>{{ order.email }}</strong>.</p>
+            <hr class="bg-white">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-4">
+            <!-- Full order details -->
+            <h3>Customer Info</h3>                             
+            <p class="mb-0">{{ order.date }}</p>
+            <p class="mb-5">{{ order.phone_number }}</p>
+        </div>
+        <div class="col-12 col-lg-4">
+            <h4>Shipping Address</h4>
+            <p class="mb-0">{{ order.full_name }}</p>
+            <p class="mb-0">{{ order.street_address1 }}</p>
+            {% if order.street_address2 %}
+                <p class="mb-0">{{ order.street_address2 }}</p>
+            {% endif %}
+            {% if order.county %}
+                <p class="mb-0">{{ order.county }}</p>
+            {% endif %}
+            <p class="mb-0">{{ order.town_or_city }}</p>
+            {% if order.postcode %}
+                <p class="mb-0">{{ order.postcode }}</p>
+            {% endif %}
+            <p class="mb-5">Country Code: {{ order.country }}</p>
+        </div>
+        <div class="col-12 col-lg-6">
+            <h4>Billing Address</h4>
+            <p class="mb-0">{{ order.full_name }}</p>
+            <p class="mb-0">{{ order.street_address1 }}</p>
+            {% if order.street_address2 %}
+                <p class="mb-0">{{ order.street_address2 }}</p>
+            {% endif %}
+            {% if order.county %}
+                <p class="mb-0">{{ order.county }}</p>
+            {% endif %}
+            <p class="mb-0">{{ order.town_or_city }}</p>
+            {% if order.postcode %}
+                <p class="mb-0">{{ order.postcode }}</p>
+            {% endif %}
+            <p class="mb-5">Country Code: {{ order.country }}</p>
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-12">
+            {% if from_profile %}
+                <!-- Signed in users can view their order history: this button takes them back to their profile -->
+                <a href="{% url 'profile' %}" class="btn btn-red rounded-0 my-2">
+                    <span class="mr-2">
+                        <i class="fas fa-caret-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Profile</span>
+                </a>
+            {% else %}
+                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-red rounded-0 my-2">
+                    <span class="mr-2">
+                        <i class="fas fa-dollar-sign"></i>
+                    </span>
+                    <span class="text-uppercase">Seen the latest deals?</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
