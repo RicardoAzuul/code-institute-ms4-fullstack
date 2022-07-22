@@ -2,11 +2,11 @@ from .models import Feature
 from django.forms import ValidationError
 from django.test import TestCase
 
-class TestModels(TestCase):
 
+class TestModels(TestCase):
     def test_blank_feature(self):
         """
-        Test that when a feature is created with no
+        When a feature is created with no
         info, we get a ValidationError
         """
         test_feature = Feature.objects.create()
@@ -15,7 +15,7 @@ class TestModels(TestCase):
 
     def test_max_length_name_feature(self):
         """
-        Test that when a feature is created with a header longer than
+        When a feature is created with a header longer than
         254 characters, we get a ValidationError
         """
         long_header = "x" * 255
@@ -23,41 +23,41 @@ class TestModels(TestCase):
         with self.assertRaises(ValidationError):
             test_feature.full_clean()
 
-class TestViews(TestCase):
 
+class TestViews(TestCase):
     def test_get_home(self):
         """
-        Test that when browsing to / we get a 200 code,
+        When browsing to / we get a 200 code,
         context and home/index.html template
         """
-        response = self.client.get('/')
+        response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'home/index.html')
+        self.assertTemplateUsed(response, "home/index.html")
         self.assertTrue(response.context)
 
     def test_get_signup(self):
         """
-        Test that when browsing to /accounts/signup we
+        When browsing to /accounts/signup we
         get a 200 code and account/signup.html template
         """
-        response = self.client.get('/accounts/signup/')
+        response = self.client.get("/accounts/signup/")
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'account/signup.html')
+        self.assertTemplateUsed(response, "account/signup.html")
 
     def test_get_login(self):
         """
-        Test that when browsing to /accounts/login we
+        When browsing to /accounts/login we
         get a 200 code and account/login.html template
         """
-        response = self.client.get('/accounts/login/')
+        response = self.client.get("/accounts/login/")
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'account/login.html')
+        self.assertTemplateUsed(response, "account/login.html")
 
     def test_get_password_reset(self):
         """
-        Test that when browsing to /accounts/password/reset
+        When browsing to /accounts/password/reset
         we get a 200 code and account/password_reset.html template
         """
-        response = self.client.get('/accounts/password/reset/')
+        response = self.client.get("/accounts/password/reset/")
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'account/password_reset.html')
+        self.assertTemplateUsed(response, "account/password_reset.html")

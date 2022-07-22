@@ -13,7 +13,7 @@ def index(request):
     features = Feature.objects.all()
 
     context = {
-        'features': features,
+        "features": features,
     }
 
-    return render(request, 'home/index.html', context)
+    return render(request, "home/index.html", context)

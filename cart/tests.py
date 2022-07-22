@@ -2,12 +2,11 @@ from django.test import TestCase
 
 
 class TestViews(TestCase):
-
     def test_get_cart(self):
         """
-        Test that when browsing to /cart/ we get
+        When browsing to /cart/ we get
         a 200 code and cart/cart.html template
         """
-        response = self.client.get('/cart/')
+        response = self.client.get("/cart/")
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'cart/cart.html')
+        self.assertTemplateUsed(response, "cart/cart.html")

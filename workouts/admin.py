@@ -3,44 +3,45 @@ from .models import BodyPart, Equipment, Target, Workout
 
 # Register your models here.
 
+
 class WorkoutAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
-        'bodypart',
-        'equipment',
-        'target',
-        'rating',
-        'image',
+        "name",
+        "bodypart",
+        "equipment",
+        "target",
+        "rating",
+        "image",
     )
 
-    ordering = ('name',)
+    ordering = ("name",)
 
 
 class BodyPartAdmin(admin.ModelAdmin):
     list_display = (
-        'friendly_name',
-        'name',
+        "friendly_name",
+        "name",
     )
 
-    ordering = ('friendly_name',)
+    ordering = ("friendly_name",)
 
 
 class EquipmentAdmin(admin.ModelAdmin):
     list_display = (
-        'friendly_name',
-        'name',
+        "friendly_name",
+        "name",
     )
 
-    ordering = ('friendly_name',)
+    ordering = ("friendly_name",)
 
 
 class TargetAdmin(admin.ModelAdmin):
     list_display = (
-        'friendly_name',
-        'name',
+        "friendly_name",
+        "name",
     )
 
-    ordering = ('friendly_name',)
+    ordering = ("friendly_name",)
 
 
 admin.site.register(BodyPart, BodyPartAdmin)

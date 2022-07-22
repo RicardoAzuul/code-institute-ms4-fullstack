@@ -25,8 +25,8 @@ Initially I wanted to name the project Fit Family, and create a more family orie
  
 ### User stories
 Not all User Stories have been completed. Basic shopping functionality has been completed, but user stories that are about the community side of the project have yet to be resolved.
-<!-- TODO: Update -->
-  
+
+
 **Viewing and Navigation**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
@@ -88,30 +88,30 @@ Not all User Stories have been completed. Basic shopping functionality has been 
 | ❌ | 35 | Store Owner/Admin | Add a subscription | Add new subscription options | |
 | ❌ | 36 | Store Owner/Admin | Edit/update a subscription | Change subscription prices, descriptions, linked workouts and nutrition | |
 | ❌ | 37 | Store Owner/Admin | Delete a subscription | Remove subscriptions that are no longer available | |
-| ✔️ | 38 | Store Owner/Admin | Add a workout | Add new workouts | |
-| ✔️ | 39 | Store Owner/Admin | Edit/update a workout | Change workouts | |
-| ✔️ | 40 | Store Owner/Admin | Delete a workout | Remove workouts that are no longer promoted | |
+| ✔️ | 38 | Store Owner/Admin | Add a workout | Add new workouts | [Add Workout](readme-assets/media/user_story_38.png) |
+| ✔️ | 39 | Store Owner/Admin | Edit/update a workout | Change workouts | [Edit Workout](readme-assets/media/user_story_39.png) |
+| ✔️ | 40 | Store Owner/Admin | Delete a workout | Remove workouts that are no longer promoted | [Delete Workout](readme-assets/media/user_story_40.png) |
 | ❌ | 41 | Store Owner/Admin | Add a nutrition plan | Add new nutrition plans | |
 | ❌ | 42 | Store Owner/Admin | Edit/update a nutrition plan | Change nutrition plan | |
 | ❌ | 43 | Store Owner/Admin | Delete a nutrition plan | Remove nutrition plans that are no longer promoted | |
-| ✔️ | 44 | Store Owner/Admin | Add subscription features to the home page | To entice visitors to subscribe | |
-| ✔️ | 45 | Store Owner/Admin | Edit subscription features visible on the home page | To tweak the features and entice visitors to subscribe | |
-| ✔️ | 46 | Store Owner/Admin | Delete subscription features visible on the home page | To remove features that are no longer offered  | |
-| ✔️ | 44 | Store Owner/Admin | Add shop alerts to the products page | To update the shop and make visitors aware of for example new deals | |
-| ✔️ | 45 | Store Owner/Admin | Edit shop alerts visible on the products page | To change shop alerts | |
-| ✔️ | 46 | Store Owner/Admin | Delete shop alerts visible on the products page | To remove shop alerts that are no longer applicable  | |
+| ✔️ | 44 | Store Owner/Admin | Add subscription features to the home page | To entice visitors to subscribe | [Add Feature](readme-assets/media/user_story_44.png) |
+| ✔️ | 45 | Store Owner/Admin | Edit subscription features visible on the home page | To tweak the features and entice visitors to subscribe | [Edit Feature](readme-assets/media/user_story_45.png) |
+| ✔️ | 46 | Store Owner/Admin | Delete subscription features visible on the home page | To remove features that are no longer offered  | Same as above |
+| ✔️ | 47 | Store Owner/Admin | Add shop alerts to the products page | To update the shop and make visitors aware of for example new deals | [Add Shop Alert](readme-assets/media/user_story_47.png) |
+| ✔️ | 48 | Store Owner/Admin | Edit shop alerts visible on the products page | To change shop alerts | [Edit Shop Alert](readme-assets/media/user_story_48.png)  |
+| ✔️ | 49 | Store Owner/Admin | Delete shop alerts visible on the products page | To remove shop alerts that are no longer applicable  | Same as above |
 
 **Viewing and Navigation - Workouts**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| ✔️ | 47 | Registered User | View a list of workouts | Select workouts to do |  |
-| ✔️ | 48 | Registered User | View individual workout details | Identify the description, rating, equipment needed and what the workout targets |  |
+| ✔️ | 50 | Registered User | View a list of workouts | Select workouts to do | [Workouts](readme-assets/media/user_story_50.png)  |
+| ✔️ | 51 | Registered User | View individual workout details | Identify the description, rating, equipment needed and what the workout targets | [Workout Details](readme-assets/media/user_story_51.png)  |
 
 **Sorting and Searching - Workouts**
 | Done | User Story ID | As A/An | I Want To Be Able To... | So That I Can... | Screenshot |
 | :---:| :-------------|:--------| :----------------------:| :---------------:| :---------:|
-| ✔️ | 49 | Registered User | Sort the list of available workouts | Easily identify the best rated, categorically sorted workouts |  |
-| ✔️ | 50 | Registered User | Sort a specific category of workout | Find the best-rated workout in a specific category, or sort the workouts in that category by name |  |
+| ✔️ | 52 | Registered User | Sort the list of available workouts | Easily identify the best rated, categorically sorted workouts | [Sort](readme-assets/media/user_story_52.png)  |
+| ✔️ | 53 | Registered User | Sort a specific category of workout | Find the best-rated workout in a specific category, or sort the workouts in that category by name | [Category](readme-assets/media/user_story_53.png)  |
 
 
 ---
@@ -130,7 +130,7 @@ Git Fit sets out to be no nonsense and active, aggressive almost. Git Fit is for
 So the main page has to have a call to action in the form of a button to take you to subscriptions. We also need a hero image that exemplifies the image of Git Fit.
 Some brief text to indicate what subscribers gain access to would also be good.
 
-We also indicate that there is a shop and account option by having options for these in the navbar.
+We also indicate that there is a shop, workouts and account option by having options for these in the navbar.
 
 ---
 
@@ -139,11 +139,11 @@ We also indicate that there is a shop and account option by having options for t
 The functional specifications of the site:
 - a responsive website with mobile first design.
 - a main page with a hero image, call to action (join our community) and navbar options indicating the shop and user account functionalities.
-- a navbar which changes if a user is logged in or not.
+- a navbar with menus that if a user is logged in or not.
 - a footer.
-- a profile page, only visible when logged in. Here members can set up their shopping details, but also personal details which map to exercise and nutrition plans.
+- a profile page, only accessible when logged in. Here members can set up their shopping details, but also personal details which map to exercise and nutrition plans.
 - a page where subscribers can share their progress with other subscribers - not yet implemented.
-- a shop page, containing items for sale. Signed in users have the option to review items.
+- a shop page, containing items for sale. Signed in users have the option to review items (not yet implemented).
 - a page containing exercises, only available for subscribers - not yet implemented.
 - a page containing nutrition plans, only available for subscribers - not yet implemented.
 
@@ -151,7 +151,7 @@ The functional specifications of the site:
 Content requirements:
 - a hero image evoking the idea of "active, aggressive, simplicity".
 - some exercise and nutrition plans - not yet implemented.
-- some items for sale, with example reviews.
+- some items for sale.
 - some example subscribers - not yet implemented.
 
 
@@ -166,10 +166,10 @@ All pages should have the same navigation bar and footer:
 <ins>The Home Page</ins>
 - a hero image evoking the idea of "active, aggressive, simplicity".
 - a call to action to subscribe.
-- features that indicate the benefits of subscribing.
+- features that indicate the benefits of subscribing. Admins can change these features using the admin portal.
 
 <ins>The Profile Page</ins>
-- a form where subscribers can fill in their shopping details, but also personal details which map to exercise or nutrition.
+- a form where subscribers can fill in their shopping details, but also personal details which map to exercise or nutrition (not yet implemented).
 
 <ins>The Community Page - not yet implemented</ins>
 - inspiring imagery.
@@ -177,8 +177,8 @@ All pages should have the same navigation bar and footer:
 
 <ins>The Shop Page</ins>
 - items for sale.
-- shop alerts, to make visitors aware of deals for instance.
-- the option to review items for signed in users.
+- shop alerts, to make visitors aware of deals for instance. Admins can change these alerts using the admin portal.
+- the option to review items for signed in users (not yet implemented).
 - search functionality to search for items
 
 <ins>The Workouts Page </ins>
@@ -192,13 +192,13 @@ All pages should have the same navigation bar and footer:
 ---
 
 #### Skeleton Plane
-The navigation bar will be added to the top of every page and will always remain visible. It contains a home link on the left side, a search bar for searching in the store in the middle, an icon containing the account options - register and login, and if you're logged in a link to your profile, and if you're a superuser, a link to add a product.
+The navigation bar will be added to the top of every page and will always remain visible. It contains a home link on the left side, a search bar for searching in the store in the middle, an icon containing the workout options, an icon containing the account options - register and login, and if you're logged in a link to your profile, and if you're a superuser, a link to add a product.
 
 There is also a cart icon, which updates when you add items to your cart and which links to the cart page, from where you can do checkouts.
 
 There are links to all pages on this navbar, though some links are only visible if the user has logged in. On the left will be the logo, which when clicked upon will take the visitor back to the home page.
 
-The home page has a hero image, a call to action to register, a button to take you to the shop and some testimonials and features of subscriptions.
+The home page has a hero image, a call to action to register, a button to take you to the shop and features of subscriptions.
 
 The shopping page has cards for the products. You can choose different categories of products, sort by price and category and rating and click on a product to get more information and add it to your cart.
 
@@ -267,20 +267,20 @@ These wireframes were used as a basis to design the actual webapp. However, some
 ---
 
 ## Database Design
-<!-- TODO: Update -->
+
 The database design can be found [here](https://dbdiagram.ario/d/628bc76ff040f104c17efc98)
 There are 11 models:
 1. Profiles
 2. Orders
 3. Order Line Items
 4. Products
-5. Product Categories
+5. Product Categories (only editable via admin portal)
 6. Workouts
-7. BodyParts (linked to Workouts)
-8. Equipment (linked to Workouts)
-9. Targets (linked to Workouts)
-10. Features
-11. ShopAlerts
+7. BodyParts (linked to Workouts, only editable via admin portal)
+8. Equipment (linked to Workouts, only editable via admin portal)
+9. Targets (linked to Workouts, only editable via admin portal)
+10. Features (only editable via admin portal)
+11. ShopAlerts (only editable via admin portal)
 
 The Profiles model is linked to the allauth User model, but I don't know how this model is constructed.
 
@@ -289,7 +289,7 @@ The Profiles model is linked to the allauth User model, but I don't know how thi
 ## Features
 
 ### Existing Features
-- the home page, with hero image, call to action, testimonials and features
+- the home page, with hero image, call to action and features
 - the navbar, with links to login and register hidden behind the "My Account" menu, a search bar, and various shopping links. Also has an icon representing the visitor's shopping cart, which updates when items are added.
 - a shop page, where the user can sort products by for instance price and category, and can select products from different categories. 
 - each product on the shop page links to a product details page, where users can find out more about the product, select a quantity and add it to their cart. This page also contains a breadcrumb and a category label, to allow quick navigation in the shop.
@@ -309,6 +309,7 @@ The Profiles model is linked to the allauth User model, but I don't know how thi
 - subscriptions: giving registered users the option to sign up for, change and end their subscriptions
 - the subscriber section, where subscribed users get access to exercises, nutrition plans and the community
 - the option for subscribers to review products
+- allowing subscribers to favorite workouts
 
 
 ---
@@ -359,56 +360,162 @@ These screenshots indicate the responsiveness of the pages on various screens. P
 <ins>Automated tests</ins>
 
 There are some automated tests using Django's own testing capabilities.
-<!-- TODO: Add coverage -->
 ```python manage.py test --verbosity=2```
 
 Output:
 ```
 test_get_cart (cart.tests.TestViews)
-Test that when browsing to /cart/ we get ... ok
+When browsing to /cart/ we get ... ok
+test_blank_feature (home.tests.TestModels)
+When a feature is created with no ... ok
+test_max_length_name_feature (home.tests.TestModels)
+When a feature is created with a header longer than ... ok
 test_get_home (home.tests.TestViews)
-Test that when browsing to / we get a 200 code ... ok
+When browsing to / we get a 200 code, ... ok
 test_get_login (home.tests.TestViews)
-Test that when browsing to /accounts/login we ... ok
+When browsing to /accounts/login we ... ok
 test_get_password_reset (home.tests.TestViews)
-Test that when browsing to /accounts/password/reset ... ok
+When browsing to /accounts/password/reset ... ok
 test_get_signup (home.tests.TestViews)
-Test that when browsing to /accounts/signup we ... ok
+When browsing to /accounts/signup we ... ok
 test_all_blank_product_category (products.tests.TestModels)
-Test that when a category is created with no ... ok
+When a category is created with no ... ok
 test_blank_description_product (products.tests.TestModels)
-Test that when a product is created with no description, ... ok
+When a product is created with no description, ... ok
 test_blank_fields_product (products.tests.TestModels)
-Test that when a product is created, category, sku, ... ok
+When a product is created, category, sku, ... ok
 test_blank_name_product (products.tests.TestModels)
-Test that when a product is created with no name, ... ok
+When a product is created with no name, ... ok
 test_blank_price_product (products.tests.TestModels)
-Test that when a product is created with no price, ... ok
+When a product is created with no price, ... ok
+test_blank_shopalert (products.tests.TestModels)
+When a shopalert is created with no ... ok
 test_friendly_name_blank_product_category (products.tests.TestModels)
-Test that when a category is created, friendly name is blank ... ok
+When a category is created, friendly name is blank ... ok
 test_max_length_image_url_product (products.tests.TestModels)
-Test that when a product is created with an image_url ... ok
+When a product is created with an image_url ... ok
 test_max_length_name_product (products.tests.TestModels)
-Test that when a product is created with a name ... ok
+When a product is created with a name ... ok
 test_max_length_name_product_category (products.tests.TestModels)
-Test that when a category is created with a name longer than ... ok
+When a category is created with a name longer than ... ok
+test_max_length_name_shopalert (products.tests.TestModels)
+When a shopalert is created with a name longer than ... ok
 test_max_length_sku_product (products.tests.TestModels)
-Test that when a product is created with a sku ... ok
+When a product is created with a sku ... ok
 test_delete_category_of_product (products.tests.TestViews)
-Test that when a category is deleted for a product, ... ok
-test_get_products (products.tests.TestViews)
-Test that when browsing to /products/ we get a 200 code, ... ok
-test_search_products (products.tests.TestViews)
-Test that when searching for 'Clearance' we get a 200 code, ... ok
-test_select_categories (products.tests.TestViews)
-Test that when selecting categories we get a 200 code, ... ok
+When a category is deleted for a product, ... ok
+test_all_blank_bodypart (workouts.tests.TestModels)
+When a bodypart is created with no ... ok
+test_all_blank_equipment (workouts.tests.TestModels)
+When a equipment is created with no ... ok
+test_all_blank_target (workouts.tests.TestModels)
+When a target is created with no ... ok
+test_blank_description_workout (workouts.tests.TestModels)
+When a workout is created with no description, ... ok
+test_blank_fields_workout (workouts.tests.TestModels)
+When a workout is created, bodypart, equipment, ... ok
+test_blank_image_workout (workouts.tests.TestModels)
+When a workout is created with no image, ... ok
+test_blank_name_workout (workouts.tests.TestModels)
+When a workout is created with no name, ... ok
+test_delete_fields_of_workout (workouts.tests.TestModels)
+When the bodypart, equipment and target objects are deleted for a workout, ... ok
+test_friendly_name_blank_bodypart (workouts.tests.TestModels)
+When a bodypart is created, friendly name is blank ... ok
+test_friendly_name_blank_equipment (workouts.tests.TestModels)
+When a equipment is created, friendly name is blank ... ok
+test_friendly_name_blank_target (workouts.tests.TestModels)
+When a target is created, friendly name is blank ... ok
+test_max_length_name_bodypart (workouts.tests.TestModels)
+When a bodypart is created with a name longer than ... ok
+test_max_length_name_equipment (workouts.tests.TestModels)
+When a equipment is created with a name longer than ... ok
+test_max_length_name_target (workouts.tests.TestModels)
+When a target is created with a name longer than ... ok
+test_max_length_name_workout (workouts.tests.TestModels)
+When a workout is created with a name ... ok
+test_get_workouts (workouts.tests.TestViews)
+When browsing to /workouts/ we get a 302 code, ... ok
 ```
 
+Coverage report:
+```coverage run --source='.' manage.py test```
+Name                                    Stmts   Miss  Cover
+-----------------------------------------------------------
+cart\__init__.py                            0      0   100%
+cart\apps.py                                4      0   100%
+cart\contexts.py                           24      7    71%
+cart\migrations\__init__.py                 0      0   100%
+cart\templatetags\__init__.py               0      0   100%
+cart\templatetags\cart_tools.py             5      1    80%
+cart\tests.py                               6      0   100%
+cart\urls.py                                3      0   100%
+cart\views.py                              40     31    22%
+checkout\__init__.py                        1      0   100%
+checkout\admin.py                          12      0   100%
+checkout\apps.py                            6      0   100%
+checkout\forms.py                          18     11    39%
+checkout\migrations\0001_initial.py         7      0   100%
+checkout\migrations\__init__.py             0      0   100%
+checkout\models.py                         51     14    73%
+checkout\signals.py                         9      2    78%
+checkout\urls.py                            4      0   100%
+checkout\views.py                          86     70    19%
+checkout\webhook_handler.py                71     56    21%
+checkout\webhooks.py                       28     19    32%
+custom_storages.py                          6      6     0%
+env.py                                      6      0   100%
+fit_family\__init__.py                      0      0   100%
+fit_family\asgi.py                          4      4     0%
+fit_family\settings.py                     68     20    71%
+fit_family\urls.py                          5      0   100%
+fit_family\wsgi.py                          4      4     0%
+home\__init__.py                            0      0   100%
+home\admin.py                               6      0   100%
+home\apps.py                                4      0   100%
+home\migrations\0001_initial.py             5      0   100%
+home\migrations\__init__.py                 0      0   100%
+home\models.py                              4      0   100%
+home\tests.py                              31      0   100%
+home\urls.py                                3      0   100%
+home\views.py                               6      0   100%
+manage.py                                  12      2    83%
+products\__init__.py                        0      0   100%
+products\admin.py                          14      0   100%
+products\apps.py                            4      0   100%
+products\forms.py                          15      6    60%
+products\migrations\0001_initial.py         6      0   100%
+products\migrations\0002_shopalert.py       4      0   100%
+products\migrations\__init__.py             0      0   100%
+products\models.py                         26      3    88%
+products\tests.py                          70      1    99%
+products\urls.py                            3      0   100%
+products\views.py                          92     77    16%
+products\widgets.py                         7      0   100%
+profiles\__init__.py                        0      0   100%
+profiles\apps.py                            4      0   100%
+profiles\forms.py                          18     11    39%
+profiles\migrations\0001_initial.py         8      0   100%
+profiles\migrations\__init__.py             0      0   100%
+profiles\models.py                         21      4    81%
+profiles\urls.py                            3      0   100%
+profiles\views.py                          26     17    35%
+workouts\__init__.py                        0      0   100%
+workouts\admin.py                          18      0   100%
+workouts\apps.py                            4      0   100%
+workouts\forms.py                          25     16    36%
+workouts\migrations\0001_initial.py         6      0   100%
+workouts\migrations\__init__.py             0      0   100%
+workouts\models.py                         37      7    81%
+workouts\tests.py                          86      0   100%
+workouts\urls.py                            3      0   100%
+workouts\views.py                          95     79    17%
+workouts\widgets.py                         7      0   100%
+-----------------------------------------------------------
+TOTAL                                    1141    468    59%
 
 
 <ins>Manual tests</ins>
-<!-- TODO: Update -->
-
 The webapp has been tested with Google Chrome, Firefox and Microsoft Edge, and on a Huawei P smart+ 2019 Android smartphone and found to be working fine.
 Below are more elaborate tests:
 
@@ -423,7 +530,10 @@ Below are more elaborate tests:
 | Clicking on the navbar brand as either an anonymous user or logged in user | I go back to the home page | ✔️ |
 | Clicking on the 'Buy' button as either an anonymous user or logged in user | I go to the products page and see a list of products | ✔️ |
 | Clicking on the 'Register' button as an anonymous user | I go to the register page and see a form to register for an account | ✔️ |
-| Clicking on the 'Workouts' button as an anonymous user | I see options to either register or login, which take me to either a register or login page | ❌ |
+| Clicking on the 'Workouts' button as an anonymous user | I see options to either register or login, which take me to either a register or login page | ✔️ |
+| Clicking on the 'Workouts' button as logged in user | I see links to view all workouts, including workouts sorted in different ways | ✔️ |
+| Clicking on the links under the 'Workouts' button as logged in user | I go to the workouts page, and if I selected a particular sorting, the workouts are sorted that way | ✔️ |
+| Clicking on a workout image as a logged in user | I see workout details | ✔️ |
 | Clicking on the 'My Account' button as an anonymous user | I see options to either register or login, which take me to either a register or login page | ✔️ |
 | Clicking on the 'My Account' button as a logged in user | I see options to go to my profile or to logout, which take me to either my profile page or logout page | ✔️ |
 | Clicking on a product image as an anonymous or a logged in user | I see product details and the option to add a product to my cart | ✔️ |
@@ -449,6 +559,7 @@ Below are more elaborate tests:
 | As either an anonymous user or logged in user, I click on the sorting menu on the products page | I can sort the list of products using the sort menu, sorting by price, category, rating or name | ✔️ | 
 | As either an anonymous user or logged in user, I choose a collection of product categories and  click on the sorting menu on the products page | I can sort this subcollection of products using the sort menu, sorting by price, category, rating or name | ✔️ | 
 | As either an anonymous user or logged in user, I enter a search term in the search bar | I get a page with the term I searched for, a counter with how many products were found, and if there are any products, a list of these products | ✔️ | 
+| As a logged in user, I click on the sorting menu on the workouts page | I can sort the list of workouts using the sort menu, sorting by body part, equipment, target, rating or name | ✔️ | 
 
 
 
@@ -468,11 +579,25 @@ Below are more elaborate tests:
 | Test | Expected | Passed |
 | :--: | :------: | :----: |
 | I log in using superuser credentials at https://code-institute-ms4.herokuapp.com/admin | I am taken to the admin portal, where I can see and edit elements of the webapp | ✔️ | 
+| In the admin portal I perform CRUD operations on a Product | The CRUD operations are applied | ✔️ | 
+| In the admin portal I perform CRUD operations on a Product_Category | The CRUD operations are applied | ✔️ | 
+| In the admin portal I perform CRUD operations on an Order | The CRUD operations are applied | ✔️ | 
+| In the admin portal I perform CRUD operations on an Shop alert | The CRUD operations are applied | ✔️ | 
+| In the admin portal I perform CRUD operations on a Feature | The CRUD operations are applied | ✔️ | 
+| In the admin portal I perform CRUD operations on a Workout | The CRUD operations are applied | ✔️ | 
+| In the admin portal I perform CRUD operations on a Body part | The CRUD operations are applied | ✔️ | 
+| In the admin portal I perform CRUD operations on an Equipment | The CRUD operations are applied | ✔️ | 
+| In the admin portal I perform CRUD operations on a Target | The CRUD operations are applied | ✔️ | 
 | Logged in as a superuser, I click on 'My Account' | I see a link for 'Add Product' which allows me to add a product to the store | ✔️ | 
 | Logged in as a superuser, I go to the Products page | I see links on each product that allow me to edit the product  | ✔️ | 
 | Logged in as a superuser, I go to the product details page for a product | I see a link that allows me to edit the product  | ✔️ | 
 | Logged in as a superuser, I go to the Products page | I see links on each product that allow me to delete the product  | ✔️ | 
 | Logged in as a superuser, I go to the product details page for a product | I see a link that allows me to delete the product  | ✔️ | 
+| Logged in as a superuser, I click on 'Workouts' | I see a link for 'Add Workout' which allows me to add a workout to the site | ✔️ | 
+| Logged in as a superuser, I go to the Workouts page | I see links on each workout that allow me to edit the product  | ✔️ | 
+| Logged in as a superuser, I go to the workout details page for a workout | I see a link that allows me to edit the product  | ✔️ | 
+| Logged in as a superuser, I go to the Workouts page | I see links on each workout that allow me to delete the product  | ✔️ | 
+| Logged in as a superuser, I go to the workout details page for a workout | I see a link that allows me to delete the product  | ✔️ | 
 
 
 
@@ -511,7 +636,9 @@ Validation: https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcode
 
 1. [Python Validation]
 1. Run ```python3 -m flake8``` and fix problems:
-- Lots of messages about line too long, whitespace, no newline. Installed autopep8 ```pip install -U autopep8``` and ran it to fix many of the problems
+- Lots of messages about line too long, whitespace, no newline. Installed autopep8 ```pip install -U autopep8``` and ran it to fix many of the problems ```autopep8 --in-place --recursive .```
+- Installed black: ```pip install black```
+- Ran black: ```black .```
 - Ignoring all the migrations files
 - Ignoring env.py, as it is only a local file and used for development
 - Ignoring tests.py, as these are not production code
@@ -521,12 +648,18 @@ Validation: https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcode
 - .\fit_family\settings.py:151:80: E501 line too long (82 > 79 characters) --> acceptable, as it belongs to the Django framework. I also don't know how to adjust the layout --> # noqa
 - .\fit_family\settings.py:154:80: E501 line too long (83 > 79 characters) --> acceptable, as it belongs to the Django framework. I also don't know how to adjust the layout --> # noqa
 - .\checkout\apps.py:9:9: F401 'checkout.signals' imported but unused --> used in another file 
-- .\checkout\views.py:1:80: E501 line too long (87 > 79 characters) --> no easy way to adjust the layout --> # noqa
-- .\checkout\webhook_handler.py:71:80: E501 line too long (80 > 79 characters) --> no easy way to adjust the layout --> # noqa
-- .\checkout\webhook_handler.py:72:80: E501 line too long (80 > 79 characters) --> no easy way to adjust the layout --> # noqa
-- .\checkout\webhooks.py:43:80: E501 line too long (86 > 79 characters) --> no easy way to adjust the layout --> # noqa
-- .\profiles\forms.py:33:80: E501 line too long (85 > 79 characters) --> no easy way to adjust the layout --> # noqa
-- .\products\widgets.py:9:80: E501 line too long (87 > 79 characters) --> no easy way to adjust the layout --> # noqa
+- .\checkout\views.py:1:80: E501 line too long (87 > 79 characters) --> no easy way to reformat --> # noqa
+- .\checkout\webhook_handler.py:71:80: E501 line too long (80 > 79 characters) --> no easy way to reformat --> # noqa
+- .\checkout\webhook_handler.py:72:80: E501 line too long (80 > 79 characters) --> no easy way to reformat --> # noqa
+- .\checkout\webhooks.py:43:80: E501 line too long (86 > 79 characters) --> no easy way to reformat --> # noqa
+- .\profiles\forms.py:33:80: E501 line too long (85 > 79 characters) --> no easy way to reformat --> # noqa
+- .\products\widgets.py:9:80: E501 line too long (87 > 79 characters) --> no easy way to reformat --> # noqa
+- .\products\views.py:62:80: E501 line too long (80 > 79 characters) --> no easy way to reformat --> # noqa
+- .\products\urls.py:9:80: E501 line too long (82 > 79 characters) --> no easy way to reformat --> # noqa
+- .\checkout\models.py:63:80: E501 line too long (87 > 79 characters) --> no easy way to reformat --> # noqa
+- .\checkout\urls.py:12:80: E501 line too long (88 > 79 characters) --> no easy way to reformat --> # noqa
+- .\profiles\urls.py:6:80: E501 line too long (84 > 79 characters) --> no easy way to reformat --> # noqa
+- .\workouts\urls.py:11:80: E501 line too long (82 > 79 characters) --> no easy way to reformat --> # noqa
 
 
 
@@ -620,10 +753,11 @@ Initially I wanted to do something different and go for warm and friendly, but I
 
 ### Content
 Product images, prices, descriptions and ratings: www.decathon.nl
+Workout information: from a dataset on Kaggle: https://www.kaggle.com/datasets/edoardoba/fitness-exercises-with-animations
+The descriptions of workouts came from: https://www.bodybuilding.com/
 
 
 ### Media
-<!-- TODO: UPdate -->
 Main page: https://www.pexels.com/photo/woman-doing-exercise-414029/
 No image available file: https://commons.wikimedia.org/wiki/File:No_Image_Available.jpg
 

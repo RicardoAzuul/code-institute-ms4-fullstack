@@ -6,40 +6,44 @@ class ProductAdmin(admin.ModelAdmin):
     """
     Registers the product model to the admin dashboard for CRUD operations
     """
+
     list_display = (
-        'name',
-        'sku',
-        'category',
-        'price',
-        'rating',
-        'image',
+        "name",
+        "sku",
+        "category",
+        "price",
+        "rating",
+        "image",
     )
 
-    ordering = ('name',)
+    ordering = ("name",)
 
 
 class Product_CategoryAdmin(admin.ModelAdmin):
     """
-    Registers the product_category model to the admin dashboard for CRUD operations
+    Registers the product_category model to
+    the admin dashboard for CRUD operations
     """
+
     list_display = (
-        'friendly_name',
-        'name',
+        "friendly_name",
+        "name",
     )
 
-    ordering = ('friendly_name',)
+    ordering = ("friendly_name",)
 
 
 class ShopAlertAdmin(admin.ModelAdmin):
     """
     Registers the shop alert model to the admin dashboard for CRUD operations
     """
+
     list_display = (
-        'name',
-        'text',
+        "name",
+        "text",
     )
 
-    ordering = ('name',)
+    ordering = ("name",)
 
 
 admin.site.register(Product_Category, Product_CategoryAdmin)

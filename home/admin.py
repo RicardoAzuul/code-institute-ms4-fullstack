@@ -4,14 +4,16 @@ from .models import Feature
 
 class FeatureAdmin(admin.ModelAdmin):
     """
-    Makes the Feature model available in 
+    Makes the Feature model available in
     the admin portal for CRUD operations.
     """
+
     list_display = (
-        'header',
-        'text',
+        "header",
+        "text",
     )
 
-    ordering = ('header',)
+    ordering = ("header",)
+
 
 admin.site.register(Feature, FeatureAdmin)

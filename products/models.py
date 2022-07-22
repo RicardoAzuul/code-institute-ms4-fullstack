@@ -7,7 +7,7 @@ class Product_Category(models.Model):
     """
 
     class Meta:
-        verbose_name_plural = 'Product_Categories'
+        verbose_name_plural = "Product_Categories"
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -24,8 +24,10 @@ class Product(models.Model):
     """
     Model to define the fields required to create products
     """
+
     category = models.ForeignKey(
-        'Product_Category', null=True, blank=True, on_delete=models.SET_NULL)
+        "Product_Category", null=True, blank=True, on_delete=models.SET_NULL
+    )
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -39,9 +41,11 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+
 class ShopAlert(models.Model):
     """
     Model to define the fields required to create shop alerts
     """
+
     name = models.CharField(max_length=254)
     text = models.TextField()
