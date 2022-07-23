@@ -270,7 +270,7 @@ The layout of the workouts section is very similar to the shop and product pages
 
 ## Database Design
 
-The database design can be found [here](https://dbdiagram.ario/d/628bc76ff040f104c17efc98)
+The database design can be found [here](https://dbdiagram.io/d/628bc76ff040f104c17efc98)
 There are 11 models:
 1. Profiles
 2. Orders
@@ -624,6 +624,7 @@ Below are more elaborate tests:
 - https://code-institute-ms4.herokuapp.com/checkout/
    1. First check: 1 error, 3 warnings, same as home page: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcode-institute-ms4.herokuapp.com%2Fcheckout%2F#l248c81
 
+I tried fixing the stray </div> error, but doing so results in breaking the DOM flow, causing the footer to be part of the container.
 
 
 
